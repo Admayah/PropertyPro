@@ -1,0 +1,11 @@
+.buttonContainer {
+  width: 9.37rem;
+  font-size: 20px;
+  background-color: #272c33;
+  padding: 10px;
+  text-align: center;
+}
+.buttonWrapper {
+  font-size: 15px;
+  font-weight: 500;
+}
