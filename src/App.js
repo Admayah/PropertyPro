@@ -3,7 +3,9 @@ import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Herosection/Hero';
 import OurServices from './components/OurServicesSection/OurServices';
 import Footer from './components/footer/Footer';
-// import Button from './components/Button/Button';
+import Signup from './pages/signup/Signup';
+import Login from './pages/login/Login';
+
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
       <Hero />
       <OurServices />
       <Footer />
+      <Signup />
+      <Login />
     </div>
   );
 }
