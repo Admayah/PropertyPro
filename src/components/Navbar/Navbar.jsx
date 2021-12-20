@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./navbar.css";
+import { Link } from "react-router-dom";
 import NavbarOptions from "./NavbarOptions";
 import Button from "../Button/Button";
 
@@ -14,27 +15,27 @@ export default function Navbar() {
   const cancelIcon = <i className="fa fa-times " onClick={toggleHandler}></i>;
 
   const NavMenu = NavbarOptions.map((btn) => (
-    <li className="navbarMenu">
-      <a href={btn.href} className="navbarPropertyLink">
+    <li className="navbar-menu">
+      <Link to={btn.href} className="navbar-property-link">
         {btn.title}
-      </a>{" "}
+      </Link>
     </li>
   ));
 
   return (
-    <div className="navbarContainer">
-      <div className="navbarWrapper">
-        <div className="navbarLeft">
-          <img src="/images/logo.png" alt="" className="logo" />
-          <span className="logo-name">PropertyPro</span>
+    <div className="navbar-container">
+      <div className="navbar-wrapper">
+        <div className="navbar-left">
+          <i className="fa fa-home logo"></i>
+          <span className="logo-name">9jaProperty</span>
         </div>
-        <div className="navbarRight">
-          <ul className={toggle ? "showNavbarMenu" : "hideNavbarMenu"}>
+        <div className="navbar-right">
+          <ul className={toggle ? "show-navbar-menu" : "hide-navbar-menu"}>
             {NavMenu}
-            <Button />
+            <Button text="BECOME AN AGENT" path="/signup" />
           </ul>
 
-          <div className="positionHamburgerIcon">
+          <div className="position-hamburger-icon">
             {" "}
             {toggle ? cancelIcon : hamburgerIcon}
           </div>

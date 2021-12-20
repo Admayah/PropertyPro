@@ -1,10 +1,10 @@
-.ourServicesContainer {
+.our-services-container {
   width: 100%;
   background-color: #f6f8f9;
   display: flex;
   justify-content: center;
 }
-.ourServicesWrapper {
+.our-services-wrapper {
   width: 80%;
   padding: 4.625rem 3.90625%;
   display: flex;
@@ -14,29 +14,29 @@
   flex-wrap: wrap;
 }
 @media (max-width: 768px) {
-  .ourServicesWrapper {
+  .our-services-wrapper {
     display: flex;
     flex-direction: column;
   }
 }
-.servicesHeader {
+.services-header {
   display: flex;
   justify-content: center;
   padding-bottom: 1.25rem;
 }
-.serviceOffers {
+.service-offers {
   display: flex;
   width: 100%;
   justify-content: center;
   flex-wrap: wrap;
 }
 @media (max-width: 768px) {
-  .serviceOffers {
+  .service-offers {
     display: flex;
     flex-direction: column;
   }
 }
-.serviceOffer {
+.service-offer {
   margin: 0.625rem;
   padding: 1.875rem 1.5625rem;
   width: 18.75rem;
@@ -53,28 +53,28 @@
   border-radius: 0 20px 0 0;
 }
 @media (max-width: 768px) {
-  .serviceOffer {
+  .service-offer {
     width: 90%;
     margin: 0 auto;
     margin-bottom: 10px;
     border-radius: 0;
-    max-width: 250px;
+    max-width: 400px;
   }
 }
-.serviceIcon {
+.service-icon {
   text-align: center;
 }
-.fa {
+.our-service-icon {
   font-size: 30px;
 }
-.serviceContent {
+.service-content {
   padding-top: 20px;
 }
 
-.serviceHeader {
+.service-header {
   text-align: center;
 }
-.serviceInfo {
+.service-info {
   padding-top: 10px;
   text-align: center;
 }

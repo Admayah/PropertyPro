@@ -1,0 +1,40 @@
+.profile-dashboard-container {
+  display: flex;
+}
+.profile-container {
+  flex: 9.5;
+  margin-top: 50px;
+  background-color: #f6f8f9;
+}
+.user-profile-wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+.property-infos {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .property-infos {
+    flex-direction: column;
+  }
+}
+.profile-input-container {
+  width: 96%;
+  height: 100%;
+  margin: 2%;
+}
+
+.photo-wrapper {
+  width: 200px;
+  padding: 10px;
+  height: 30px;
+  border: 1px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input[type="file"] {
+  display: none;
+}

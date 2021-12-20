@@ -1,37 +1,45 @@
 import React from "react";
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/footer/Footer";
 import "./login.css";
 
 export default function Login() {
   return (
-    <div className="loginContainer">
-      <div className="loginWrapper">
-        <div className="loginInputWrapper">
-        <div className="loginHeader">
-          <h2 className="loginHeaderText">LOGIN</h2>
-        </div>
-        <div className="loginDataInputContainer">
-          <input
-            type="
+    <>
+      <Navbar />
+      <div className="login-container">
+        <div className="login-wrapper">
+          <div className="login-input-wrapper">
+            <div className="login-header">
+              <h2 className="login-header-text">LOGIN</h2>
+            </div>
+            <div className="login-data-input-container">
+              <input
+                type="
                     email"
-            className="inputField"
-            placeholder="Email"
-          />
-          <input
-            type="
+                className="input-field"
+                placeholder="Email"
+              />
+              <input
+                type="
                     password"
-            className="inputField"
-            placeholder="Password"
-          />
-        </div>
-        <div className="buttonContainer signupBtn">
-          <button className="loginButton">Login</button>
-        </div>
-        </div>
-        
-        <div className="registerLink">
-            <span>Not yet Registered? Registe Here.</span>
+                className="input-field"
+                placeholder="Password"
+              />
+            </div>
+            <div className="button-wrapper">
+              <button className="login-button">
+                <a href="#">Login</a>
+              </button>
+            </div>
+          </div>
+
+          <div className="register-link">
+            Don't have an account? &nbsp; <a href="#"> Signup Here.</a>
+          </div>
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 }

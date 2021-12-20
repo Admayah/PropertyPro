@@ -1,7 +1,7 @@
-const facebookIcon = <i className="fa fa-facebook social-icon"></i>;
-const whatsappIcon = <i className="fa fa-whatsapp social-icon"></i>;
-const instagramIcon = <i className="fa fa-instagram social-icon"></i>;
-const twitterIcon = <i className="fa fa-twitter social-icon"></i>;
+const facebookIcon = <i className="fa fa-facebook ourServiceIcon"></i>;
+const whatsappIcon = <i className="fa fa-whatsapp ourServiceIcon"></i>;
+const instagramIcon = <i className="fa fa-instagram ourServiceIcon"></i>;
+const twitterIcon = <i className="fa fa-twitter ourServiceIcon"></i>;
 
 export const socialMenu = [
   {

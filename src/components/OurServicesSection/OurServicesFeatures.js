@@ -1,7 +1,11 @@
-const trustedService = <i class="fa fa-handshake-o" aria-hidden="true"></i>;
-const propertyService = <i class="fa fa-home"></i>;
-const financeService = <i class="fa fa-credit-card"></i>;
-const safeAndSecureService = <i class="fa fa-shield" aria-hidden="true"></i>;
+const trustedService = (
+  <i class="fa fa-handshake-o our-service-icon" aria-hidden="true"></i>
+);
+const propertyService = <i class="fa fa-home our-service-icon"></i>;
+const financeService = <i class="fa fa-credit-card our-service-icon"></i>;
+const safeAndSecureService = (
+  <i class="fa fa-shield our-service-icon" aria-hidden="true"></i>
+);
 
 const OurServicesFeatures = [
   {

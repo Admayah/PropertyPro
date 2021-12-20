@@ -10,18 +10,22 @@ export const FooterListArray = ({ header, links }) => {
 
   const listArray = links.map((listLink, index) => {
     return (
-      <li className="propertyArea" key={index}>
-        <a href="#" className="liLink">{listLink}</a>
+      <li className="property-area" key={index}>
+        <a href="#" className="li-link">
+          {listLink}
+        </a>
       </li>
     );
   });
   return (
     <>
-      <div className="accordionHeader">
+      <div className="accordion-header">
         <span>{header}</span>
-        <span className="arrowIcons"> {arrow ? arrowUp : arrowDown}</span>
+        <span className="arrow-icons"> {arrow ? arrowUp : arrowDown}</span>
       </div>
-      <ul className={arrow ? "showMoreAboutCompany" : "hide"}>{listArray}</ul>
+      <ul className={arrow ? "show-more-about-company" : "hide"}>
+        {listArray}
+      </ul>
     </>
   );
 };

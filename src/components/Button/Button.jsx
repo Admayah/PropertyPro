@@ -1,12 +1,13 @@
 import React from "react";
 import "./button.css";
+import { Link } from "react-router-dom";
 
-export default function Button({ props }) {
+export default function Button({ path, text }) {
   return (
-    <div className="buttonContainer">
-      <a href="#">
-        <button className="buttonWrapper">BECOME AN AGENT</button>
-      </a>
+    <div className="button-container">
+      <Link to={path}>
+        <button className="button-wrapper">{text}</button>
+      </Link>
     </div>
   );
 }
