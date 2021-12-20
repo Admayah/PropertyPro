@@ -1,0 +1,268 @@
+.footerContainer {
+  width: 100%;
+  background-color: #3f4652;
+}
+.footerFirstWrapper {
+  padding: 20px 35px;
+}
+@media (min-width: 768px) {
+  .footerFirstWrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 4.625rem 3.90625%;
+  }
+}
+.footerFirstContainer {
+  width: 100%;
+  color: white;
+}
+@media (min-width: 768px) {
+  .footerFirstContainer {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.footerLeft {
+  display: none;
+}
+@media (min-width: 768px) {
+  .footerLeft {
+    height: 50px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.footerLogo {
+  width: 2.3775rem;
+  height: 2.875rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.footerLogoName {
+  padding-left: 10px;
+  font-size: 18px;
+}
+
+.accordion {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+@media (min-width: 768px) {
+  .accordion {
+    width: 70%;
+    display: flex;
+    padding: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 2.187rem;
+  }
+}
+
+.arrowIcons {
+  display: flex;
+  height: 30px;
+  position: absolute;
+  right: 0;
+}
+@media (min-width: 768px) {
+  .arrowIcons {
+    display: none;
+  }
+}
+.hide {
+  display: none;
+}
+@media (min-width: 768px) {
+  .hide {
+    display: block;
+  }
+}
+.accordionHeader {
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+  align-items: center;
+}
+
+.accordionsWrapper {
+  position: relative;
+  padding-top: 20px;
+  border-bottom: 1px solid white;
+  opacity: 0.5;
+  color: white;
+}
+@media (min-width: 768px) {
+  .accordionsWrapper {
+    padding: 0;
+    border: none;
+    opacity: 1;
+  }
+}
+
+.propertyArea {
+  list-style: none;
+  padding-top: 15px;
+}
+.liLink {
+  text-decoration: none;
+  color: white;
+}
+.SocialMenu {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  color: white;
+  border-bottom: 1px solid white;
+  opacity: 0.5;
+}
+@media (min-width: 768px) {
+  .SocialMenu {
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    opacity: 1;
+    flex-direction: column;
+  }
+}
+.socialIcons {
+  width: 200px;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .socialIcons {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+}
+
+.contactInfoContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+}
+@media screen and (min-width: 768px) {
+  .contactInfoContainer {
+    width: 200px;
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+}
+.contactInfo {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+@media screen and (min-width: 768px) {
+  .contactInfo {
+    padding: 5px 0;
+  }
+}
+.socialIcon:hover {
+  color: chartreuse;
+  border-radius: 50%;
+}
+.social-icon {
+  margin: 10px;
+  margin-left: 0;
+}
+.fa-comment {
+  margin-right: 10px;
+}
+.fa-envelope {
+  margin-right: 10px;
+}
+.copyrightContainer {
+  color: white;
+  padding: 0 35px;
+  display: flex;
+  justify-content: space-between;
+}
+@media (min-width: 768px) {
+  .copyrightContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.footerLogoContainer {
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .footerLogoContainer {
+    display: none;
+  }
+}
+.footerLogo {
+  width: 2.3775rem;
+  height: 2.875rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.copyrightText {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+}
+@media (min-width: 768px) {
+  .copyrightText {
+    width: 90%;
+    padding: 0 48px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+.location {
+  margin-right: 20px;
+}
+@media (min-width: 768px) {
+  .location {
+    margin-right: 80px;
+  }
+}
+.check {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+}
+.propertyArea::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  transition: width 0.3s;
+  background: #000;
+}
+.propertyArea:hover::after {
+  width: 100%;
+}
+.socialIcon {
+  margin-left: 40px;
+  flex-wrap: wrap;
+}
+@media (min-width: 768px) {
+  .socialIcon {
+    margin: 0;
+  }
+}
