@@ -1,45 +1,58 @@
-.loginContainer {
+.login-container {
+  width: 100%;
+  height: calc(100vh - 80px);
+  background-color: #f6f8f9;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-wrapper {
+  width: 40%;
+  box-shadow: 0 12px 15px rgba(0, 0, 0, 0.1), 0 17px 50px rgba(0, 0, 0, 0.1);
+  border-radius: 0 20px 0 0;
+}
+@media (max-width: 768px) {
+  .login-wrapper {
     width: 100%;
-    background-color: #f6f8f9;
-    color: white;
-    margin-top: 20px;
+    margin: 0;
   }
-  .loginWrapper {
-    width: 50%;
-    margin: 0 auto;
-    box-shadow: 0 12px 15px rgba(0, 0, 0, 0.1), 0 17px 50px rgba(0, 0, 0, 0.1);
-    border-radius: 0 20px 0 0;
-  }
-  .loginInputWrapper{
-    padding: 20px;
-  }
-  .loginHeader {
-    color: #000;
-    display: flex;
-    justify-content: center;
-    margin: 10px 0;
-      padding: 20px;
-  
-  }
-  .loginDataInputContainer {
-    display: flex;
-    flex-direction: column;
-      
-  
-  }
-  .loginButton{
-    padding: 0;
-    margin-top: 10px;
-    padding: 10px 0;
-    width: 100%;
-    background-color: #3F4652;
-    border-radius: 3px;
-  }
-  
-  .registerLink{
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      background-color: crimson;
-  }
-  
+}
+.login-wrapper a {
+  text-decoration: none;
+  color: white;
+}
+.login-input-wrapper {
+  padding: 20px;
+}
+.login-header {
+  color: #000;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  padding: 20px;
+}
+.login-header-text {
+  color: #000;
+}
+.login-data-input-container {
+  display: flex;
+  flex-direction: column;
+}
+.login-button {
+  padding: 0;
+  margin-top: 10px;
+  padding: 10px 0;
+  width: 100%;
+  background-color: #3f4652;
+  border-radius: 3px;
+}
+
+.register-link {
+  color: #000;
+  display: flex;
+  justify-content: center;
+}
+.register-link a {
+  color: blue;
+}

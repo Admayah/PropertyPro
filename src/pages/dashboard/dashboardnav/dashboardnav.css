@@ -1,0 +1,89 @@
+.dashboard-nav-container {
+  width: 100%;
+  background-color: crimson;
+  color: white;
+}
+.dashboard-nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  .dashboard-nav-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+  }
+}
+.company-logo {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .company-logo {
+    display: none;
+  }
+}
+.position-dash-hamburger-icon {
+  position: absolute;
+  left: 10px;
+  height: 40px;
+  width: 40px;
+  border: 3px solid white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+@media (min-width: 768px) {
+  .position-dash-hamburger-icon {
+    display: none;
+  }
+}
+.username-and-image {
+  display: flex;
+  align-items: center;
+}
+.user-name {
+  margin-right: 10px;
+}
+.profile-logo{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.show-dashboard-sidebar {
+  width: 80%;
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.5 linear;
+  left: 0%;
+  z-index: 100;
+  transition: all 0.5s linear;
+}
+
+.hide-dashboard-sidebar {
+  top: 0;
+  background-color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  position: fixed;
+  left: -100%;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  transition: all 0.5s linear;
+}

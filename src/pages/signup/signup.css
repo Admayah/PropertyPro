@@ -1,78 +1,93 @@
-.signupContainer {
+.signup-container {
+  width: 100%;
+  height: 100vh;
+  background-color: #f6f8f9;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.signup-wrapper {
+  width: 40%;
+  box-shadow: 0 12px 15px rgba(0, 0, 0, 0.1), 0 17px 50px rgba(0, 0, 0, 0.1);
+  border-radius: 0 20px 0 0;
+}
+@media (max-width: 768px) {
+  .signup-wrapper {
     width: 100%;
-    background-color: #f6f8f9;
-    color: white;
-  }
-  .signupWrapper {
-    width: 50%;
-    margin: 0 auto;
-    box-shadow: 0 12px 15px rgba(0, 0, 0, 0.1), 0 17px 50px rgba(0, 0, 0, 0.1);
-    border-radius: 0 20px 0 0;
-  }
-  .signupInputWrapper{
-    padding: 20px;
-  }
-  .signupHeader {
-    color: #000;
-    display: flex;
-    justify-content: center;
-    margin: 10px 0;
-  }
-  .signupDataInputContainer {
-    display: flex;
-    flex-direction: column;
-  }
-  .inputField {
-    width: 100%;
-    margin-bottom: 20px;
-    height: 30px;
-    border-radius: 5px;
-    background-color: #ddd;
-    outline: none;
-    border: 1px solid black;
-  }
-  ::placeholder {
-    padding-left: 10px;
-    font-weight: bold;
-    font-size: 16px;
-  }
-  select {
-    width: 80%;
-    height: 100%;
-    border-radius: 5px;
-    border: 1px solid black;
-  }
-  .countryCodeContainer {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-  }
-  .telInput {
-    width: 100%;
-  }
-  
-  .countryCode {
-    width: 40%;
-  }
-  .hat {
     margin: 0;
   }
-  .signupBtn {
-    padding: 0;
-    margin-top: 10px;
-    padding: 10px 0;
-    width: 100%;
-    background-color: #3F4652;
-    border-radius: 3px;
-  }
-  .signupButton {
-    font-size: 18px;
-  }
-  .registerLink{
-    width: 100%;
-    padding: 10px 0;
-    display: flex;
-    justify-content: center;
-    background-color: crimson;
-  }
-  
+}
+.signup-input-wrapper {
+  padding: 20px;
+}
+.signup-header {
+  color: #000;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+.signup-data-input-container {
+  display: flex;
+  flex-direction: column;
+}
+.input-field {
+  width: 100%;
+  margin-bottom: 20px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #ddd;
+  outline: none;
+  border: 1px solid black;
+}
+::placeholder {
+  padding-left: 10px;
+  font-weight: bold;
+  font-size: 16px;
+}
+select {
+  width: 80%;
+  height: 100%;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+.country-code-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.tel-input {
+  width: 100%;
+}
+
+.country-code {
+  width: 40%;
+}
+.tel-select-code {
+  margin: 0;
+}
+.signup-button {
+  padding: 0;
+  margin-top: 10px;
+  padding: 10px 0;
+  width: 100%;
+  background-color: #3f4652;
+  border-radius: 3px;
+}
+.signup-button a {
+  text-decoration: none;
+  color: white;
+}
+.login-btn a {
+  text-decoration: none;
+  color: white;
+}
+.register-link {
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+.register-link a {
+  color: black;
+}

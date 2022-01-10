@@ -1,0 +1,27 @@
+.dashboard-wrapper {
+  display: flex;
+}
+.searchbar-wrapper {
+  display: flex;
+  width: 15rem;
+  height: 20px;
+  position: absolute;
+  right: 20px;
+  top: 80px;
+  border-bottom: 1px solid #272c33;
+}
+.search-bar {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+.search-icon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 0;
+}
+.dashboard-content {
+  flex: 9.5;
+  background-color: #f6f8f9;
+}

@@ -1,21 +1,30 @@
-import './App.css';
-import Navbar from './components/Navbar/Navbar';
-import Hero from './components/Herosection/Hero';
-import OurServices from './components/OurServicesSection/OurServices';
-import Footer from './components/footer/Footer';
-import Signup from './pages/signup/Signup';
-import Login from './pages/login/Login';
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Signup from "./pages/signup/Signup";
+import Login from "./pages/login/Login";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Homepage from "./pages/homepage/Homepage";
+import PropertiesInputData from "./components/propertiesInput/PropertiesInputData";
+import Feed from "./components/feed/Feed";
+import AllPropertiesData from "./components/allproperties/AllPropertiesData";
+import Profile from "./pages/profile/Profile";
 
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Hero />
-      <OurServices />
-      <Footer />
-      <Signup />
-      <Login />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Homepage />}></Route>
+          <Route path="/properties" element={<AllPropertiesData/>}></Route>
+          <Route path="/signup" element={<Signup />}></Route>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/dashboard" element={<Dashboard />}></Route>
+          <Route path="/my-properties" element={<Feed/>}></Route>
+          <Route path="/post-a-property" element={<PropertiesInputData/>}></Route>
+          <Route path="/profile" element={<Profile/> }></Route>
+        </Routes>
+      </Router>
     </div>
   );
 }
