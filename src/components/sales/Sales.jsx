@@ -1,15 +1,15 @@
-import React from 'react'
-import Navbar from '../Navbar/Navbar';
-import AllSaleProperties from './saleData';
-import Footer from '../footer/Footer';
+import React from "react";
+import Navbar from "../Navbar/Navbar";
+import AllSaleProperties from "./saleData";
+import Footer from "../footer/Footer";
 
+import "./sales.css";
 
 function Sales() {
-    return (
-          <>
-    
-    <Navbar />
-    <div className="all-properties-container">
+  return (
+    <>
+      <Navbar />
+      <div className="all-properties-container">
         <div class="properties-card-wrapper">
           {AllSaleProperties.map((item) => (
             <div class="property-info">
@@ -61,11 +61,8 @@ function Sales() {
         </div>
       </div>
       <Footer />
-    
-      
-     
     </>
-    )
+  );
 }
 
-export default Sales
+export default Sales;
