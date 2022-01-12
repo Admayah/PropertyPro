@@ -1,17 +1,17 @@
-import React from "react";
-import Navbar from "../Navbar/Navbar";
-import Footer from "../../components/footer/Footer";
-import AllProperties from "./allproperties";
-import "./propertiesdata.css";
+import React from 'react'
+import Navbar from '../Navbar/Navbar';
+import AllSaleProperties from './saleData';
+import Footer from '../footer/Footer';
 
-function AllPropertiesData() {
-  return (
-    <>
+
+function Sales() {
+    return (
+          <>
     
     <Navbar />
     <div className="all-properties-container">
         <div class="properties-card-wrapper">
-          {AllProperties.map((item) => (
+          {AllSaleProperties.map((item) => (
             <div class="property-info">
               <div className="property-info-image">
                 {" "}
@@ -65,7 +65,7 @@ function AllPropertiesData() {
       
      
     </>
-  );
+    )
 }
 
-export default AllPropertiesData;
+export default Sales

@@ -8,6 +8,7 @@ import PropertiesInputData from "./components/propertiesInput/PropertiesInputDat
 import Feed from "./components/feed/Feed";
 import AllPropertiesData from "./components/allproperties/AllPropertiesData";
 import Profile from "./pages/profile/Profile";
+import Sales from "./components/sales/Sales";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/my-properties" element={<Feed/>}></Route>
           <Route path="/post-a-property" element={<PropertiesInputData/>}></Route>
           <Route path="/profile" element={<Profile/> }></Route>
+          <Route path="/sales" element={<Sales/>}></Route>
         </Routes>
       </Router>
     </div>
