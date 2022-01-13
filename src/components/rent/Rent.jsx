@@ -3,7 +3,7 @@ import Navbar from "../Navbar/Navbar";
 import AllRentProperties from "./rentData";
 import Footer from "../footer/Footer";
 
-import "./sales.css";
+import "./rent.css";
 
 function Rent() {
   return (

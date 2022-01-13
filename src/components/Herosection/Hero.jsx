@@ -14,10 +14,11 @@ export default function Hero() {
               </span>
             </div>
             <p className="hero-sub-tagline">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Buying a bigger home doesn’t necessarily mean spending more money.
+              {/* Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Voluptas, laborum magnam. Esse exercitationem dolor, dolorum
               eveniet doloremque illum tenetur blanditiis voluptatibus
-              doloribus, ratione, eos laboriosam.
+              doloribus, ratione, eos laboriosam. */}
             </p>
             <div className="hero-button-container">
               <Button text="BECOME AN AGENT" path="/signup"/>

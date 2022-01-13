@@ -253,3 +253,13 @@
     margin-right: 80px;
   }
 }
+.nav-to-dashboard{
+  width: 100px;
+  height: 20px;
+  background-color: crimson;
+ 
+}
+.nav-to-dashboard a{
+  text-decoration: none;
+  color: #fff
+}
