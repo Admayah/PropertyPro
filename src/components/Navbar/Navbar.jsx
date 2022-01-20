@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 import NavbarOptions from "./NavbarOptions";
 import Button from "../Button/Button";
 
-export default function Navbar() {
+export default function Navbar(props) {
   const [toggle, setToggle] = useState(false);
+  // const [color, changeColor] = useState("crimson");
 
   const toggleHandler = () => {
     setToggle(!toggle);
@@ -23,7 +24,8 @@ export default function Navbar() {
   ));
 
   return (
-    <div className="navbar-container">
+    // style={{ background: color }}
+    <div className="navbar-container" >
       <div className="navbar-wrapper">
         <div className="navbar-left">
           <i className="fa fa-home logo"></i>
@@ -33,6 +35,7 @@ export default function Navbar() {
           <ul className={toggle ? "show-navbar-menu" : "hide-navbar-menu"}>
             {NavMenu}
             <Button text="BECOME AN AGENT" path="/signup" />
+            {/* onClick={() => changeColor("yellow")} */}
           </ul>
 
           <div className="position-hamburger-icon">

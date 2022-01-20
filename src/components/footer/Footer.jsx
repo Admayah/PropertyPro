@@ -1,4 +1,5 @@
 import "./footer.css";
+import { Link } from "react-router-dom";
 import { FooterListArray } from "./footerListArray";
 import {
   aboutCompany,
@@ -57,7 +58,7 @@ export default function Footer() {
         </div>
         <div className="copyright-text">
           <span className="copyright">&copy; Coyright Reserved - 2021</span>
-          <button className="nav-to-dashboard"><a href="/dashboard" className="nav-to-dashboard-link">dashboard</a></button>
+          <button className="nav-to-dashboard"><Link to="/dashboard" className="nav-to-dashboard-link">dashboard</Link></button>
           <span className="location"> Based in Nigeria</span>
         </div>
       </div>
