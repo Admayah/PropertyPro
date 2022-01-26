@@ -4,15 +4,19 @@ import Footer from "../../components/footer/Footer";
 import AllProperties from "./allproperties";
 import "./propertiesdata.css";
 
+function getCard(event){
+  // console.log(e.target)
+  event.currentTarget.classList.toggle('active');
+}
+
 function AllPropertiesData() {
   return (
     <>
-    
     <Navbar />
-    <div className="all-properties-container">
-        <div class="properties-card-wrapper">
-          {AllProperties.map((item) => (
-            <div class="property-info">
+    <div className="all-properties-container" >
+        <div className="properties-card-wrapper" >
+          {AllProperties.map((item, index) => (
+            <div className="property-info" key={index} onClick={getCard}>
               <div className="property-info-image">
                 {" "}
                 <img src={item.img} alt="" className="property-img" />

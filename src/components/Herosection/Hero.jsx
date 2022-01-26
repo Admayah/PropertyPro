@@ -10,19 +10,17 @@ export default function Hero() {
           <div className="hero-tagline-container">
             <div className="hero-tagline-header">
               <span className="tagline-text">
-                Own, Live and Love your dream home
+                Love Where You Live
               </span>
             </div>
             <p className="hero-sub-tagline">
-            Buying a bigger home doesn’t necessarily mean spending more money.
-              {/* Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Voluptas, laborum magnam. Esse exercitationem dolor, dolorum
-              eveniet doloremque illum tenetur blanditiis voluptatibus
-              doloribus, ratione, eos laboriosam. */}
+              Summarizing the end goal that everyone has for moving houses in
+              the first place, 9japroperty-pro Real Estate hit the nail on
+              the head with this short and sweet slogan.
             </p>
             <div className="hero-button-container">
-              <Button text="BECOME AN AGENT" path="/signup"/>
-              <Button text="ALREADY AN AGENT" path="/login"/>
+              <Button text="BECOME AN AGENT" path="/signup" />
+              <Button text="ALREADY AN AGENT" path="/login" />
             </div>
           </div>
         </div>

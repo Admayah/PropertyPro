@@ -53,8 +53,8 @@ function Feed() {
                     </ul>
                     <div className="property-price">
                       <span>{item.price}</span>
-                      <button className="k">EDIT</button>
-                      <button className="k">DELETE</button>
+                      <button className="btn edit-btn">EDIT</button>
+                      <button className="btn delete-btn">DELETE</button>
                     </div>
                   </div>
                 </div>

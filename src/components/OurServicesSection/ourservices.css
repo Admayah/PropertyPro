@@ -13,12 +13,7 @@
   align-items: center;
   flex-wrap: wrap;
 }
-@media (max-width: 768px) {
-  .our-services-wrapper {
-    display: flex;
-    flex-direction: column;
-  }
-}
+
 .services-header {
   display: flex;
   justify-content: center;
@@ -32,7 +27,6 @@
 }
 @media (max-width: 768px) {
   .service-offers {
-    display: flex;
     flex-direction: column;
   }
 }
@@ -56,7 +50,7 @@
   .service-offer {
     width: 90%;
     margin: 0 auto;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
     border-radius: 0;
     max-width: 400px;
   }
@@ -65,16 +59,16 @@
   text-align: center;
 }
 .our-service-icon {
-  font-size: 30px;
+  font-size: 1.875rem;
 }
 .service-content {
-  padding-top: 20px;
+  padding-top: 1.25rem;
 }
 
 .service-header {
   text-align: center;
 }
 .service-info {
-  padding-top: 10px;
+  padding-top: 0.625rem;
   text-align: center;
 }

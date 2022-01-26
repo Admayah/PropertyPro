@@ -3,7 +3,7 @@
   background-color: #3f4652;
 }
 .footer-first-wrapper {
-  padding: 20px 35px;
+  padding: 1.25rem 2.1875rem;
   
 }
 @media (min-width: 768px) {
@@ -37,25 +37,24 @@
 }
 
 .footer-logo {
-  font-size: 30px;
+  font-size: 1.875rem;
   border-radius: 50%;
   object-fit: cover;
 }
 .footer-logo-name {
-  padding-left: 10px;
-  font-size: 18px;
+  padding-left: 0.625rem;
+  font-size: 1.125rem;
 }
 
 .accordion {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding-bottom: 20px;
+  padding-bottom: 1.25rem;
 }
 @media (min-width: 768px) {
   .accordion {
     width: 70%;
-    display: flex;
     padding: 0;
     flex-direction: row;
     align-items: center;
@@ -65,7 +64,7 @@
 }
 .accordions-wrapper {
   position: relative;
-  padding-top: 20px;
+  padding-top: 1.25rem;
   border-bottom: 1px solid rgba(225, 225, 225, 0.5);
 }
 @media (min-width: 768px) {
@@ -95,11 +94,11 @@
     display: none;
   }
 }
-.hide {
+.hide-more-about-company {
   display: none;
 }
 @media (min-width: 768px) {
-  .hide {
+  .hide-more-about-company {
     display: block;
   }
 }
@@ -107,8 +106,8 @@
   transition: all 0.5 linear;
 }
 .property-area {
-  list-style: none;
-  padding-top: 15px;
+  /* list-style: none; */
+  padding-top: 0.9375rem;
 }
 .property-area::after {
   content: "";
@@ -121,7 +120,7 @@
 .property-area:hover::after {
   width: 100%;
 }
-.li-link {
+.property-area-link {
   text-decoration: none;
   color: white;
 }
@@ -137,8 +136,6 @@
 @media (min-width: 768px) {
   .social-menu {
     width: 25%;
-    display: flex;
-    justify-content: space-between;
     border: none;
     opacity: 1;
     flex-direction: column;
@@ -155,15 +152,13 @@
 @media (min-width: 768px) {
   .social-icons {
     width: 200px;
-    display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
     flex-direction: row;
   }
 }
 .social-icon {
-  font-size: 30px;
-  margin-left: 40px;
+  font-size: 1.875rem;
+  margin-left: 2.5rem;
   flex-wrap: wrap;
 }
 @media (min-width: 768px) {
@@ -183,9 +178,7 @@
 @media screen and (min-width: 768px) {
   .contact-info-container {
     width: 200px;
-    padding-bottom: 25px;
-    display: flex;
-    justify-content: space-between;
+    padding-bottom: 1.562rem;
     flex-wrap: wrap;
     flex-direction: column;
   }
@@ -193,28 +186,22 @@
 .contact-info {
   display: flex;
   align-items: center;
-  padding: 10px 0;
+  padding: 0.625rem 0;
 }
 @media screen and (min-width: 768px) {
   .contact-info {
-    padding: 5px 0;
+    padding: 0.3125rem 0;
   }
 }
 .social-contact {
-  font-size: 30px;
-  margin-right: 10px;
+  font-size: 1.875rem;
+  margin-right: 0.625rem;
 }
 .copyright-container {
   color: white;
-  padding: 0 35px;
+  padding: 0 2.187rem;
   display: flex;
   justify-content: space-between;
-}
-@media (min-width: 768px) {
-  .copyright-container {
-    display: flex;
-    justify-content: space-between;
-  }
 }
 .footer-logo-container {
   display: flex;
@@ -239,18 +226,16 @@
 @media (min-width: 768px) {
   .copyright-text {
     width: 90%;
-    padding: 0 48px;
-    display: flex;
-    justify-content: space-between;
+    padding: 0 3.125rem;
     flex-direction: row;
   }
 }
 .location {
-  margin-right: 20px;
+  margin-right: 1.25rem;
 }
 @media (min-width: 768px) {
   .location {
-    margin-right: 80px;
+    margin-right: 5rem;
   }
 }
 .nav-to-dashboard{

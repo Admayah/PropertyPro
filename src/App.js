@@ -1,4 +1,3 @@
-import REACT from "react"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Signup from "./pages/signup/Signup";
 import Login from "./pages/login/Login";
@@ -11,6 +10,8 @@ import Profile from "./pages/profile/Profile";
 import Sales from "./components/sales/Sales";
 import Rent from "./components/rent/Rent"
 
+
+import "./app.css"
 
 function App() {
   return (

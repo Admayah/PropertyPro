@@ -32,8 +32,8 @@ export default function Footer() {
         </div>
         <div className="social-menu">
           <div className="social-icons">
-            {socialMenu.map(({ href, icon }) => (
-              <span className="social-icon">
+            {socialMenu.map(({ href, icon }, index) => (
+              <span className="social-icon" key={index}>
                 <a href={href} className="navbar-property-link">
                   {icon}
                 </a>

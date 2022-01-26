@@ -21,14 +21,14 @@ function Profile() {
                   <span className="profile-input-container">
                     <input
                       type="text"
-                      placeholder="first profile-input-container"
+                      placeholder="first name"
                       className="input-field"
                     />
                   </span>
                   <span className="profile-input-container">
                     <input
                       type="text"
-                      placeholder="last profile-input-container"
+                      placeholder="last name"
                       className="input-field"
                       profile-input-container=""
                       id=""

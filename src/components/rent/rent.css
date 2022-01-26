@@ -18,22 +18,18 @@
   }
   .property-info {
     margin: 0 auto;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
     width: 300px;
-    /* height: 350px; */
     position: relative;
     display: flex;
     flex-direction: column;
-    /* min-width: 0; */
-    /* word-wrap: break-word; */
     background-color: #fff;
-    /* background-clip: border-box; */
     border: none;
     box-shadow: 0 12px 15px rgba(0, 0, 0, 0.1), 0 17px 50px rgba(0, 0, 0, 0.1);
     border-radius: 0 10px 0 0;
   }
   .property-details {
-    padding: 10px;
+    padding: 0.625rem;
   }
   
   .property-info-image {
@@ -44,9 +40,9 @@
     height: 100%;
   }
   .sale {
-    font-size: 15px;
+    font-size: 1rem;
     width: 80px;
-    padding: 10px;
+    padding: 0.625rem;
     background-color: crimson;
     position: absolute;
     top: 5px;
@@ -54,15 +50,14 @@
   }
   .property-title {
     display: flex;
-    font-size: 18px;
-    margin: 10px 0;
+    font-size: 1.125rem;
+    margin: 0.625rem 0;
   }
   .property-location {
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
   }
   
   .property-features {
-    list-style: none;
     display: flex;
     justify-content: space-around;
   }
@@ -72,21 +67,21 @@
     text-decoration: none;
     color: black;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
   }
   .agent-price-and-no {
     display: flex;
     justify-content: space-between;
     color: black;
-    margin-top: 20px;
+    margin-top: 1.25rem;
   }
   .agent-no {
     display: flex;
     align-items: center;
   }
   .wb-color {
-    margin-right: 5px;
-    font-size: 20px;
+    margin-right: 0.3125rem;
+    font-size: 1.25rem;
     color: #1b892a;
   }
   

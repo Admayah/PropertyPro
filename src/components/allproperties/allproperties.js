@@ -1,7 +1,6 @@
 const AllProperties = [
   {
     img: "./images/houseimg.jpg",
-
     purpose: "For Sale",
     title: "Spacious Family House",
     location: "Ikotun. Lagos State",

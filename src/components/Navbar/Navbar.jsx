@@ -6,7 +6,6 @@ import Button from "../Button/Button";
 
 export default function Navbar(props) {
   const [toggle, setToggle] = useState(false);
-  // const [color, changeColor] = useState("crimson");
 
   const toggleHandler = () => {
     setToggle(!toggle);
@@ -15,8 +14,8 @@ export default function Navbar(props) {
   const hamburgerIcon = <i className="fa fa-bars" onClick={toggleHandler}></i>;
   const cancelIcon = <i className="fa fa-times " onClick={toggleHandler}></i>;
 
-  const NavMenu = NavbarOptions.map((btn) => (
-    <li className="navbar-menu">
+  const NavMenu = NavbarOptions.map((btn, index) => (
+    <li className="navbar-menu" key={index}>
       <Link to={btn.href} className="navbar-property-link">
         {btn.title}
       </Link>
@@ -24,7 +23,6 @@ export default function Navbar(props) {
   ));
 
   return (
-    // style={{ background: color }}
     <div className="navbar-container" >
       <div className="navbar-wrapper">
         <div className="navbar-left">
@@ -35,7 +33,6 @@ export default function Navbar(props) {
           <ul className={toggle ? "show-navbar-menu" : "hide-navbar-menu"}>
             {NavMenu}
             <Button text="BECOME AN AGENT" path="/signup" />
-            {/* onClick={() => changeColor("yellow")} */}
           </ul>
 
           <div className="position-hamburger-icon">

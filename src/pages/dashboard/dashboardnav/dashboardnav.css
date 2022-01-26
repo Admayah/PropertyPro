@@ -79,7 +79,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  list-style: none;
   position: fixed;
   left: -100%;
   width: 100%;
