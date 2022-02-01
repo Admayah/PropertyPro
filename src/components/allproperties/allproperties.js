@@ -1,6 +1,7 @@
 const AllProperties = [
   {
-    img: "./images/houseimg.jpg",
+    id: 1,
+    img: "/images/houseImg2.jpg",
     purpose: "For Sale",
     title: "Spacious Family House",
     location: "Ikotun. Lagos State",
@@ -14,7 +15,8 @@ const AllProperties = [
     },
   },
   {
-    img: "./images/houseImg2.jpg",
+    id: 2,
+    img: "/images/houseImg2.jpg",
     purpose: "For Rent",
     title: "Spacious Family House",
     location: "Oshodi. Lagos State",
@@ -27,7 +29,8 @@ const AllProperties = [
     },
   },
   {
-    img: "./images/houseImg3.jpg",
+    id: 3,
+    img: "/images/houseImg3.jpg",
     purpose: "For Sale",
     title: "Spacious Family House",
     location: "Agege. Lagos State",
@@ -41,7 +44,8 @@ const AllProperties = [
   },
   
   {
-    img: "./images/houseImg3.jpg",
+    id: 4,
+    img: "/images/houseImg3.jpg",
     purpose: "For Rent",
     title: "Spacious Family House",
     location: "Agege. Lagos State",
@@ -54,7 +58,8 @@ const AllProperties = [
     },
   },
   {
-    img: "./images/houseImg3.jpg",
+    id: 5,
+    img: "/images/houseImg3.jpg",
     purpose: "For Sale",
     title: "Spacious Family House",
     location: "Agege. Lagos State",
@@ -67,7 +72,8 @@ const AllProperties = [
     },
   },
   {
-    img: "./images/houseImg3.jpg",
+    id: 6,
+    img: "/images/houseImg3.jpg",
     purpose: "For Rent",
     title: "Spacious Family House",
     location: "Agege. Lagos State",
@@ -80,7 +86,8 @@ const AllProperties = [
     },
   },
   {
-    img: "./images/houseImg3.jpg",
+    id: 7,
+    img: "/images/houseImg3.jpg",
     purpose: "For Sale",
     title: "Spacious Family House",
     location: "Agege. Lagos State",
@@ -93,7 +100,8 @@ const AllProperties = [
     },
   },
   {
-    img: "./images/houseImg3.jpg",
+    id: 8,
+    img: "/images/houseImg3.jpg",
     purpose: "For Rent",
     title: "Spacious Family House",
     location: "Agege. Lagos State",
@@ -106,7 +114,8 @@ const AllProperties = [
     },
   },
   {
-    img: "./images/houseImg3.jpg",
+  
+  img: "/images/houseImg3.jpg",
     purpose: "For Sale",
     title: "Spacious Family House",
     location: "Agege. Lagos State",

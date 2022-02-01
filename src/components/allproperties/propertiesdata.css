@@ -84,9 +84,14 @@
   font-size: 1.25rem;
   color: #1b892a;
 }
+.read-more-link{
+  display: flex;
+  justify-content: flex-end;
+}
+
 .active{
-  width: 80%;
-  background-color: blue;
-  margin: 0 auto;
-  z-index: 2;
+  display: block;
+}
+.a{
+  display: none;
 }

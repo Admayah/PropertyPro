@@ -3,71 +3,35 @@ import Navbar from "../Navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import AllProperties from "./allproperties";
 import "./propertiesdata.css";
+import PropertiesInfo from "./PropertiesInfo";
 
-function getCard(event){
-  // console.log(e.target)
-  event.currentTarget.classList.toggle('active');
-}
 
-function AllPropertiesData() {
+function AllPropertiesData(props) {
+
+  
+
   return (
     <>
-    <Navbar />
-    <div className="all-properties-container" >
-        <div className="properties-card-wrapper" >
-          {AllProperties.map((item, index) => (
-            <div className="property-info" key={index} onClick={getCard}>
-              <div className="property-info-image">
-                {" "}
-                <img src={item.img} alt="" className="property-img" />
-              </div>
-              <button className="sale">{item.purpose}</button>
-
-              <div className="property-details">
-                <h3 className="property-title">{item.title}</h3>
-                <p className="property-location">{item.location}</p>
-
-                <ul className="property-features">
-                  <li className="feature-item">
-                    <a href="/" className="feature-item-link">
-                      <span>
-                        <i className="fa fa-bed property-feature"></i>
-                      </span>
-                      {item.features.no_of_beds}
-                    </a>
-                  </li>
-                  <li className="featureItem">
-                    <a href="/" className="feature-item-link">
-                      <span>
-                        <i className="fa fa-bed property-feature"></i>
-                      </span>
-                      {item.features.no_of_baths}
-                    </a>
-                  </li>
-                  <li className="featureItem">
-                    <a href="/" className="feature-item-link">
-                      <span>
-                        <i className="fa fa-bed property-feature"></i>
-                      </span>
-                      {item.features.no_of_garage}
-                    </a>
-                  </li>
-                </ul>
-                <div className="agent-price-and-no">
-                  <span agent-price>{item.price}</span>
-                  <span className="agent-no">
-                    <i className="fa fa-whatsapp wb-color"></i> 09073645165
-                  </span>
-                </div>
-              </div>
-            </div>
+      <Navbar />
+      <div className="all-properties-container">
+        <div className="properties-card-wrapper">
+          {AllProperties.map((item) => (
+           <PropertiesInfo 
+           key={item.id}
+            id={item.id}
+            img= {item.img}
+            purpose= {item.purpose}
+            title= {item.title}
+            location= {item.location}
+            price= {item.price}
+            no_of_beds= {item.features.no_of_beds}
+            no_of_baths= {item.features.no_of_baths}
+            no_of_garage= {item.features.no_of_garage}
+           />
           ))}
         </div>
       </div>
       <Footer />
-    
-      
-     
     </>
   );
 }

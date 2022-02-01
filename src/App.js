@@ -11,7 +11,7 @@ import Sales from "./components/sales/Sales";
 import Rent from "./components/rent/Rent"
 
 
-import "./app.css"
+
 
 function App() {
   return (
@@ -28,6 +28,9 @@ function App() {
           <Route path="/profile" element={<Profile/> }></Route>
           <Route path="/sales" element={<Sales/>}></Route>
           <Route path="/rent" element={<Rent/>}></Route>
+     
+      
+          
         </Routes>
       </Router>
     </div>
