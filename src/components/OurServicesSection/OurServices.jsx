@@ -10,10 +10,10 @@ export default function OurServices() {
           <h2 className="services-header-text">WHY CHOOSE US</h2>
         </div>
         <div className="service-offers">
-          {OurServicesFeatures.map((services) => {
+          {OurServicesFeatures.map((services, index) => {
             return (
-              <div className="service-offer">
-                <div className="service-icon">{services.icon}</div>
+              <div className="service-offer" key={index}>
+                <div className="service-icon"><i className={services.icon} aria-hidden="true"></i></div>
                 <div className="service-content">
                   <h3 className="service-header">{services.header}</h3>
                   <p className="service-info">{services.info}</p>

@@ -9,7 +9,7 @@ function PropertiesInfo(props){
             <div className="property-info" id={props.id}>
               <div className="property-info-image">
                 {" "}
-                <img src={props.img} alt="" className="property-img" />
+                <img src={props.img} alt="property-img" className="property-img"/>
               </div>
               <button className="sale">{props.purpose}</button>
 

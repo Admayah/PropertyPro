@@ -2,6 +2,28 @@ import React from "react";
 import "./propertydetails.css";
 
 function Review() {
+  const inputArr = [
+    {
+      type: "text",
+      placeholder: "fullname",
+      nameclass: "fa fa-user form-icon",
+    },
+    {
+      type: "email",
+      placeholder: "Email",
+      nameclass: "fa fa-envelope form-icon",
+    },
+    {
+      type: "tel",
+      placeholder: "Phone",
+      nameclass: "fa fa-phone form-icon",
+    },
+    {
+      type: "text",
+      placeholder: "I am interested in 25, Tyler Ct.",
+      nameclass: "fa fa-address-card form-icon",
+    },
+  ];
   return (
     <div className="review-container">
       <div className="email-agent-container">
@@ -9,28 +31,17 @@ function Review() {
           <h4>More about Property</h4>
         </span>
         <div className="contact-agent-wrapper">
-          <div className="input-container">
-            <i className="fa fa-user form-icon"></i>
-            <input className="field" type="text" placeholder="Username" />
-          </div>
-          <div className="input-container">
-            <i className="fa fa-envelope form-icon"></i>
-            <input className="field" type="tel" placeholder="Email" />
-          </div>
-          <div className="input-container">
-            <i className="fa fa-phone form-icon"> </i>
-            <input className="field" type="email" placeholder="Phone" />
-          </div>
-          <div className="input-container">
-            <i class="fa fa-address-card form-icon"></i>
-            <input
-              className="field"
-              type="email"
-              placeholder="I am interested in 25, Tyler Ct."
-            />
-          </div>
-
-          <button className="contact-agent-button">Email Agent</button>
+          {inputArr.map((item, index) => (
+            <div className="input-container" key={index}>
+              <i className={item.nameclass}></i>
+              <input
+                className="field"
+                type={item.type}
+                placeholder={item.placeholder}
+              />
+            </div>
+          ))}
+          ;<button className="contact-agent-button">Email Agent</button>
         </div>
       </div>
     </div>

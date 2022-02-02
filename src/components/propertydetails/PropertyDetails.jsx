@@ -8,7 +8,7 @@ function PropertyDetails() {
   return (
     <div className="property-details-container">
       {AllProperties.filter((ele) => ele.id === id).map((ele, index) => (
-        <div className="property-detail-wrapper">
+        <div className="property-detail-wrapper" key={index}>
           <div className="property-image-wrapper">
             <img src={ele.img} alt="pic" className="property-img" />
           </div>
