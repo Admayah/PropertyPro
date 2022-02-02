@@ -3,13 +3,10 @@ import { Link } from 'react-router-dom';
 
 function PropertiesInfo(props){
 
-    // const {title} = useParams()
-    // console.log(title)
     return(
         <>
             
             <div className="property-info" id={props.id}>
-              {/* { console.log({index})} */}
               <div className="property-info-image">
                 {" "}
                 <img src={props.img} alt="" className="property-img" />
@@ -54,13 +51,11 @@ function PropertiesInfo(props){
                   </span>
                 </div>
                 <Link to={`/properties/${props.id}`}> Read More</Link>
-                {/* <a href="#"
-                  className="read-more-link">
-                  Read More
-                </a> */}
 
               </div>
             </div>
+
+          
         </>
     )
 }

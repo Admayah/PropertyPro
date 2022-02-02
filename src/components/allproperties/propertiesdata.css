@@ -57,7 +57,6 @@
 }
 
 .property-features {
-  /* list-style: none; */
   display: flex;
   justify-content: space-around;
 }
@@ -87,11 +86,4 @@
 .read-more-link{
   display: flex;
   justify-content: flex-end;
-}
-
-.active{
-  display: block;
-}
-.a{
-  display: none;
 }

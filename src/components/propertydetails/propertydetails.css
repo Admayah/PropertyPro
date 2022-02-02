@@ -1,0 +1,85 @@
+.property-details-container {
+  width: 100%;
+}
+.property-detail-wrapper {
+  width: 94%;
+  margin: 0 auto;
+  padding: 1.3rem 3%;
+  background-color: #fff;
+  box-shadow: 0 12px 15px rgba(0, 0, 0, 0.1), 0 17px 50px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.property-title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.properties-details {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.property-details-header {
+  font-size: 18px;
+  padding: 0 16px;
+  margin: 0 10px;
+  color: #000;
+}
+
+.more-property-features {
+  display: flex;
+  flex-direction: column;
+}
+.desc-wrapper{
+    padding: 0.625rem;
+}
+
+.desc-text {
+  margin-bottom: 20px;
+}
+.review-container {
+  width: 450px;
+  padding: 25px;
+  box-shadow: 0 12px 15px rgba(0, 0, 0, 0.1), 0 17px 50px rgba(0, 0, 0, 0.1);
+  border-radius: 0 10px 0 0;
+  margin: 20px auto;
+}
+.email-agent-container {
+  width: 95%;
+  margin: 0 auto;
+}
+.email-agent-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.input-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.form-icon {
+  padding: 0.625rem;
+  background: crimson;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+.field {
+  font-size: 20px;
+  font-weight: 500;
+  width: 100%;
+  padding: 5px;
+  outline: none;
+}
+.contact-agent-button {
+  width: 100%;
+  background-color: crimson;
+  border-radius: 15px;
+  padding: 10px;
+  font-size: 18px;
+}

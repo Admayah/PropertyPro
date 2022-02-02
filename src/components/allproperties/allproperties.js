@@ -115,7 +115,8 @@ const AllProperties = [
   },
   {
   
-  img: "/images/houseImg3.jpg",
+    id: 9,
+    img: "/images/houseImg3.jpg",
     purpose: "For Sale",
     title: "Spacious Family House",
     location: "Agege. Lagos State",
@@ -130,3 +131,6 @@ const AllProperties = [
 ];
 
 export default AllProperties;
+
+
+
