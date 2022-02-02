@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import "./signup.css";
+import { Link } from "react-router-dom";
 
 
 export default function Signup() {
@@ -701,12 +702,13 @@ export default function Signup() {
             </div>
             <div className="button-wrapper">
               <button className="signup-button">
-                <a href="#">CREATE AN ACCOUNT</a>
+                <Link to='#'>CREATE AN ACCOUNT</Link>
+               
               </button>
             </div>
           </div>
           <div className="register-link">
-            Already an agent? &nbsp; <a href="/login">Login Here.</a>
+            Already an agent? &nbsp; <Link to= "/login">Login Here.</Link>
           </div>
         </div>
       </div>

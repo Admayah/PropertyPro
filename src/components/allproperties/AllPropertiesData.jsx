@@ -5,7 +5,7 @@ import AllProperties from "./allproperties";
 import "./propertiesdata.css";
 import PropertiesInfo from "./PropertiesInfo";
 
-function AllPropertiesData(props) {
+function AllPropertiesData() {
   return (
     <>
       <Navbar />

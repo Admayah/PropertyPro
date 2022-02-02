@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const FooterListArray = ({ header, links }) => {
   const [arrow, setArrow] = useState(false);
@@ -11,9 +12,9 @@ export const FooterListArray = ({ header, links }) => {
   const listArray = links.map((listLink, index) => {
     return (
       <li className="property-area" key={index}>
-        <a href="#" className="property-area-link">
+        <Link to="#" className="property-area-link">
           {listLink}
-        </a>
+        </Link>
       </li>
     );
   });
@@ -23,7 +24,10 @@ export const FooterListArray = ({ header, links }) => {
         <span>{header}</span>
         <span className="arrow-icons"> {arrow ? arrowUp : arrowDown}</span>
       </div>
-      <ul className={arrow ? "show-more-about-company" : "hide-more-about-company"}>
+      <ul
+        className={
+          arrow ? "show-more-about-company" : "hide-more-about-company"
+        }>
         {listArray}
       </ul>
     </>

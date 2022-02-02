@@ -7,7 +7,7 @@ function PropertyDetails() {
   const { id } = useParams();
   return (
     <div className="property-details-container">
-      {AllProperties.filter((ele) => ele.id == id).map((ele, index) => (
+      {AllProperties.filter((ele) => ele.id === id).map((ele, index) => (
         <div className="property-detail-wrapper">
           <div className="property-image-wrapper">
             <img src={ele.img} alt="pic" className="property-img" />
