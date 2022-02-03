@@ -7,12 +7,12 @@ function PropertyDetails() {
   const { id } = useParams();
   return (
     <div className="property-details-container">
-      {AllProperties.filter((ele) => ele.id === id).map((ele, index) => (
+      {AllProperties.filter((property) => property.id === id).map((property, index) => (
         <div className="property-detail-wrapper" key={index}>
           <div className="property-image-wrapper">
-            <img src={ele.img} alt="pic" className="property-img" />
+            <img src={property.img} alt="pic" className="property-img" />
           </div>
-          <div className="property-title">{ele.title} </div>
+          <div className="property-title">{property.title} </div>
 
           <div className="properties-details">
             <NavLink to={`/properties/${id}/features`}>

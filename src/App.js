@@ -26,7 +26,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />}></Route>
           <Route path="/my-properties" element={<Feed />}></Route>
           <Route
-            path="/post-a-property"
+            path="/post-property"
             element={<PropertiesInputData />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
           <Route path="/sales" element={<Sales />}></Route>
