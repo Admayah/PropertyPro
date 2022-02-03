@@ -1,6 +1,6 @@
 const AllProperties = [
   {
-    id: '1',
+    id: "1",
     img: "/images/houseImg2.jpg",
     purpose: "For Sale",
     title: "Spacious Family House",
@@ -15,7 +15,7 @@ const AllProperties = [
     },
   },
   {
-    id: '2',
+    id: "2",
     img: "/images/houseImg2.jpg",
     purpose: "For Rent",
     title: "Spacious Family House",
@@ -29,7 +29,7 @@ const AllProperties = [
     },
   },
   {
-    id: '3',
+    id: "3",
     img: "/images/houseImg3.jpg",
     purpose: "For Sale",
     title: "Spacious Family House",
@@ -42,9 +42,9 @@ const AllProperties = [
       no_of_garage: "1 garage",
     },
   },
-  
+
   {
-    id: '4',
+    id: "4",
     img: "/images/houseImg3.jpg",
     purpose: "For Rent",
     title: "Spacious Family House",
@@ -58,7 +58,7 @@ const AllProperties = [
     },
   },
   {
-    id: '5',
+    id: "5",
     img: "/images/houseImg3.jpg",
     purpose: "For Sale",
     title: "Spacious Family House",
@@ -72,7 +72,7 @@ const AllProperties = [
     },
   },
   {
-    id: '6',
+    id: "6",
     img: "/images/houseImg3.jpg",
     purpose: "For Rent",
     title: "Spacious Family House",
@@ -86,7 +86,7 @@ const AllProperties = [
     },
   },
   {
-    id: '7',
+    id: "7",
     img: "/images/houseImg3.jpg",
     purpose: "For Sale",
     title: "Spacious Family House",
@@ -100,7 +100,7 @@ const AllProperties = [
     },
   },
   {
-    id: '8',
+    id: "8",
     img: "/images/houseImg3.jpg",
     purpose: "For Rent",
     title: "Spacious Family House",
@@ -114,8 +114,7 @@ const AllProperties = [
     },
   },
   {
-  
-    id: '9',
+    id: "9",
     img: "/images/houseImg3.jpg",
     purpose: "For Sale",
     title: "Spacious Family House",
@@ -131,6 +130,3 @@ const AllProperties = [
 ];
 
 export default AllProperties;
-
-
-

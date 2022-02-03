@@ -27,7 +27,6 @@ function AllPropertiesData() {
           ))}
         </div>
       </div>
-
       <Footer />
     </>
   );

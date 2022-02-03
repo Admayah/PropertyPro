@@ -43,14 +43,6 @@ function DashboardNav() {
              <img src={icon} alt="" className="sidebar-img" />
             </Link>
           </li>
-          // <Link to={href} className="sidebar-link">
-          //   <li className="sidebar-menu">
-          //     <span className="sidebar-icon">
-          //       <img src={icon} alt="" className="sidebar-img" />
-          //     </span>
-          //     <span className="sidebar-text">{text}</span>
-          //   </li>
-          // </Link>
         ))}
       </ul>
     </>
