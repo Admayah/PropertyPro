@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import "./login.css";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   return (
@@ -29,13 +30,13 @@ export default function Login() {
             </div>
             <div className="button-wrapper">
               <button className="login-button">
-                <a href="#">Login</a>
+                <Link to = '#'>Login</Link>
               </button>
             </div>
           </div>
 
           <div className="register-link">
-            Don't have an account? &nbsp; <a href="/signup"> Signup Here.</a>
+            Don't have an account? &nbsp; <Link to = "/signup">Signup Here.</Link>
           </div>
         </div>
       </div>

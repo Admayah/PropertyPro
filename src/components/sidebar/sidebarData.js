@@ -5,7 +5,7 @@ export const SidebarData = [
         text: "Dashboard"
     },
     {
-        href: "/post-a-property",
+        href: "/post-property",
         icon: "https://img.icons8.com/ios/48/000000/add-property.png",
         text: "Post a Property"
     },

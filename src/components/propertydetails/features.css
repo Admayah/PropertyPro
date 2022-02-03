@@ -1,0 +1,22 @@
+.features-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  .features-wrapper {
+    flex-direction: column;
+  }
+}
+.more-property-features {
+  margin-right: 10px;
+}
+.property-feature-item::before {
+  content: "\2192";
+  color: crimson;
+  margin-right: 5px;
+}
+.property-feature-item {
+  display: flex;
+  align-items: center;
+}

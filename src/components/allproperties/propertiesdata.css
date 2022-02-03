@@ -57,7 +57,6 @@
 }
 
 .property-features {
-  /* list-style: none; */
   display: flex;
   justify-content: space-around;
 }
@@ -84,14 +83,7 @@
   font-size: 1.25rem;
   color: #1b892a;
 }
-.read-more-link{
+.read-more-link {
   display: flex;
   justify-content: flex-end;
-}
-
-.active{
-  display: block;
-}
-.a{
-  display: none;
 }
