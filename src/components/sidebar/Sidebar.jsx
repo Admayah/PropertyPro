@@ -9,14 +9,14 @@ function Sidebar() {
       <div className="sidebar-wrapper">
         <ul className="sidebar-items">
           {SidebarData.map(({ href, icon, text }) => (
-            <Link to={href} className="sidebar-link">
-              <li className="sidebar-menu">
+            <li className="sidebar-menu">
+              <Link to={href} className="sidebar-links">
                 <span className="sidebar-icon">
                   <img src={icon} alt="" className="sidebar-img" />
                 </span>
                 <span className="sidebar-text">{text}</span>
-              </li>
-            </Link>
+              </Link>
+            </li>
           ))}
         </ul>
       </div>
