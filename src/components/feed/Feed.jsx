@@ -1,10 +1,79 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import { Link, useParams } from "react-router-dom";
 import Properties from "./properties";
 import "./feed.css";
 import DashboardNav from "../../pages/dashboard/dashboardnav/DashboardNav";
 import Sidebar from "../sidebar/Sidebar";
+import { removeProperty } from "../../features/properties/adminProperties";
+import { useSelector, useDispatch } from "react-redux";
+import axios from 'axios'
+import { useNavigate } from "react-router-dom";
+
+
+const url = 'http://localhost:4000/v1/agent/properties';
+
+
 
 function Feed() {
+
+  const {id} = useParams()
+  console.log('----->', id)
+  const dispatch = useDispatch();
+  const navigate = useNavigate()
+
+    const [agentProperties, setAgentProperties] = useState([])
+
+    const token = localStorage.getItem('token');
+  let config = {
+    "headers": {
+     "Authorization": token,
+    }
+  }
+
+    const getProperties = async () => {
+      try {
+        const response =  await axios.get(url, config);
+        const {data} = await response;
+        setAgentProperties(data)
+        // dispatch({agentProperties})
+        console.log(data)
+      } catch (error) {
+        console.log(error)
+      }
+  }
+  
+
+  useEffect(() => {
+      // setProperties(AllProperties)
+      getProperties()
+  }, [])
+
+
+  const editHandler = async (id) => {
+    const editProperty = agentProperties.filter((property) => {
+      return property.id === id;
+    })
+    console.log(editProperty)
+    navigate()
+  }
+ 
+  const deleteHandler =  async (id) => {
+   
+   const newAgentProperties = agentProperties.filter((item) => {
+    return item.id !== id
+   })
+   console.log(newAgentProperties)
+  //  setAgentProperties(newAgentProperties)
+      try {
+        const response = await axios.delete('http://localhost:4000/v1/agent/properties/' + id, config);
+        console.log(response.data)
+         setAgentProperties(newAgentProperties)
+        dispatch(removeProperty(id))
+      } catch (error) {
+        console.log(error)
+      }
+  }
+
   return (
     <div className="my-properties-cards">
       <DashboardNav />
@@ -12,18 +81,18 @@ function Feed() {
         <Sidebar />
         <div className="feed-container">
           <div class="feed-card-wrapper">
-            {Properties.map((item) => {
+            {agentProperties.map(({id, image, purpose, title, address, state, landrea, description,yearBuild, baths, rooms, store, garage, price}) => {
               return (
                 <div class="property-content">
                   <div className="property-image">
                     {" "}
-                    <img src={item.img} alt="" className="property-img" />
+                    <img src={image} alt="" className="property-img" />
                   </div>
-                  <button className="sale">{item.purpose}</button>
+                  <button className="sale">{purpose}</button>
 
                   <div className="property-details">
-                    <h3 className="property-title">{item.title}</h3>
-                    <p className="property-location">{item.location}</p>
+                    <h3 className="property-title">{title}</h3>
+                    <p className="property-address">{address}</p>
 
                     <ul className="property-features">
                       <li className="feature-item">
@@ -31,7 +100,7 @@ function Feed() {
                           <span>
                             <i className="fa fa-bed property-feature"></i>
                           </span>
-                          {item.features.no_of_beds}
+                          {rooms}
                         </a>
                       </li>
                       <li className="feature-item">
@@ -39,7 +108,7 @@ function Feed() {
                           <span>
                             <i className="fa fa-bed property-feature"></i>
                           </span>
-                          {item.features.no_of_baths}
+                          {baths}
                         </a>
                       </li>
                       <li className="feature-item">
@@ -47,14 +116,23 @@ function Feed() {
                           <span>
                             <i className="fa fa-bed property-feature"></i>
                           </span>
-                          {item.features.no_of_garage}
+                          {garage}
+                        </a>
+                      </li>
+                      <li className="feature-item">
+                        <a href="/" className="feature-item-link">
+                          <span>
+                            <i className="fa fa-bed property-feature"></i>
+                          </span>
+                          {store}
                         </a>
                       </li>
                     </ul>
                     <div className="property-price">
-                      <span>{item.price}</span>
-                      <button className="btn edit-btn">EDIT</button>
-                      <button className="btn delete-btn">DELETE</button>
+                      <span>{price}</span>
+                      <Link to={`/edit-property/${id}`}><button className="btn edit-btn">EDIT</button></Link>
+                      {/* onClick={()=> {editHandler(id)}} */}
+                      <button className="btn delete-btn"  onClick={()=>{deleteHandler(id)}}>DELETE</button>
                     </div>
                   </div>
                 </div>

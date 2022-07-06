@@ -1,28 +1,48 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import AllProperties from "./allproperties";
 import "./propertiesdata.css";
 import PropertiesInfo from "./PropertiesInfo";
+import axios from 'axios'
+import { useSelector } from "react-redux";
+
+const url = 'http://localhost:4000/v1/properties'
 
 function AllPropertiesData() {
+
+//  const {propertyItems} = useSelector((store) => store.properties)
+//  console.log(propertyItems)
+
+  const [properties, setProperties] = useState([])
+
+  const getProperties = async () => {
+    const response =  await axios.get(url)
+    const {data} = response;
+    console.log('this is the array of all properties', data);
+    setProperties(data)
+  }
+
+  useEffect(() => {
+      // setProperties(AllProperties)
+      getProperties()
+  }, [])
+  
+  
+//  if (propertyItems < 1) {
+//   return <section>properties page is empty</section>
+//  }
+
   return (
     <>
       <Navbar />
       <div className="all-properties-container">
         <div className="properties-card-wrapper">
-          {AllProperties.map((item) => (
+          {properties.map((item) => (
             <PropertiesInfo
               key={item.id}
-              id={item.id}
-              img={item.img}
-              purpose={item.purpose}
-              title={item.title}
-              location={item.location}
-              price={item.price}
-              no_of_beds={item.features.no_of_beds}
-              no_of_baths={item.features.no_of_baths}
-              no_of_garage={item.features.no_of_garage}
+              {...item}
+              {...item.features}
             />
           ))}
         </div>

@@ -5,6 +5,7 @@ import "./propertydetails.css";
 
 function PropertyDetails() {
   const { id } = useParams();
+  console.log(id)
   return (
     <div className="property-details-container">
       {AllProperties.filter((property) => property.id === id).map((property, index) => (

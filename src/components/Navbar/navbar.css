@@ -4,6 +4,9 @@
   color: white;
   max-width: 1536px;
   margin: 0 auto;
+  /* position: fixed;
+  z-index: 2; */
+  /* top: 0; */
 }
 .navbar-wrapper {
   width: 90%;

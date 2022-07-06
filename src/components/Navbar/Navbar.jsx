@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import NavbarOptions from "./NavbarOptions";
 import Button from "../Button/Button";
 
+
+
+
 export default function Navbar(props) {
   const [toggle, setToggle] = useState(false);
 
@@ -11,11 +14,12 @@ export default function Navbar(props) {
     setToggle(!toggle);
   };
 
+
   const hamburgerIcon = <i className="fa fa-bars" onClick={toggleHandler}></i>;
   const cancelIcon = <i className="fa fa-times " onClick={toggleHandler}></i>;
 
   const NavMenu = NavbarOptions.map((btn, index) => (
-    <li className="navbar-menu" key={index}>
+    <li className="navbar-menu" key={index} >
       <Link to={btn.href} className="navbar-property-link">
         {btn.title}
       </Link>
@@ -30,7 +34,7 @@ export default function Navbar(props) {
           <span className="logo-name">9jaProperty</span>
         </div>
         <div className="navbar-right">
-          <ul className={toggle ? "show-navbar-menu" : "hide-navbar-menu"}>
+          <ul className={toggle ? "show-navbar-menu" : "hide-navbar-menu"} >
             {NavMenu}
             <Button text="BECOME AN AGENT" path="/signup" />
           </ul>

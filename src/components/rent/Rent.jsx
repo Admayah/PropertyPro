@@ -10,9 +10,9 @@ function Rent() {
     <>
       <Navbar />
       <div className="all-properties-container">
-        <div class="properties-card-wrapper">
-          {AllRentProperties.map((item) => (
-            <div class="property-info">
+        <div className="properties-card-wrapper">
+          {AllRentProperties.map((item, index) => (
+            <div className="property-info" key={index}>
               <div className="property-info-image">
                 {" "}
                 <img src={item.img} alt="" className="property-img" />
@@ -50,7 +50,7 @@ function Rent() {
                   </li>
                 </ul>
                 <div className="agent-price-and-no">
-                  <span agent-price>{item.price}</span>
+                  <span className= 'agent-price'>{item.price}</span>
                   <span className="agent-no">
                     <i className="fa fa-whatsapp wb-color"></i> 09073645165
                   </span>

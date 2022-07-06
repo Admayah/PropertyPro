@@ -1,6 +1,6 @@
 .our-services-container {
   width: 100%;
-  background-color: #f6f8f9;
+  background-color: rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
 }
