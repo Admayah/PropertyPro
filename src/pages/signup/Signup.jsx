@@ -6,10 +6,20 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { addUser } from "../../features/properties/userSlice";
 import { useDispatch } from "react-redux";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import InputField from "../../components/propertiesInput/Input";
+// import { register } from "../../features/auth/action";
+// import { url } from "../../config";
 
-const url = "http://localhost:4000/v1/signup";
+
+// const url = 'http://localhost:4000/v1/signup';
+
 
 export default function Signup() {
+
+  // const url = process.env.REACT_APP_BASEURL
+  // console.log(url);
 
   const dispatch = useDispatch();
 
@@ -32,18 +42,20 @@ export default function Signup() {
     e.preventDefault();
 
     try {
-      const response = await axios.post(url, { ...person });
+      const response = await axios.post(`${process.env.REACT_APP_BASEURL}/signup`, { ...person });
       const { token } = response.data;
       localStorage.setItem("token", token);
       dispatch(
         addUser({
           id: new Date().getTime().toString(36),
-          ...person,
+          ...person
         })
       );
+        toast('Account successfully created')
       navigate("/dashboard");
     } catch (error) {
-      console.log(error);
+      console.log(error)
+      toast.error('Something went wrong')
     }
     setPerson({
       firstName: "",
@@ -57,66 +69,53 @@ export default function Signup() {
   return (
     <>
       <Navbar />
+      <ToastContainer />
       <div className="signup-container">
         <div className="signup-wrapper">
           <div className="signup-input-wrapper">
-            <div className="signup-header">
-              <h2 className="signup-header-text">REGISTER</h2>
-            </div>
+            <header className="signup-header">
+              REGISTER
+            </header>
             <div className="signup-data-input-container">
-              <input
-                type="
-                    text"
-                id="firstName"
-                name="firstName"
-                value={person.firstName}
-                className="input-field"
-                placeholder="First Name"
-                onChange={handleChange}
+              <InputField
+              type='text'
+              name='firstName'
+              value={person.firstName}
+              placeholder='First Name'
+              onChange={handleChange}
               />
-              <input
-                type="
-                    text"
-                id="lastName"
-                name="lastName"
-                value={person.lastName}
-                className="input-field"
-                placeholder="Last Name"
-                onChange={handleChange}
+              <InputField
+              type='text'
+              name='lastName'
+              value={person.lastName}
+              placeholder='Last Name'
+              onChange={handleChange}
               />
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={person.email}
-                className="input-field"
-                placeholder="email@gmail.com"
-                onChange={handleChange}
+              <InputField
+              type='email'
+              name='email'
+              value={person.email}
+              placeholder='Enter email address'
+              onChange={handleChange}
               />
-              <input
-                type="password"
-                id="password"
-                name="password"
-                value={person.password}
-                className="input-field"
-                placeholder="Enter Password"
-                onChange={handleChange}
+              <InputField
+              type='password'
+              name='password'
+              value={person.password}
+              placeholder='Enter password'
+              onChange={handleChange}
               />
-              <input
-                type="tel"
-                id="phoneNo"
-                name="phoneNo"
-                value={person.phoneNo}
-                className="input-field tel-select-code"
-                placeholder="Phone Number"
-                onChange={handleChange}
+              <InputField
+              type='tel'
+              name='phoneNo'
+              value={person.phoneNo}
+              placeholder='Enter phone number'
+              onChange={handleChange}
               />
             </div>
-            <div className="button-wrapper">
-              <button className="signup-button" onClick={handleSubmit}>
+              <Link to='#'><button className="signup-button" onClick={handleSubmit}>
                 CREATE AN ACCOUNT
-              </button>
-            </div>
+              </button></Link>
           </div>
           <div className="register-link">
             Already an agent? &nbsp; <Link to="/login">Login Here.</Link>

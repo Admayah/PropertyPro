@@ -32,6 +32,7 @@
 }
 .property-image {
   height: 50%;
+  object-fit: contain;
 }
 .property-img {
   width: 100%;

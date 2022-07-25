@@ -5,19 +5,19 @@ import "./feed.css";
 import DashboardNav from "../../pages/dashboard/dashboardnav/DashboardNav";
 import Sidebar from "../sidebar/Sidebar";
 import { removeProperty } from "../../features/properties/adminProperties";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
-const url = 'http://localhost:4000/v1/agent/properties';
+// const url = 'http://localhost:4000/v1/agent/properties';
 
 
 
 function Feed() {
 
-  const {id} = useParams()
-  console.log('----->', id)
   const dispatch = useDispatch();
   const navigate = useNavigate()
 
@@ -32,19 +32,18 @@ function Feed() {
 
     const getProperties = async () => {
       try {
-        const response =  await axios.get(url, config);
-        const {data} = await response;
+        const response =  await axios.get(`${process.env.REACT_APP_BASEURL}/agent/properties`, config);
+        const {data} =  response;
         setAgentProperties(data)
-        // dispatch({agentProperties})
+        toast('Successful')
         console.log(data)
       } catch (error) {
-        console.log(error)
+        toast.error('Something went wrong')
       }
   }
   
 
   useEffect(() => {
-      // setProperties(AllProperties)
       getProperties()
   }, [])
 
@@ -62,31 +61,30 @@ function Feed() {
    const newAgentProperties = agentProperties.filter((item) => {
     return item.id !== id
    })
-   console.log(newAgentProperties)
-  //  setAgentProperties(newAgentProperties)
-      try {
+         try {
         const response = await axios.delete('http://localhost:4000/v1/agent/properties/' + id, config);
         console.log(response.data)
          setAgentProperties(newAgentProperties)
+         toast('Deleted successfully')
         dispatch(removeProperty(id))
       } catch (error) {
-        console.log(error)
-      }
+        toast('something went wrong') 
+     }
   }
 
   return (
     <div className="my-properties-cards">
       <DashboardNav />
+      <ToastContainer />
       <div className="my-properties-wrapper">
         <Sidebar />
         <div className="feed-container">
-          <div class="feed-card-wrapper">
-            {agentProperties.map(({id, image, purpose, title, address, state, landrea, description,yearBuild, baths, rooms, store, garage, price}) => {
+          <div className="feed-card-wrapper">
+            {agentProperties.map(({id, image_url, purpose, title, address, state, landrea, description,yearBuild, baths, rooms, store, garage, price}) => {
               return (
-                <div class="property-content">
+                <div className="property-content">
                   <div className="property-image">
-                    {" "}
-                    <img src={image} alt="" className="property-img" />
+                    <img src={image_url} alt="" className="property-img" />
                   </div>
                   <button className="sale">{purpose}</button>
 
@@ -131,7 +129,6 @@ function Feed() {
                     <div className="property-price">
                       <span>{price}</span>
                       <Link to={`/edit-property/${id}`}><button className="btn edit-btn">EDIT</button></Link>
-                      {/* onClick={()=> {editHandler(id)}} */}
                       <button className="btn delete-btn"  onClick={()=>{deleteHandler(id)}}>DELETE</button>
                     </div>
                   </div>

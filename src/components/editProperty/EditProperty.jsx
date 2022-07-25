@@ -3,12 +3,13 @@ import DashboardNav from '../../pages/dashboard/dashboardnav/DashboardNav'
 import Sidebar from '../sidebar/Sidebar'
 import Footer from '../footer/Footer'
 import './style.css'
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { PropertyFeature } from '../propertiesInput/propertyFeatures'
 import axios from 'axios'
 import { useSelector, useDispatch } from 'react-redux'
 import { editStateProperty } from '../../features/properties/adminProperties'
-import { useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const EditProperty = () => {
 
@@ -54,21 +55,23 @@ const EditProperty = () => {
     try {
   
 
-      const response = await axios.put('http://localhost:4000/v1/agent/properties/' + id ,{...editProperty}, config)
+      const response = await axios.put(`${process.env.REACT_APP_BASEURL}/` + id ,{...editProperty}, config)
       dispatch(editStateProperty({
         id,
         ...editProperty
       }))
       navigate('/my-properties')
+      toast('Updated successfully')
       console.log(response.data)
     } catch (error) {
-      console.log(error)
+      toast.error('Something went wrong')
     }
     }  
 
   return (
     <div className="properties-container">
     <DashboardNav />
+    <ToastContainer />
     <div className="properties-wrap">
       <Sidebar />
       <div className="properties-input-container">
@@ -108,7 +111,6 @@ const EditProperty = () => {
               <div className="property-data-input-field">
                 <select
                   name="purpose"
-                  id="choces"
                   className="property-option"
                   onChange={editHandler}
                   >
@@ -124,7 +126,6 @@ const EditProperty = () => {
                   value={editProperty.no_of_rooms}
                   name='no_of_rooms'
                   placeholder="no-of-room"
-                  // id="choices"
                   className="property-option"
                   onChange={editHandler}
                   >
@@ -141,7 +142,6 @@ const EditProperty = () => {
                   value={editProperty.no_of_bathrooms}
                   placeholder="no-of-no_of_bathrooms"
                   name='no_of_bathrooms'
-                  id="choice"
                   className="property-option"
                   onChange={editHandler}
                   >
@@ -158,7 +158,6 @@ const EditProperty = () => {
                   value={editProperty.no_of_garage}
                   name='no_of_garage'
                   placeholder="no-of-garage"
-                  id="choices"
                   className="property-option"
                   onChange={editHandler}
                   >
@@ -175,7 +174,6 @@ const EditProperty = () => {
                   value={editProperty.no_of_store}
                   name='no_of_store'
                   placeholder="no-of-store"
-                  id="choices"
                   className="property-option"
                   onChange={editHandler}
                   >
@@ -209,14 +207,12 @@ const EditProperty = () => {
                     placeholder="address"
                     value={editProperty.address}
                     onChange={editHandler}
-                    // placeholder="Street / Estate / Neighbourhood"
                   />
                 </div>
               </div>
             </div>
             <div className="properties-content-wrapper">
               <div className="property-location">
-                {/* <div>Price</div> */}
                 <div className="property-data-input-field">
                   <input
                     type="text"
@@ -227,46 +223,20 @@ const EditProperty = () => {
                     onChange={editHandler}
                   />
                 </div>
-                <div className="property-data-input-field">
-                  <select
-                    name="purpose"
-                    id="choices"
-                    className="property-option">
-                    <option value="" disabled selected hidden>
-                      Select Denomination
-                    </option>
-                    <option value="rent">Naira</option>
-                    <option value="sale">Dollar</option>
-                  </select>
-                </div>
               </div>
             </div>
             <div className="properties-content-wrapper">
               <div className="property-location">
-                {/* <div className="property-location-header">Price</div> */}
                 <div className="property-data-input-field">
                   <input
                     type="text"
                     className="property-data"
-                    // placeholder=""
                     name="image_url"
                     placeholder="image_url"
                     onChange={editHandler}
                     value={editProperty.image_url}
 
                   />
-                </div>
-                <div className="property-data-input-field">
-                  <select
-                    name="purpose"
-                    id="choices"
-                    className="property-option">
-                    <option value="" disabled selected hidden>
-                      Select Denomination
-                    </option>
-                    <option value="rent">Naira</option>
-                    <option value="sale">Dollar</option>
-                  </select>
                 </div>
               </div>
             </div>
@@ -297,4 +267,4 @@ const EditProperty = () => {
   )
 }
 
-export default EditProperty
+export default EditProperty;

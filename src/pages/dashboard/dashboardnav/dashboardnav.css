@@ -1,7 +1,9 @@
 .dashboard-nav-container {
   width: 100%;
-  background-color: crimson;
+  background-color: #312D2A;
   color: white;
+  border-bottom: 1px solid #fff;
+
 }
 .dashboard-nav-wrapper {
   display: flex;

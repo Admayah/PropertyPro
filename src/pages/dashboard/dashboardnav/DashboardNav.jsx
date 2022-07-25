@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import { SidebarData } from "../../../components/sidebar/sidebarData";
 import { Link } from "react-router-dom";
+import jwt_decode from "jwt-decode";
 import "./dashboardnav.css";
 
 function DashboardNav() {
+  const getToken = localStorage.getItem("token")
+  const decodedToken =  jwt_decode(getToken)
+  const {newUser} = decodedToken
+  console.log(decodedToken)
   const [dashtoggle, setDashToggle] = useState(false);
 
   const togHandler = () => {
@@ -25,7 +30,7 @@ function DashboardNav() {
             {dashtoggle ? dashCancelIcon : dashHamburgerIcon}
           </div>
           <div className="username-and-image">
-            <span className="user-name"> Mayowa</span>
+            <span className="user-name"> {newUser.firstName}</span>
             <img src="/images/image2.jpg" alt="" className="profile-logo" />
           </div>
         </div>
@@ -34,13 +39,13 @@ function DashboardNav() {
         className={
           dashtoggle ? "show-dashboard-sidebar" : "hide-dashboard-sidebar"
         }>
-        {SidebarData.map(({ href, icon, text }) => (
-          <li className="sidebar-menu">
-            <Link to={href} className="sidebar-link">
+        {SidebarData.map((item, index) => (
+          <li className="sidebar-menu" key={index}>
+            <Link to={item.href} className="sidebar-link">
               <span className="sidebar-icon">
-                <img src={icon} alt="" className="sidebar-img" />
+                <img src={item.icon} alt="" className="sidebar-img" />
               </span>
-              <span className="sidebar-text">{text}</span>
+              <span className="sidebar-text">{item.text}</span>
             </Link>
           </li>
         ))}

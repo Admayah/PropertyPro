@@ -1,5 +1,6 @@
 .properties-wrap {
   display: flex;
+  margin-bottom: 20px;
 }
 .properties-input-container {
   flex: 9.5;
@@ -56,4 +57,5 @@
   width: 150px;
   padding: 10px;
   background-color: crimson;
+  cursor: pointer;
 }

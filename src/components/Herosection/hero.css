@@ -47,5 +47,7 @@
 }
 .hero-button-container .button-container:last-child{
   margin-left: 1.25rem;
-  background-color: crimson;
+  background-color: transparent;
+  border: 1px solid #000;
+  color: #000;
 }

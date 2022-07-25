@@ -15,25 +15,19 @@ import Review from "./components/propertydetails/Review";
 import Features from "./components/propertydetails/Features";
 import ErrorPage from "./ErrorPage";
 import ProtectedRoute from "./ProtectedRoute";
-import {useState} from 'react'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import EditProperty from "./components/editProperty/EditProperty";
 
 function App() {
-  const notify = () => toast("Wow so easy!");
 
   return (
     <div className="App">
-    <button onClick={notify}>Notify!</button>
-    <ToastContainer />
       <Router>
         <Routes>
           <Route path="/" element={<Homepage />}></Route>
           <Route path="/properties" element={<AllPropertiesData />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/login" element={<Login />}></Route>
-          <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>}></Route>
+          <Route path="/dashboard" element={<Dashboard />}></Route>
           <Route path="/my-properties" element={<Feed />}></Route>
           <Route
             path="/post-property"
@@ -47,8 +41,7 @@ function App() {
             <Route path="desc" element={<Description />} />{" "}
             <Route path="review" element={<Review />} />
           </Route>
-          
-        <Route path="*" element={<ErrorPage />} ></Route>
+          <Route path="*" element={<ErrorPage />} ></Route>
         </Routes>
       </Router>
     </div>
