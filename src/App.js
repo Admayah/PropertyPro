@@ -13,8 +13,12 @@ import PropertyDetails from "./components/propertydetails/PropertyDetails";
 import Description from "./components/propertydetails/Description";
 import Review from "./components/propertydetails/Review";
 import Features from "./components/propertydetails/Features";
+import ErrorPage from "./ErrorPage";
+import ProtectedRoute from "./ProtectedRoute";
+import EditProperty from "./components/editProperty/EditProperty";
 
 function App() {
+
   return (
     <div className="App">
       <Router>
@@ -31,12 +35,13 @@ function App() {
           <Route path="/profile" element={<Profile />}></Route>
           <Route path="/sales" element={<Sales />}></Route>
           <Route path="/rent" element={<Rent />}></Route>
-
+          <Route path="/edit-property/:id" element={<EditProperty />}></Route>
           <Route path="/properties/:id" element={<PropertyDetails />}>
             <Route path="features" element={<Features />} />
             <Route path="desc" element={<Description />} />{" "}
             <Route path="review" element={<Review />} />
           </Route>
+          <Route path="*" element={<ErrorPage />} ></Route>
         </Routes>
       </Router>
     </div>

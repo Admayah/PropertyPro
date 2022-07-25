@@ -1,4 +1,5 @@
 import React from "react";
+import InputField from "../../components/propertiesInput/Input";
 import Sidebar from "../../components/sidebar/Sidebar";
 import DashboardNav from "../dashboard/dashboardnav/DashboardNav";
 import "./profile.css";
@@ -17,25 +18,49 @@ function Profile() {
                 <div className="property-location-header">
                   Contact Information
                 </div>
+                {/* <InputField
+                  type='text'
+                  className='profile-input'
+                  placeholder='Enter first name'
+                  name='firstName'
+                /> */}
                 <div className="property-infos">
                   <span className="profile-input-container">
-                    <input
-                      type="text"
-                      placeholder="first name"
-                      className="input-field"
+                    <InputField
+                      type='text'
+                      className='profile-input'
+                      placeholder='Enter first name'
+                      name='firstName'
                     />
                   </span>
                   <span className="profile-input-container">
-                    <input
-                      type="text"
-                      placeholder="last name"
-                      className="input-field"
-                      profile-input-container=""
-                      id=""
+                    <InputField
+                      type='text'
+                      className='profile-input'
+                      placeholder='Enter last name'
+                      name='lastName'
                     />
                   </span>
                 </div>
                 <div className="property-infos">
+                  <span className="profile-input-container">
+                    <InputField
+                      type='email'
+                      className='profile-input'
+                      placeholder='Enter Email Address'
+                      name='email'
+                    />
+                  </span>
+                  <span className="profile-input-container">
+                    <InputField
+                      type='tel'
+                      className='profile-input'
+                      placeholder='Enter Phone Number'
+                      name='phoneNo'
+                    />
+                  </span>
+                </div>
+                {/* <div className="property-infos">
                   <span className="profile-input-container">
                     <input
                       type="text"
@@ -52,8 +77,8 @@ function Profile() {
                       id=""
                     />
                   </span>
-                </div>
-                <div className="property-infos">
+                </div> */}
+                {/* <div className="property-infos">
                   <textarea
                     profile-input-container="about-me"
                     id="about-me"
@@ -61,36 +86,33 @@ function Profile() {
                     rows="5"
                     className="profile-input-container input-field"
                     placeholder="About me"></textarea>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="properties-title-wrapper">
               <div className="property-location">
                 <div className="property-location-header">Change Password</div>
+                <InputField
+                      type='password'
+                      className='profile-input'
+                      placeholder='Enter Old Password'
+                      name='password'
+                    />
                 <div className="property-infos">
                   <span className="profile-input-container">
-                    <input
-                      type="text"
-                      placeholder="old Password"
-                      className="input-field"
-                    />
-                  </span>
-                </div>
-                <div className="property-infos">
-                  <span className="profile-input-container">
-                    <input
-                      type="text"
-                      placeholder="New Password"
-                      className="input-field"
+                    <InputField
+                      type='password'
+                      className='profile-input'
+                      placeholder='Enter New Password'
+                      name='email'
                     />
                   </span>
                   <span className="profile-input-container">
-                    <input
-                      type="text"
-                      placeholder="Confirm Password"
-                      className="input-field"
-                      profile-input-container=""
-                      id=""
+                    <InputField
+                      type='passwod'
+                      className='profile-input'
+                      placeholder='Confirm New Password'
+                      name='phoneNo'
                     />
                   </span>
                 </div>

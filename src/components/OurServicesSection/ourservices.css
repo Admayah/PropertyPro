@@ -1,8 +1,9 @@
 .our-services-container {
   width: 100%;
-  background-color: #f6f8f9;
+  background-color: #312D2A;
   display: flex;
   justify-content: center;
+  color: #fff;
 }
 .our-services-wrapper {
   width: 80%;
@@ -40,7 +41,8 @@
   min-width: 150px;
   max-width: 250px;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: #F98547;
+color: black;
   background-clip: border-box;
   border: none;
   box-shadow: 0 12px 15px rgba(0, 0, 0, 0.1), 0 17px 50px rgba(0, 0, 0, 0.1);

@@ -14,12 +14,16 @@
   }
 }
 .sidebar-wrapper {
-  padding: 30px;
+  display: flex;
+  padding-top: 30px;
+  width: 100%;
+  justify-content: center;
+
   color: white;
 }
 @media (max-width: 768px) {
   .sidebar-wrapper {
-    padding: 10px;
+    /* padding: 10px; */
     position: relative;
   }
 }
@@ -59,6 +63,9 @@
   width: 50%;
   margin: 0 auto;
   margin-bottom: 20px;
+}
+.sidebar-menu:hover{
+  font-size: 20px;
 }
 @media (min-width: 768px) {
   .sidebar-menu {
