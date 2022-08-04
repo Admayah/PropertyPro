@@ -1,18 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, NavLink, Outlet } from "react-router-dom";
-import AllProperties from "../allproperties/allproperties";
+import { ToastContainer, toast } from 'react-toastify';
+import axios from 'axios'
 import "./propertydetails.css";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function PropertyDetails() {
+  
   const { id } = useParams();
+  const [moreInfo, setMoreInfo] = useState([]);
+
+  const getProperty = async () => {
+    try {
+      const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties`)
+      const { data } = response;
+      setMoreInfo(data)
+
+      toast('Property is successfully created')
+    } catch (error) {
+      toast.error('Something went wrong')
+    }
+  };
+
+  useEffect(() => {
+    getProperty()
+  }, []);
+
   return (
     <div className="property-details-container">
-      {AllProperties.filter((property) => property.id === id).map((property, index) => (
-        <div className="property-detail-wrapper" key={index}>
+      <ToastContainer />
+      {moreInfo.filter((property) => property.id === parseInt(id)).map((property, index) => {
+        return (
+          <div className="property-detail-wrapper" key={index}>
           <div className="property-image-wrapper">
-            <img src={property.img} alt="pic" className="property-img" />
+            <img src={property.image_url} alt="pic" className="property-img" />
           </div>
           <div className="property-title">{property.title} </div>
+          <div className="property-title">{property.address}</div>
 
           <div className="properties-details">
             <NavLink to={`/properties/${id}/features`}>
@@ -33,7 +58,9 @@ function PropertyDetails() {
           <hr />
           <Outlet />
         </div>
-      ))}
+        )
+      }
+      )}
     </div>
   );
 }

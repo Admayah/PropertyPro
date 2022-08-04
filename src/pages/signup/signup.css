@@ -1,14 +1,16 @@
 .signup-container {
   width: 100%;
   height: 100vh;
-  background-color: #f6f8f9;
+  background-color: #312D2A;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .signup-wrapper {
-  width: 40%;
+  width: 30%;
+  background-color: #F98547;
+  color: #fff;
   box-shadow: 0 12px 15px rgba(0, 0, 0, 0.1), 0 17px 50px rgba(0, 0, 0, 0.1);
   border-radius: 0 20px 0 0;
   max-width: 1536px;
@@ -32,56 +34,22 @@
   display: flex;
   flex-direction: column;
 }
-.input-field {
-  width: 100%;
-  margin-bottom: 20px;
-  height: 30px;
-  border-radius: 5px;
-  background-color: #ddd;
-  outline: none;
-  border: 1px solid black;
-}
 ::placeholder {
   padding-left: 10px;
   font-weight: bold;
   font-size: 16px;
 }
-select {
-  width: 80%;
-  height: 100%;
-  border-radius: 5px;
-  border: 1px solid black;
-}
-.country-code-container {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
 .tel-input {
   width: 100%;
-}
-
-.country-code {
-  width: 40%;
-}
-.tel-select-code {
-  margin: 0;
 }
 .signup-button {
   padding: 0;
   margin-top: 10px;
   padding: 10px 0;
   width: 100%;
-  background-color: #3f4652;
+  background-color: #000;
   border-radius: 3px;
-}
-.signup-button a {
-  text-decoration: none;
-  color: white;
-}
-.login-btn a {
-  text-decoration: none;
-  color: white;
+  cursor: pointer;
 }
 .register-link {
   width: 100%;

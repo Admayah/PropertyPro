@@ -1,65 +1,87 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../Navbar/Navbar";
-import AllSaleProperties from "./saleData";
 import Footer from "../footer/Footer";
+import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useFetch } from "../../useFetch";
+import PropertiesInfo from "../allproperties/PropertiesInfo";
 
-import "./sales.css";
 
 function Sales() {
+  const { loading, datas } = useFetch();
+  const [page, setPage] = useState(0)
+
+  const [saleProps, setSaleProps] = useState([]);
+
+  const salesPoperties = saleProps.filter((item) => item.purpose === 'sale')
+
+
+
+  useEffect(() => {
+    if (loading) return
+    setSaleProps(datas[page])
+  }, [page]);
+
+
+  const nextPage = () => {
+    setPage((oldPage) => {
+      let nextPage = oldPage + 1
+      if (nextPage > datas.length - 1) {
+        nextPage = 0
+      }
+      return nextPage
+    })
+  }
+  const prevPage = () => {
+    setPage((oldPage) => {
+      let prevPage = oldPage - 1
+      if (prevPage < 0) {
+        prevPage = datas.length - 1
+      }
+      return prevPage
+    })
+  }
+
+  const handlePage = (index) => {
+    setPage(index)
+  }
+
   return (
     <>
       <Navbar />
+      <ToastContainer />
       <div className="all-properties-container">
-        <div class="properties-card-wrapper">
-          {AllSaleProperties.map((item) => (
-            <div class="property-info">
-              <div className="property-info-image">
-                {" "}
-                <img src={item.img} alt="" className="property-img" />
-              </div>
-              <button className="sale">{item.purpose}</button>
-
-              <div className="property-details">
-                <h3 className="property-title">{item.title}</h3>
-                <p className="property-location">{item.location}</p>
-
-                <ul className="property-features">
-                  <li className="feature-item">
-                    <a href="/" className="feature-item-link">
-                      <span>
-                        <i className="fa fa-bed property-feature"></i>
-                      </span>
-                      {item.features.no_of_beds}
-                    </a>
-                  </li>
-                  <li className="featureItem">
-                    <a href="/" className="feature-item-link">
-                      <span>
-                        <i className="fa fa-bed property-feature"></i>
-                      </span>
-                      {item.features.no_of_baths}
-                    </a>
-                  </li>
-                  <li className="featureItem">
-                    <a href="/" className="feature-item-link">
-                      <span>
-                        <i className="fa fa-bed property-feature"></i>
-                      </span>
-                      {item.features.no_of_garage}
-                    </a>
-                  </li>
-                </ul>
-                <div className="agent-price-and-no">
-                  <span agent-price>{item.price}</span>
-                  <span className="agent-no">
-                    <i className="fa fa-whatsapp wb-color"></i> 09073645165
-                  </span>
-                </div>
-              </div>
-            </div>
+        <div className="properties-card-wrapper">
+          {salesPoperties.map((item) => (
+            <PropertiesInfo
+              key={item.id}
+              {...item}
+            />
           ))}
         </div>
       </div>
+      {!loading && (
+        <div className='btn-container'>
+          <button className='btn prev-btn' onClick={prevPage}>
+            prev
+          </button>
+          {datas.map((item, index) => {
+            return (
+              <button
+                key={index}
+                className={`page-btn ${index === page ? 'active-btn' : null}`}
+                onClick={() => handlePage(index)}
+              >
+                {index + 1}
+              </button>
+            )
+          })}
+          <button className='btn next-btn' onClick={nextPage} >
+            next
+          </button>
+        </div>
+      )}
       <Footer />
     </>
   );

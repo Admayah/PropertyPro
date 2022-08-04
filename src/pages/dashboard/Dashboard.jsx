@@ -1,9 +1,12 @@
 import React from "react";
 import Sidebar from "../../components/sidebar/Sidebar";
-import "./dashboard.css";
 import DashboardNav from "./dashboardnav/DashboardNav";
+import "./dashboard.css";
+
+
 
 export default function Dashboard() {
+
   return (
     <>
       <div className="dashboard-container">
@@ -14,7 +17,7 @@ export default function Dashboard() {
             <img
               src="https://img.icons8.com/material-outlined/50/000000/search--v1.png"
               className="search-icon"
-              alt=""
+              alt="search-menu"
             />
           </div>
           <Sidebar />

@@ -24,6 +24,7 @@
   width: 96%;
   height: 100%;
   margin: 2%;
+
 }
 
 .photo-wrapper {
@@ -37,4 +38,9 @@
 }
 input[type="file"] {
   display: none;
+}
+
+.profile-input {
+  border: none;
+  outline: none;
 }

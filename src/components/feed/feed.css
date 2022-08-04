@@ -19,7 +19,6 @@
   }
 }
 .property-content {
-
   margin: 0 auto;
   margin-bottom: 10px;
   width: 25rem;
@@ -33,6 +32,7 @@
 }
 .property-image {
   height: 50%;
+  object-fit: contain;
 }
 .property-img {
   width: 100%;
