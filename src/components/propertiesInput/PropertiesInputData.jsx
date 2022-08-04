@@ -1,14 +1,14 @@
 import React, { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import axios from "axios";
 import { PropertyFeature } from "./propertyFeatures";
 import DashboardNav from "../../pages/dashboard/dashboardnav/DashboardNav";
 import Footer from "../footer/Footer";
 import Sidebar from "../sidebar/Sidebar";
-import "./propertiesInput.css";
-import axios from "axios";
 import InputField from "./Input";
 import { useDispatch, useSelector } from "react-redux";
 import { addProperty } from "../../features/properties/adminProperties";
-import { ToastContainer, toast } from 'react-toastify';
+import "./propertiesInput.css";
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -51,7 +51,6 @@ export default function PropertiesInputData() {
     setPropertiesInfo(prev => ({
       ...prev, [e.target.name]: e.target.value
     }))
-    console.log(propertiesInfo)
 
   }
 
@@ -214,7 +213,7 @@ export default function PropertiesInputData() {
                <InputField
                 type='text'
                 placeholder='land area'
-                name='land_area'
+                name='landArea'
                 value={propertiesInfo.landArea}
                 onChange={informationHandler}
                 />

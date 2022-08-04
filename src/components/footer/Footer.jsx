@@ -1,4 +1,3 @@
-import "./footer.css";
 import { Link } from "react-router-dom";
 import { FooterListArray } from "./footerListArray";
 import {
@@ -7,6 +6,7 @@ import {
   moreAboutCompany,
 } from "./staticData/dataMenu";
 import { socialMenu } from "./staticData/socialMediaMenu";
+import "./footer.css";
 
 export default function Footer() {
   return (

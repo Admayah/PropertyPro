@@ -1,22 +1,18 @@
 import React, {useEffect, useState} from "react";
-import { Link, useParams } from "react-router-dom";
-import Properties from "./properties";
-import "./feed.css";
-import DashboardNav from "../../pages/dashboard/dashboardnav/DashboardNav";
-import Sidebar from "../sidebar/Sidebar";
-import { removeProperty } from "../../features/properties/adminProperties";
-import { useDispatch } from "react-redux";
+import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
+import { useDispatch } from "react-redux";
+import Sidebar from "../sidebar/Sidebar";
+import DashboardNav from "../../pages/dashboard/dashboardnav/DashboardNav";
+import EditProperty from "../editProperty/EditProperty";
+import { removeProperty } from "../../features/properties/adminProperties";
 import 'react-toastify/dist/ReactToastify.css';
-
-
-// const url = 'http://localhost:4000/v1/agent/properties';
+import "./feed.css";
 
 
 
-function Feed() {
+function Feed({data}) {
 
   const dispatch = useDispatch();
   const navigate = useNavigate()
@@ -80,7 +76,7 @@ function Feed() {
         <Sidebar />
         <div className="feed-container">
           <div className="feed-card-wrapper">
-            {agentProperties.map(({id, image_url, purpose, title, address, state, landrea, description,yearBuild, baths, rooms, store, garage, price}) => {
+            {agentProperties.map(({id, image_url, title, no_of_rooms, no_of_bathrooms, no_of_garage, no_of_store, address, price, purpose}) => {
               return (
                 <div className="property-content">
                   <div className="property-image">
@@ -98,7 +94,7 @@ function Feed() {
                           <span>
                             <i className="fa fa-bed property-feature"></i>
                           </span>
-                          {rooms}
+                          {no_of_rooms} rooms
                         </a>
                       </li>
                       <li className="feature-item">
@@ -106,7 +102,7 @@ function Feed() {
                           <span>
                             <i className="fa fa-bed property-feature"></i>
                           </span>
-                          {baths}
+                          {no_of_bathrooms} baths
                         </a>
                       </li>
                       <li className="feature-item">
@@ -114,7 +110,7 @@ function Feed() {
                           <span>
                             <i className="fa fa-bed property-feature"></i>
                           </span>
-                          {garage}
+                          {no_of_garage} garage
                         </a>
                       </li>
                       <li className="feature-item">
@@ -122,13 +118,15 @@ function Feed() {
                           <span>
                             <i className="fa fa-bed property-feature"></i>
                           </span>
-                          {store}
+                          {no_of_store} store
                         </a>
                       </li>
                     </ul>
                     <div className="property-price">
-                      <span>{price}</span>
-                      <Link to={`/edit-property/${id}`}><button className="btn edit-btn">EDIT</button></Link>
+                      <span> ₦{price}</span>
+                      <button className="btn edit-btn" onClick={()=>{
+                        navigate(`/edit-property/${id}`)
+                      }}>EDIT</button>
                       <button className="btn delete-btn"  onClick={()=>{deleteHandler(id)}}>DELETE</button>
                     </div>
                   </div>

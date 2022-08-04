@@ -1,7 +1,8 @@
 import React from "react";
 import Sidebar from "../../components/sidebar/Sidebar";
-import "./dashboard.css";
 import DashboardNav from "./dashboardnav/DashboardNav";
+import "./dashboard.css";
+
 
 
 export default function Dashboard() {

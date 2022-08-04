@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
+import { ToastContainer, toast } from 'react-toastify';
 import Navbar from "../Navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import PropertiesInfo from "./PropertiesInfo";
-import axios from 'axios'
-import { ToastContainer, toast } from 'react-toastify';
+import { useFetch } from "../../useFetch";
 import 'react-toastify/dist/ReactToastify.css';
 import "./propertiesdata.css";
-import { useFetch } from "../../useFetch";
 
 
 function AllPropertiesData() {
@@ -14,22 +13,13 @@ const {loading, datas} = useFetch();
   const [page, setPage] = useState(0)
   const [properties, setProperties] = useState([])
 
-  // const getProperties = async () => {
-  //   try {
-  //     const response = await axios.get()
-  //     const { data } = response;
-  //     setProperties(paginate(data))
-  //     toast('Property is successfully created')
-  //   } catch (error) {
-  //     toast.error('Something went wrong')
-  //   }
-  // };
-
-  useEffect(() => {
-    if (loading) return
-   setProperties(datas[page])
+  useLayoutEffect(() => {
+    const newData = async () => { 
+      const check = datas[page]
+      setProperties(check)
+    }
+   newData()
   }, [page]);
-
 
   const nextPage = () => {
     setPage((oldPage) => {
@@ -53,7 +43,11 @@ const {loading, datas} = useFetch();
   const handlePage = (index) => {
     setPage(index)
   }
-
+if (loading) {
+  return <div style={{fontSize: '24px', textAlign: 'center'}}>
+    Loading....
+    </div>
+}
 console.log(properties)
   return (
     <>

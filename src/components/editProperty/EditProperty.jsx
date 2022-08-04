@@ -5,16 +5,16 @@ import Footer from '../footer/Footer'
 import './style.css'
 import { useParams, useNavigate } from "react-router-dom";
 import { PropertyFeature } from '../propertiesInput/propertyFeatures'
+import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios'
 import { useSelector, useDispatch } from 'react-redux'
 import { editStateProperty } from '../../features/properties/adminProperties'
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const EditProperty = () => {
+const EditProperty = ({data}) => {
 
   const {id} = useParams();
-
+  console.log(id)
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -62,7 +62,6 @@ const EditProperty = () => {
       }))
       navigate('/my-properties')
       toast('Updated successfully')
-      console.log(response.data)
     } catch (error) {
       toast.error('Something went wrong')
     }

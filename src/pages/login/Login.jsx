@@ -1,15 +1,14 @@
 import React, {useState} from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import axios from 'axios'
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/footer/Footer";
-import "./login.css";
-import { Link } from "react-router-dom";
-import axios from 'axios'
-import { useNavigate } from "react-router-dom";
+import InputField from "../../components/propertiesInput/Input";
 import { addUser } from "../../features/properties/userSlice";
 import { useDispatch } from "react-redux";
-import { ToastContainer, toast } from 'react-toastify';
+import "./login.css";
 import 'react-toastify/dist/ReactToastify.css';
-import InputField from "../../components/propertiesInput/Input";
 
 const initialValue = {
   email: '',

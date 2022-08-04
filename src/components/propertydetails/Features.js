@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
 import { useParams } from "react-router-dom";
 import "./features.css";
-import { ToastClassName, toast, ToastContainer } from "react-toastify";
 
 function Features(props) {
 

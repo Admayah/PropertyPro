@@ -8,13 +8,15 @@ function Sidebar() {
     <div className="sidebar-container">
       <div className="sidebar-wrapper">
         <ul className="sidebar-items">
-          {SidebarData.map((item, index ) => (
+          {SidebarData.map((item, index) => (
             <li className="sidebar-menu" key={index}>
               <Link to={item.href} className="sidebar-links">
-                <span className="sidebar-icon">
-                  <img src={item.icon} alt="" className="sidebar-img" />
+                <span className="sidebar-text">
+                  <span className="sidebar-icon">
+                    <img src={item.icon} alt="" className="sidebar-img" />
+                  </span>
+                  {item.text}
                 </span>
-                <span className="sidebar-text">{item.text}</span>
               </Link>
             </li>
           ))}

@@ -64,8 +64,9 @@
   margin: 0 auto;
   margin-bottom: 20px;
 }
-.sidebar-menu:hover{
+.sidebar-links:hover{
   font-size: 20px;
+ color: yellow;
 }
 @media (min-width: 768px) {
   .sidebar-menu {

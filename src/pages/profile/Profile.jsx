@@ -18,12 +18,6 @@ function Profile() {
                 <div className="property-location-header">
                   Contact Information
                 </div>
-                {/* <InputField
-                  type='text'
-                  className='profile-input'
-                  placeholder='Enter first name'
-                  name='firstName'
-                /> */}
                 <div className="property-infos">
                   <span className="profile-input-container">
                     <InputField
@@ -60,33 +54,6 @@ function Profile() {
                     />
                   </span>
                 </div>
-                {/* <div className="property-infos">
-                  <span className="profile-input-container">
-                    <input
-                      type="text"
-                      placeholder="Email"
-                      className="input-field"
-                    />
-                  </span>
-                  <span className="profile-input-container">
-                    <input
-                      type="text"
-                      placeholder="Phone Number"
-                      className="input-field"
-                      profile-input-container=""
-                      id=""
-                    />
-                  </span>
-                </div> */}
-                {/* <div className="property-infos">
-                  <textarea
-                    profile-input-container="about-me"
-                    id="about-me"
-                    cols="100"
-                    rows="5"
-                    className="profile-input-container input-field"
-                    placeholder="About me"></textarea>
-                </div> */}
               </div>
             </div>
             <div className="properties-title-wrapper">

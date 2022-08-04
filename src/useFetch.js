@@ -7,7 +7,6 @@ const [loading, setLoading] = useState(true)
     const [datas, setDatas] = useState();
     const getProperties = async () => {
         const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties`)
-        console.log(response)
         const {data} = response
         setDatas(paginate(data))
         setLoading(false)
@@ -16,7 +15,5 @@ const [loading, setLoading] = useState(true)
     useEffect(() => {
         getProperties()
     }, [])
-    console.log(datas)
 return {loading, datas}
-
 }

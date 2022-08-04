@@ -13,33 +13,10 @@ import PropertiesInfo from "../allproperties/PropertiesInfo";
 function Rent() {
   const {loading, datas} = useFetch();
   const [page, setPage] = useState(0)
-  // const [properties, setProperties] = useState([])
 
   const [rentProps, setRentProps] = useState([]);
 
-  // const getRentProperties = async () => {
-  //   try {
-  //     const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties`)
-  //     console.log(response)
-  //     const { data } = response;
-  //     console.log(data)
-  //     setRentProps(data)
-  //     toast('Property is successfully created')
-  //   } catch (error) {
-  //     toast.error('Something went wrong') 
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   getRentProperties()
-  // }, []);
-
-  // console.log(rentProps)
-
  const rentPoperties = rentProps.filter((item) => item.purpose === 'rent')
-//  console.log(rentPoperties);
-
-
 
  useEffect(() => {
   if (loading) return
@@ -106,65 +83,7 @@ const handlePage = (index) => {
           </div>
         )}
       <Footer />
-      {/* <Navbar />
-      <div className="all-properties-container">
-        <div className="properties-card-wrapper">
-          {rentPoperties.map((item, index) => {
-            return (
-<>
-<div className="property-info" key={index}>
-              <div className="property-info-image">
-                <img src={item.img} alt="" className="property-img" />
-              </div>
-              <button className="sale">{item.purpose}</button>
-
-              <div className="property-details">
-                <h3 className="property-title">{item.title}</h3>
-                <p className="property-location">{item.location}</p>
-
-                <ul className="property-features">
-                  <li className="feature-item">
-                    <a href="/" className="feature-item-link">
-                      <span>
-                        <i className="fa fa-bed property-feature"></i>
-                      </span>
-                      {item.no_of_beds}
-                    </a>
-                  </li>
-                  <li className="featureItem">
-                    <a href="/" className="feature-item-link">
-                      <span>
-                        <i className="fa fa-bed property-feature"></i>
-                      </span>
-                      {item.no_of_baths}
-                    </a>
-                  </li>
-                  <li className="featureItem">
-                    <a href="/" className="feature-item-link">
-                      <span>
-                        <i className="fa fa-bed property-feature"></i>
-                      </span>
-                      {item.no_of_garage}
-                    </a>
-                  </li>
-                </ul>
-                <div className="agent-price-and-no">
-                  <span className= 'agent-price'>{item.price}</span>
-                  <span className="agent-no">
-                    <i className="fa fa-whatsapp wb-color"></i> 09073645165
-                  </span>
-                </div>
-              </div>
-            </div>
-</>
-            )
-          }
-
-          )}
-        </div>
-      </div>
-      <Footer /> */}
-    </>
+     </>
   );
 }
 

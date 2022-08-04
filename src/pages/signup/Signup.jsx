@@ -4,22 +4,15 @@ import Footer from "../../components/footer/Footer";
 import "./signup.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { addUser } from "../../features/properties/userSlice";
-import { useDispatch } from "react-redux";
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { useDispatch } from "react-redux";
+import { addUser } from "../../features/properties/userSlice";
 import InputField from "../../components/propertiesInput/Input";
-// import { register } from "../../features/auth/action";
-// import { url } from "../../config";
+import 'react-toastify/dist/ReactToastify.css';
 
-
-// const url = 'http://localhost:4000/v1/signup';
 
 
 export default function Signup() {
-
-  // const url = process.env.REACT_APP_BASEURL
-  // console.log(url);
 
   const dispatch = useDispatch();
 

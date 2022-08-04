@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams, NavLink, Outlet } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios'
 import "./propertydetails.css";
-import { useSelector } from "react-redux";
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -15,7 +14,6 @@ function PropertyDetails() {
   const getProperty = async () => {
     try {
       const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties`)
-      console.log(response)
       const { data } = response;
       setMoreInfo(data)
 
@@ -28,17 +26,6 @@ function PropertyDetails() {
   useEffect(() => {
     getProperty()
   }, []);
-console.log(moreInfo, id)
-  // const {adminProperties} = useSelector((state) => state.adminProperties)
-// return item.filter((item) => item.id === id))
-// const singlePropertyInfo = moreInfo.((item )=> {
-//  if (item.id === parseInt(id)) {
-//   return 'Yes'
-//  } 
-//  return 'No'
-//   })
-// console.log(singlePropertyInfo)
-
 
   return (
     <div className="property-details-container">

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { SidebarData } from "../../../components/sidebar/sidebarData";
 import { Link } from "react-router-dom";
 import jwt_decode from "jwt-decode";
+import { SidebarData } from "../../../components/sidebar/sidebarData";
 import "./dashboardnav.css";
 
 function DashboardNav() {
