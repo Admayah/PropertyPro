@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import Sidebar from "../sidebar/Sidebar";
 import DashboardNav from "../../pages/dashboard/dashboardnav/DashboardNav";
 import EditProperty from "../editProperty/EditProperty";
-import { removeProperty } from "../../features/properties/adminProperties";
+// import { removeProperty } from "../../features/properties/adminProperties";
 import 'react-toastify/dist/ReactToastify.css';
 import "./feed.css";
 
@@ -62,7 +62,7 @@ function Feed({data}) {
         console.log(response.data)
          setAgentProperties(newAgentProperties)
          toast('Deleted successfully')
-        dispatch(removeProperty(id))
+        // dispatch(removeProperty(id))
       } catch (error) {
         toast('something went wrong') 
      }

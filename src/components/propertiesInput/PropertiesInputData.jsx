@@ -13,7 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 export default function PropertiesInputData() {
- 
+
 
   const dispatch = useDispatch();
 
@@ -57,11 +57,11 @@ export default function PropertiesInputData() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const formData = new FormData();
-    
+
     formData.append("file", file);
     formData.append("fileName", JSON.stringify(propertiesInfo));
     console.log(formData)
-    
+
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_BASEURL}/agent/properties`,
@@ -202,49 +202,49 @@ export default function PropertiesInputData() {
                   onChange={informationHandler}
                 />
                 <label htmlFor="price">Address</label>
-               <InputField
-                type='text'
-                placeholder='address'
-                name='address'
-                value={propertiesInfo.address}
-                onChange={informationHandler}
+                <InputField
+                  type='text'
+                  placeholder='address'
+                  name='address'
+                  value={propertiesInfo.address}
+                  onChange={informationHandler}
                 />
-              <label htmlFor="price">land Area</label>
-               <InputField
-                type='text'
-                placeholder='land area'
-                name='landArea'
-                value={propertiesInfo.landArea}
-                onChange={informationHandler}
+                <label htmlFor="price">land Area</label>
+                <InputField
+                  type='text'
+                  placeholder='land area'
+                  name='landArea'
+                  value={propertiesInfo.landArea}
+                  onChange={informationHandler}
                 />
-              <label htmlFor="price">Property Description</label>
-              <div className="property-location">
-               <InputField
-               className='property-desc'
-                type='text'
-                placeholder='Description'
-                name='description'
-                value={propertiesInfo.description}
-                onChange={informationHandler}
-                />
+                <label htmlFor="price">Property Description</label>
+                <div className="property-location">
+                  <InputField
+                    className='property-desc'
+                    type='text'
+                    placeholder='Description'
+                    name='description'
+                    value={propertiesInfo.description}
+                    onChange={informationHandler}
+                  />
                 </div>
               </div>
             </div>
-          
+
           </div>
           <div className="property-image">
-                  <label className="photo-wrapper profile-input-container">
-                    <span className="profile">
-                      Upload property Image
-                      <input type="file"               
-                      name='image'
-                // value={propertiesInfo.image}
-                onChange={saveFile}/>
-                    </span>
-                  </label>
-                  <button className="post-btn" onClick={handleSubmit}>Post property</button>
-                </div>
-       
+            <label className="photo-wrapper profile-input-container">
+              <span className="profile">
+                Upload property Image
+                <input type="file"
+                  name='image'
+                  // value={propertiesInfo.image}
+                  onChange={saveFile} />
+              </span>
+            </label>
+            <button className="post-btn" onClick={handleSubmit}>Post property</button>
+          </div>
+
         </div>
       </div>
       <Footer />

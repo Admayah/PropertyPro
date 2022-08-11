@@ -9,16 +9,16 @@ function Sidebar() {
       <div className="sidebar-wrapper">
         <ul className="sidebar-items">
           {SidebarData.map((item, index) => (
-            <li className="sidebar-menu" key={index}>
               <Link to={item.href} className="sidebar-links">
+            <li className="sidebar-menu" key={index}>
                 <span className="sidebar-text">
                   <span className="sidebar-icon">
                     <img src={item.icon} alt="" className="sidebar-img" />
                   </span>
                   {item.text}
                 </span>
-              </Link>
             </li>
+            </Link>
           ))}
         </ul>
       </div>

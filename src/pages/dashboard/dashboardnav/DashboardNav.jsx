@@ -40,14 +40,14 @@ function DashboardNav() {
           dashtoggle ? "show-dashboard-sidebar" : "hide-dashboard-sidebar"
         }>
         {SidebarData.map((item, index) => (
-          <li className="sidebar-menu" key={index}>
             <Link to={item.href} className="sidebar-link">
+          <li className="sidebar-menu" key={index}>
               <span className="sidebar-icon">
                 <img src={item.icon} alt="" className="sidebar-img" />
               </span>
               <span className="sidebar-text">{item.text}</span>
-            </Link>
           </li>
+          </Link>
         ))}
       </ul>
     </>

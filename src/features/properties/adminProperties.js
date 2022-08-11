@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import Properties from "../../components/feed/properties";
+// import Properties from "../../components/feed/properties";
 
 const initialState = {
-    adminProperties : Properties
+    adminProperties : []
 }
 
 console.log(initialState)
