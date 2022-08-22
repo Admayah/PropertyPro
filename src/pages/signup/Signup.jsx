@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/footer/Footer";
-import "./signup.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import { useDispatch } from "react-redux";
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/footer/Footer";
 import { addUser } from "../../features/properties/userSlice";
 import InputField from "../../components/propertiesInput/Input";
 import 'react-toastify/dist/ReactToastify.css';
+import "./signup.css";
+
 
 
 
