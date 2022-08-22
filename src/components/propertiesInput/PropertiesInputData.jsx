@@ -59,7 +59,7 @@ export default function PropertiesInputData() {
     const formData = new FormData();
 
     formData.append("file", file);
-    formData.append("fileName", JSON.stringify(propertiesInfo));
+    formData.append("fileName", {...propertiesInfo});
     console.log(formData)
 
     try {
