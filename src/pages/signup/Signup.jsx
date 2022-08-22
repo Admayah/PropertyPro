@@ -25,6 +25,7 @@ export default function Signup() {
     password: "",
     phoneNo: "",
   });
+  const [loading, setLoading] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -50,6 +51,7 @@ export default function Signup() {
       console.log(error)
       toast.error('Something went wrong')
     }
+    setLoading(!loading)
     setPerson({
       firstName: "",
       lastName: "",
@@ -107,7 +109,8 @@ export default function Signup() {
               />
             </div>
               <Link to='#'><button className="signup-button" onClick={handleSubmit}>
-                CREATE AN ACCOUNT
+                {loading ? (<>Loading<div className="loader"></div></>) : (<>CREATE AN ACCOUNT</>)}
+                
               </button></Link>
           </div>
           <div className="register-link">

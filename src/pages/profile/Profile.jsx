@@ -76,7 +76,7 @@ function Profile() {
                   </span>
                   <span className="profile-input-container">
                     <InputField
-                      type='passwod'
+                      type='password'
                       className='profile-input'
                       placeholder='Confirm New Password'
                       name='phoneNo'
