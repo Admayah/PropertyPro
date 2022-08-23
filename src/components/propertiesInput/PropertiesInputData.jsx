@@ -60,6 +60,7 @@ export default function PropertiesInputData() {
 
     formData.append("file", file);
     formData.append("fileName", {...propertiesInfo});
+    console.log(file, propertiesInfo)
     console.log(formData)
 
     try {
