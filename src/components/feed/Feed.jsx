@@ -127,7 +127,7 @@ function Feed({data}) {
                       <button className="btn edit-btn" onClick={()=>{
                         navigate(`/edit-property/${id}`)
                       }}>EDIT</button>
-                      <button className="btn delete-btn"  onClick={()=>{deleteHandler(id)}}>DELETE</button>
+                      <button className="btn delete-btn"  onClick={()=>{deleteHandler({id})}}>DELETE</button>
                     </div>
                   </div>
                 </div>
