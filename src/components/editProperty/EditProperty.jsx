@@ -63,6 +63,7 @@ const EditProperty = ({data}) => {
       navigate('/my-properties')
       toast('Updated successfully')
     } catch (error) {
+      console.log(error)
       toast.error('Something went wrong')
     }
     }  
