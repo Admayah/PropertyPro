@@ -66,7 +66,7 @@ function Feed({data}) {
         // dispatch(removeProperty(id))
       } catch (error) {
         console.log(error)
-        toast('something went wrong') 
+        toast.error(`${error.response.data.message}`)
      }
   }
 

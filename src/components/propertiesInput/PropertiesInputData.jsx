@@ -77,7 +77,7 @@ export default function PropertiesInputData() {
         ...propertiesInfo
       }))
     } catch (error) {
-      toast.error('Something went wrong')
+      toast.error(`${error.response.data.message}`)
     }
   }
   return (

@@ -43,7 +43,8 @@ export default function Login() {
           toast('User logged in successfully')
           navigate('/dashboard')
         } catch (error) {
-          toast('Something went wrong')
+          toast.error(`${error.response.data.message}`)
+
         }
     }
 
