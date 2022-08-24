@@ -48,8 +48,8 @@ export default function Signup() {
       );
         toast('Account successfully created', {
           position: toast.POSITION.BOTTOM_CENTER,
-          className: 'toast-message'
-        })
+          className: 'message'
+        });
       navigate("/dashboard");
     } catch (error) {
       toast.error(`${error.response.data.message}`)
