@@ -55,7 +55,7 @@ const EditProperty = ({data}) => {
     try {
   
 
-      const response = await axios.put(`${process.env.REACT_APP_BASEURL}/` + id ,{...editProperty}, config)
+      const response = await axios.put(`${process.env.REACT_APP_BASEURL}/agent/properties/${id}` ,{...editProperty}, config)
       dispatch(editStateProperty({
         id,
         ...editProperty
