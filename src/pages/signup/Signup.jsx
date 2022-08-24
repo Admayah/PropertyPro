@@ -49,7 +49,7 @@ export default function Signup() {
         toast('Account successfully created')
       navigate("/dashboard");
     } catch (error) {
-      toast.error(response.data.message)
+      toast.error(`${error.response.data.message}`)
     }
     setLoading(!loading)
     setPerson({
