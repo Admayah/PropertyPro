@@ -46,7 +46,10 @@ export default function Signup() {
           ...person
         })
       );
-        toast('Account successfully created')
+        toast('Account successfully created', {
+          position: toast.POSITION.BOTTOM_CENTER,
+          className: 'toast-message'
+        })
       navigate("/dashboard");
     } catch (error) {
       toast.error(`${error.response.data.message}`)

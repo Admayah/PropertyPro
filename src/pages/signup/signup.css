@@ -60,6 +60,13 @@
 .register-link a {
   color: black;
 }
+.toast-message {
+  background: dark;
+  color: #fff;
+  font-size: 12px;
+  width: 34vw;
+  padding: 30px 20px;
+}
 
 .loader {
   border: 5px solid #f3f3f3; /* Light grey */
