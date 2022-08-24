@@ -59,7 +59,7 @@ function Feed({data}) {
     return item.id !== id
    })
          try {
-        const response = await axios.delete('http://localhost:4000/v1/agent/properties/' + id, config);
+        const response = await axios.delete(`${process.env.REACT_APP_BASEURL}/agent/properties/${id}` , config);
         console.log(response.data)
          setAgentProperties(newAgentProperties)
          toast('Deleted successfully')
