@@ -49,8 +49,7 @@ export default function Signup() {
         toast('Account successfully created')
       navigate("/dashboard");
     } catch (error) {
-      console.log(error)
-      toast.error('Something went wrong')
+      toast.error(response.data.message)
     }
     setLoading(!loading)
     setPerson({
