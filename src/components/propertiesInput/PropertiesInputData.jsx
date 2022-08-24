@@ -69,6 +69,7 @@ export default function PropertiesInputData() {
         formData,
         config
       )
+      console.log(response)
       toast('Property posted successfully')
       const { id } = await response.data[0]
       dispatch(addProperty({
