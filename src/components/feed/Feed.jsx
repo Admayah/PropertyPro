@@ -48,7 +48,7 @@ function Feed({data}) {
       return property.id === id;
     })
     // navigate()
-   
+   const deleteHandler = async (id) => {
    const newAgentProperties = agentProperties.filter((item) => {
     return item.id !== id
    })
