@@ -52,7 +52,10 @@ export default function Signup() {
         });
       navigate("/dashboard");
     } catch (error) {
-      toast.error(`${error.response.data.message}`)
+      toast.error(`${error.response.data.message}`, {
+        position: toast.POSITION.BOTTOM_CENTER,
+        className: 'message'
+      } )
     }
     setLoading(!loading)
     setPerson({
