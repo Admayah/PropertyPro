@@ -14,7 +14,6 @@ import 'react-toastify/dist/ReactToastify.css';
 const EditProperty = ({data}) => {
 
   const {id} = useParams();
-  console.log(id)
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

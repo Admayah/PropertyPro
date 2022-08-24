@@ -32,7 +32,6 @@ function Feed({data}) {
         const {data} =  response;
         setAgentProperties(data)
         toast('Successful')
-        console.log(data)
       } catch (error) {
         toast.error('Something went wrong')
       }
@@ -48,24 +47,17 @@ function Feed({data}) {
     const editProperty = agentProperties.filter((property) => {
       return property.id === id;
     })
-    console.log(editProperty)
-    navigate()
-  }
- 
-  const deleteHandler =  async (id) => {
-    console.log(id)
+    // navigate()
    
    const newAgentProperties = agentProperties.filter((item) => {
     return item.id !== id
    })
          try {
         const response = await axios.delete(`${process.env.REACT_APP_BASEURL}/agent/properties/${id}` , config);
-        console.log(response.data)
          setAgentProperties(newAgentProperties)
          toast('Deleted successfully')
         // dispatch(removeProperty(id))
       } catch (error) {
-        console.log(error)
         toast.error(`${error.response.data.message}`)
      }
   }

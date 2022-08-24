@@ -60,8 +60,6 @@ export default function PropertiesInputData() {
 
     formData.append("file", file);
     formData.append("fileName", JSON.stringify(propertiesInfo));
-    console.log(file, propertiesInfo)
-    console.log(formData)
 
     try {
       const response = await axios.post(
@@ -69,7 +67,6 @@ export default function PropertiesInputData() {
         formData,
         config
       )
-      console.log(response)
       toast('Property posted successfully')
       const { id } = await response.data[0]
       dispatch(addProperty({

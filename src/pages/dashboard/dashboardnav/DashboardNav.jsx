@@ -8,7 +8,6 @@ function DashboardNav() {
   const getToken = localStorage.getItem("token")
   const decodedToken =  jwt_decode(getToken)
   const {newUser} = decodedToken
-  console.log(decodedToken)
   const [dashtoggle, setDashToggle] = useState(false);
 
   const togHandler = () => {
