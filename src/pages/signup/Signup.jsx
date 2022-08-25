@@ -52,7 +52,7 @@ export default function Signup() {
       
       toast('Account successfully created')
       setDisabled(false);
-      setTimeout(navigate("/dashboard"), 5000)
+      setTimeout(navigate("/dashboard"), 10000)
       
     } catch (error) {
       console.log(error)
