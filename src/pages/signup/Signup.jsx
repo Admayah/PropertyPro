@@ -123,7 +123,7 @@ export default function Signup() {
             
             {/* <Link to='#'> */}
               <button className="signup-button" disabled={isDisabled}>
-                {isDisabled ? 'Loading...' : 'CREATE AN ACCOUNT'}
+                {isDisabled ? <i class="fa fa-circle-o-notch fa-spin"></i> : 'CREATE AN ACCOUNT'}
               
             </button>
             {/* </Link> */}
