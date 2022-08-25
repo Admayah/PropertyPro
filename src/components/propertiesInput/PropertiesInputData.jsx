@@ -14,6 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function PropertiesInputData() {
 
+  const [isDisabled, setDisabled] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -76,6 +77,7 @@ export default function PropertiesInputData() {
     } catch (error) {
       toast.error(`${error.response.data.message}`)
     }
+    setDisabled(true);
   }
   return (
     <div className="properties-container">
@@ -241,7 +243,7 @@ export default function PropertiesInputData() {
                   onChange={saveFile} />
               </span>
             </label>
-            <button className="post-btn" onClick={handleSubmit}>Post property</button>
+            <button className="post-btn" onClick={handleSubmit} disabled={isDisabled}>Post property</button>
           </div>
 
         </div>

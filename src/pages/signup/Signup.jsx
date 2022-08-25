@@ -27,6 +27,8 @@ export default function Signup() {
     phoneNo: "",
   });
   const [loading, setLoading] = useState(false)
+  const [isDisabled, setDisabled] = useState(false);
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,6 +37,7 @@ export default function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setDisabled(true);
 
     try {
       const response = await axios.post(`${process.env.REACT_APP_BASEURL}/signup`, { ...person });
@@ -46,19 +49,25 @@ export default function Signup() {
           ...person
         })
       );
-        toast('Account successfully created')
+      
+      toast('Account successfully created')
+      setDisabled(false);
       navigate("/dashboard");
     } catch (error) {
       toast.error(`${error.response.data.message}`)
+      setDisabled(false);
     }
     setLoading(!loading)
-    setPerson({
-      firstName: "",
-      lastName: "",
-      email: "",
-      password: "",
-      phoneNo: "",
-    });
+    setDisabled(false);
+    console.log('hello')
+    
+    // setPerson({
+    //   firstName: "",
+    //   lastName: "",
+    //   email: "",
+    //   password: "",
+    //   phoneNo: "",
+    // });
   };
 
   return (
@@ -71,52 +80,61 @@ export default function Signup() {
             <header className="signup-header">
               REGISTER
             </header>
-            <div className="signup-data-input-container">
-              <InputField
-              type='text'
-              name='firstName'
-              value={person.firstName}
-              placeholder='First Name'
-              onChange={handleChange}
-              />
-              <InputField
-              type='text'
-              name='lastName'
-              value={person.lastName}
-              placeholder='Last Name'
-              onChange={handleChange}
-              />
-              <InputField
-              type='email'
-              name='email'
-              value={person.email}
-              placeholder='Enter email address'
-              onChange={handleChange}
-              />
-              <InputField
-              type='password'
-              name='password'
-              value={person.password}
-              placeholder='Enter password'
-              onChange={handleChange}
-              />
-              <InputField
-              type='tel'
-              name='phoneNo'
-              value={person.phoneNo}
-              placeholder='Enter phone number'
-              onChange={handleChange}
-              />
-            </div>
-              <Link to='#'><button className="signup-button" onClick={handleSubmit}>
-                {loading ? (<>Loading<div className="loader"></div></>) : (<>CREATE AN ACCOUNT</>)}
-                
-              </button></Link>
+            <form onSubmit={handleSubmit}>
+              <div className="signup-data-input-container">
+                <InputField
+                  type='text'
+                  name='firstName'
+                  value={person.firstName}
+                  placeholder='First Name'
+                  onChange={handleChange}
+                />
+                <InputField
+                  type='text'
+                  name='lastName'
+                  value={person.lastName}
+                  placeholder='Last Name'
+                  onChange={handleChange}
+                />
+                <InputField
+                  type='email'
+                  name='email'
+                  value={person.email}
+                  placeholder='Enter email address'
+                  onChange={handleChange}
+                />
+                <InputField
+                  type='password'
+                  name='password'
+                  value={person.password}
+                  placeholder='Enter password'
+                  onChange={handleChange}
+                />
+                <InputField
+                  type='tel'
+                  name='phoneNo'
+                  value={person.phoneNo}
+                  placeholder='Enter phone number'
+                  onChange={handleChange}
+                />
+              </div>
+              {/* <input type="submit" disabled={isDisabled} className="signup-button"/> */}
+            
+            {/* <Link to='#'> */}
+              <button className="signup-button" disabled={isDisabled}>
+                {isDisabled ? 'Loading...' : 'CREATE AN ACCOUNT'}
+              
+            </button>
+            {/* </Link> */}
+            </form>
           </div>
+          
+
           <div className="register-link">
             Already an agent? &nbsp; <Link to="/login">Login Here.</Link>
           </div>
         </div>
+
       </div>
       <Footer />
     </>
