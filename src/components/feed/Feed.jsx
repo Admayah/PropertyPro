@@ -11,8 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import "./feed.css";
 
 
-
-function Feed({data}) {
+ function Feed({data}) {
 
   const dispatch = useDispatch();
   const navigate = useNavigate()
@@ -22,9 +21,9 @@ function Feed({data}) {
     const token = localStorage.getItem('token');
   let config = {
     "headers": {
-     "Authorization": token,
+     "Authorization": token
     }
-  }
+  };
 
     const getProperties = async () => {
       try {
@@ -47,6 +46,7 @@ function Feed({data}) {
     const editProperty = agentProperties.filter((property) => {
       return property.id === id;
     })
+  }
     // navigate()
    const deleteHandler = async (id) => {
    const newAgentProperties = agentProperties.filter((item) => {
