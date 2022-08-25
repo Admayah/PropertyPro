@@ -54,6 +54,7 @@ export default function Signup() {
       setDisabled(false);
       navigate("/dashboard");
     } catch (error) {
+      console.log(error)
       toast.error(`${error.response.data.message}`)
       setDisabled(false);
     }
