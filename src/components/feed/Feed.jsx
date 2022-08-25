@@ -30,9 +30,9 @@ import "./feed.css";
         const response =  await axios.get(`${process.env.REACT_APP_BASEURL}/agent/properties`, config);
         const {data} =  response;
         setAgentProperties(data)
-        toast('Successful')
+        // toast('Successful')
       } catch (error) {
-        toast.error('Something went wrong')
+        toast.error(`${error.response.data.message}`)
       }
   }
   
