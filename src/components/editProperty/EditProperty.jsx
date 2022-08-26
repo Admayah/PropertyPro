@@ -53,23 +53,23 @@ const {  title, address, state, land_area, purpose, description, year_of_build, 
 
 console.log( title, address, state, land_area, purpose, description, year_of_build, price, no_of_bathrooms, no_of_rooms, no_of_store, no_of_garage)
 
-const [editProperty, setEditProperty] = useState([])
+// const [editProperty, setEditProperty] = useState([])
 
-// const [editProperty, setEditProperty] = useState({ 
-//   image_url, 
-//   title, 
-//   address, 
-//   state, 
-//   land_area, 
-//   purpose, 
-//   description, 
-//   year_of_build, 
-//   price, 
-//   no_of_bathrooms, 
-//   no_of_rooms, 
-//   no_of_store, 
-//   no_of_garage
-// });
+const [editProperty, setEditProperty] = useState({ 
+  image_url, 
+  title, 
+  address, 
+  state, 
+  land_area, 
+  purpose, 
+  description, 
+  year_of_build, 
+  price, 
+  no_of_bathrooms, 
+  no_of_rooms, 
+  no_of_store, 
+  no_of_garage
+});
   
 
   const editHandler = (e) => {
