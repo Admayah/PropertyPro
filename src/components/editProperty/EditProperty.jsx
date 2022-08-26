@@ -45,7 +45,7 @@ const EditProperty = ({data}) => {
       console.log(datas)
     }, [])
 
-    console.log(datas[0])
+    console.log(datas)
 
 // const { image_url, title, address, state, land_area, purpose, description, year_of_build, price, no_of_bathrooms, no_of_rooms, no_of_store, no_of_garage } = datas;
 
