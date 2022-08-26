@@ -15,23 +15,11 @@ import { useEffect } from 'react'
 const EditProperty = ({data}) => {
 
   const initialValues = {
-    image_url : '',
-    title : '',
-    address : '',
-    state : '',
-    land_area : '',
-    purpose : '',
-    description : '',
-    year_of_build : '',
-    price: '',
-    no_of_bathrooms : '',
-    no_of_rooms: '',
-    no_of_store : '',
-    no_of_garage : ''
+
   }
 
 
-  const [editProperty, setEditProperty] = useState({...initialValues});
+  
   const [datas, setDatas] = useState([])
 
   const {id} = useParams();
@@ -58,7 +46,23 @@ const EditProperty = ({data}) => {
     }, [])
 
 
- console.log(datas)
+const { image_url, title, address, state, land_area, purpose, description, year_of_build, price, no_of_bathrooms, no_of_rooms, no_of_store, no_of_garage } = datas;
+
+const [editProperty, setEditProperty] = useState({ 
+  image_url, 
+  title, 
+  address, 
+  state, 
+  land_area, 
+  purpose, 
+  description, 
+  year_of_build, 
+  price, 
+  no_of_bathrooms, 
+  no_of_rooms, 
+  no_of_store, 
+  no_of_garage
+});
   
 
   const editHandler = (e) => {
