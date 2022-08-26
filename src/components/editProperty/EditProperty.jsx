@@ -37,7 +37,8 @@ const EditProperty = ({data}) => {
       const response = await axios.get(`${process.env.REACT_APP_BASEURL}/agent/property/${id}`, config)
       console.log(response.data)
       const {data} = response
-      setDatas(data)
+      const info = data[0]
+      setDatas(info)
       
     }
 
