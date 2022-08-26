@@ -20,7 +20,7 @@ const EditProperty = ({data}) => {
 
 
   
-  const [datas, setDatas] = useState([])
+  const [datas, setDatas] = useState({})
 
   const {id} = useParams();
   const dispatch = useDispatch();
@@ -36,7 +36,8 @@ const EditProperty = ({data}) => {
     const propertyInformation = async () => {
       const response = await axios.get(`${process.env.REACT_APP_BASEURL}/agent/property/${id}`, config)
       console.log(response.data)
-      setDatas(response.data)
+      const {data} = response
+      setDatas(...data)
       
     }
 
