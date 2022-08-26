@@ -56,7 +56,6 @@ console.log( title, address, state, land_area, purpose, description, year_of_bui
 // const [editProperty, setEditProperty] = useState([])
 
 const [editProperty, setEditProperty] = useState({ 
-  image_url, 
   title, 
   address, 
   state, 
