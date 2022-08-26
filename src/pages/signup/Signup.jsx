@@ -56,8 +56,9 @@ export default function Signup() {
       
     } catch (error) {
       console.log(error)
-      toast.error(`${error.response.data.message}`)
       setDisabled(false);
+      toast.error(`${error.response.data.message}`)
+      
     }
     setLoading(!loading)
     setDisabled(false);
