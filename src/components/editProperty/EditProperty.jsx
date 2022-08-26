@@ -58,7 +58,7 @@ const EditProperty = ({data}) => {
     }, [])
 
 
- 
+ console.log(datas)
   
 
   const editHandler = (e) => {
