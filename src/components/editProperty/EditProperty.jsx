@@ -14,6 +14,9 @@ import { useEffect } from 'react'
 
 const EditProperty = ({data}) => {
 
+  const [editProperty, setEditProperty] = useState({...initialValues});
+  const [data, setData] = useState([])
+
   const {id} = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -28,10 +31,13 @@ const EditProperty = ({data}) => {
     const propertyInformation = async () => {
       const response = await axios.get(`${process.env.REACT_APP_BASEURL}/agent/property/${id}`, config)
       console.log(response.data)
+      setData(response.data)
+      
     }
 
     useEffect(()=> {
       propertyInformation()
+      console.log(data)
     }, [])
 
 
@@ -51,7 +57,7 @@ const EditProperty = ({data}) => {
     no_of_garage : ''
   }
 
-  const [editProperty, setEditProperty] = useState({...initialValues});
+  
 
   const editHandler = (e) => {
     setEditProperty({
