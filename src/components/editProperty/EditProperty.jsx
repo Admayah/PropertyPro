@@ -10,6 +10,7 @@ import axios from 'axios'
 import { useSelector, useDispatch } from 'react-redux'
 import { editStateProperty } from '../../features/properties/adminProperties'
 import 'react-toastify/dist/ReactToastify.css';
+import { useEffect } from 'react'
 
 const EditProperty = ({data}) => {
 
@@ -24,6 +25,15 @@ const EditProperty = ({data}) => {
        "Authorization": token,
       }
     }
+    const propertyInformation = async () => {
+      const response = await axios.get(`${process.env.REACT_APP_BASEURL}/agent/property/${id}`, config)
+      console.log(response.data)
+    }
+
+    useEffect(()=> {
+      propertyInformation()
+    }, [])
+
 
   const initialValues = {
     image_url : '',
