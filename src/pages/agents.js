@@ -4,7 +4,7 @@ import Avatar from 'react-avatar';
 import { useParams, useNavigate } from 'react-router-dom';
 
 const Agents = () => {
-    const { id } = useParams();
+    // const { id } = useParams();
     const navigate = useNavigate();
     const [agents, setAgents] = useState([])
     const getAgents = async () => {
