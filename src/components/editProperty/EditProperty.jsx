@@ -93,7 +93,7 @@ const [editProperty, setEditProperty] = useState({
       toast.error(`${error.response.data.message}`)
     }
     }  
-
+console.log(editProperty)
   return (
     <div className="properties-container">
     <DashboardNav />
