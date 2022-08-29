@@ -61,7 +61,7 @@ import "./feed.css";
         toast.error(`${error.response.data.message}`)
      }
   }
-  if(agentProperties < 0) {
+  if(agentProperties.length < 0) {
 return <div>You haven't post a property</div>
   }
 
