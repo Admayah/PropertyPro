@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import Sidebar from "../sidebar/Sidebar";
 import DashboardNav from "../../pages/dashboard/dashboardnav/DashboardNav";
 // import EditProperty from "../editProperty/EditProperty";
-// import { removeProperty } from "../../features/properties/adminProperties";
+import { removeProperty } from "../../features/properties/adminProperties";
 import 'react-toastify/dist/ReactToastify.css';
 import "./feed.css";
 
@@ -60,6 +60,9 @@ import "./feed.css";
       } catch (error) {
         toast.error(`${error.response.data.message}`)
      }
+  }
+  if(agentProperties < 0) {
+return <div>You haven't post a property</div>
   }
 
   return (

@@ -1,16 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from "react-router-dom";
+import axios from 'axios'
+import { ToastContainer, toast } from 'react-toastify';
+import { useDispatch } from 'react-redux'
 import DashboardNav from '../../pages/dashboard/dashboardnav/DashboardNav'
 import Sidebar from '../sidebar/Sidebar'
 import Footer from '../footer/Footer'
-import './style.css'
-import { useParams, useNavigate } from "react-router-dom";
 import { PropertyFeature } from '../propertiesInput/propertyFeatures'
-import { ToastContainer, toast } from 'react-toastify';
-import axios from 'axios'
-import { useDispatch } from 'react-redux'
 import { editStateProperty } from '../../features/properties/adminProperties'
 import 'react-toastify/dist/ReactToastify.css';
-import { useEffect } from 'react'
+import './style.css'
 
 const EditProperty = () => {
   
