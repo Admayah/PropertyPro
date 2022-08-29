@@ -41,21 +41,21 @@ const EditProperty = () => {
       console.log(datas)
     }, [])
 
-const {  title, address, state, land_area, purpose, description, year_of_build, price, no_of_bathrooms, no_of_rooms, no_of_store, no_of_garage } = datas;
+// const {  title, address, state, land_area, purpose, description, year_of_build, price, no_of_bathrooms, no_of_rooms, no_of_store, no_of_garage } = datas;
 
 const [editProperty, setEditProperty] = useState({ 
-  title, 
-  address, 
-  state, 
-  land_area, 
-  purpose, 
-  description, 
-  year_of_build, 
-  price, 
-  no_of_bathrooms, 
-  no_of_rooms, 
-  no_of_store,
-  no_of_garage
+  title: "", 
+  address: "", 
+  state: "", 
+  land_area: "", 
+  purpose: "", 
+  description: "", 
+  year_of_build: "", 
+  price: "", 
+  no_of_bathrooms: "", 
+  no_of_rooms: "", 
+  no_of_store: "",
+  no_of_garage: ""
 });
   
 
