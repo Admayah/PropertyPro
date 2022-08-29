@@ -13,12 +13,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useEffect } from 'react'
 
 const EditProperty = ({data}) => {
-
-  // const initialValues = {
-
-  // }
-
-
   
   const [datas, setDatas] = useState([])
 
@@ -47,13 +41,11 @@ const EditProperty = ({data}) => {
       console.log(datas)
     }, [])
 
-    // console.log(datas)
-
 const {  title, address, state, land_area, purpose, description, year_of_build, price, no_of_bathrooms, no_of_rooms, no_of_store, no_of_garage } = datas;
 
-console.log( title, address, state, land_area, purpose, description, year_of_build, price, no_of_bathrooms, no_of_rooms, no_of_store, no_of_garage)
+// console.log( title, address, state, land_area, purpose, description, year_of_build, price, no_of_bathrooms, no_of_rooms, no_of_store, no_of_garage)
 
-// const [editProperty, setEditProperty] = useState([])
+
 
 const [editProperty, setEditProperty] = useState({ 
   title, 
