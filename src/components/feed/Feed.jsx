@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import Sidebar from "../sidebar/Sidebar";
 import DashboardNav from "../../pages/dashboard/dashboardnav/DashboardNav";
-import EditProperty from "../editProperty/EditProperty";
+// import EditProperty from "../editProperty/EditProperty";
 // import { removeProperty } from "../../features/properties/adminProperties";
 import 'react-toastify/dist/ReactToastify.css';
 import "./feed.css";
@@ -42,21 +42,21 @@ import "./feed.css";
   }, [])
 
 
-  const editHandler = async (id) => {
-    const editProperty = agentProperties.filter((property) => {
-      return property.id === id;
-    })
-  }
+  // const editHandler = async (id) => {
+  //   const editProperty = agentProperties.filter((property) => {
+  //     return property.id === id;
+  //   })
+  // }
     // navigate()
    const deleteHandler = async (id) => {
    const newAgentProperties = agentProperties.filter((item) => {
     return item.id !== id
    })
          try {
-        const response = await axios.delete(`${process.env.REACT_APP_BASEURL}/agent/properties/${id}` , config);
+        await axios.delete(`${process.env.REACT_APP_BASEURL}/agent/properties/${id}` , config);
          setAgentProperties(newAgentProperties)
          toast('Deleted successfully')
-        // dispatch(removeProperty(id))
+        dispatch(removeProperty(id))
       } catch (error) {
         toast.error(`${error.response.data.message}`)
      }

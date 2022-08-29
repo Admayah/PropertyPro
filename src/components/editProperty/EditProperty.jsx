@@ -7,7 +7,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { PropertyFeature } from '../propertiesInput/propertyFeatures'
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { editStateProperty } from '../../features/properties/adminProperties'
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect } from 'react'

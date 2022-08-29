@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import Navbar from "../Navbar/Navbar";
 import Footer from "../../components/footer/Footer";
@@ -19,7 +19,7 @@ const {loading, datas} = useFetch();
       setProperties(check)
     }
    newData()
-  }, [page]);
+  }, []);
 
   const nextPage = () => {
     setPage((oldPage) => {

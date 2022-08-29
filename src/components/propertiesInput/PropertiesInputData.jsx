@@ -6,7 +6,7 @@ import DashboardNav from "../../pages/dashboard/dashboardnav/DashboardNav";
 import Footer from "../footer/Footer";
 import Sidebar from "../sidebar/Sidebar";
 import InputField from "./Input";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addProperty } from "../../features/properties/adminProperties";
 import "./propertiesInput.css";
 import 'react-toastify/dist/ReactToastify.css';

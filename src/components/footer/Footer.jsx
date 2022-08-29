@@ -58,7 +58,6 @@ export default function Footer() {
         </div>
         <div className="copyright-text">
           <span className="copyright">&copy; Coyright Reserved - 2021</span>
-          <button className="nav-to-dashboard"><Link to="/dashboard" className="nav-to-dashboard-link">dashboard</Link></button>
           <span className="location"> Based in Nigeria</span>
         </div>
       </div>

@@ -12,14 +12,14 @@ export default function Dashboard() {
       <div className="dashboard-container">
         <DashboardNav />
         <div className="dashboard-wrapper">
-          <div className="searchbar-wrapper">
+          {/* <div className="searchbar-wrapper">
             <input type="search" className="search-bar" />
             <img
               src="https://img.icons8.com/material-outlined/50/000000/search--v1.png"
               className="search-icon"
               alt="search-menu"
             />
-          </div>
+          </div> */}
           <Sidebar />
           <div className="dashboard-content"></div>
         </div>
