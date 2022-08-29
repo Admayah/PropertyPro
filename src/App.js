@@ -15,7 +15,7 @@ import Review from "./components/propertydetails/Review";
 import Features from "./components/propertydetails/Features";
 import ErrorPage from "./ErrorPage";
 import ProtectedRoute from "./ProtectedRoute";
-import EditProperty from "./components/editProperty/EditProperty";
+// import EditProperty from "./components/editProperty/EditProperty";
 import Agents from "./pages/agents";
 
 
@@ -39,7 +39,7 @@ function App() {
           <Route path="/sales" element={<Sales />}></Route>
           <Route path="/rent" element={<Rent />}></Route>
           {/* <Route path="/agents/:id" element={<Hello />} /> */}
-          <Route path="/edit-property/:id" element={<EditProperty />}></Route>
+          {/* <Route path="/edit-property/:id" element={<EditProperty />}></Route> */}
           <Route path="/properties/:id" element={<PropertyDetails />}>
             <Route path="features" element={<Features />} />
             <Route path="desc" element={<Description />} />{" "}
