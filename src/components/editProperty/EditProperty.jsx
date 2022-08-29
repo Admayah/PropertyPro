@@ -14,7 +14,7 @@ import { useEffect } from 'react'
 
 const EditProperty = () => {
   
-  const [datas, setDatas] = useState([])
+  // const [datas, setDatas] = useState([])
 
   const {id} = useParams();
   const dispatch = useDispatch();
@@ -27,19 +27,19 @@ const EditProperty = () => {
        "Authorization": token,
       }
     }
-    const propertyInformation = async () => {
-      const response = await axios.get(`${process.env.REACT_APP_BASEURL}/agent/property/${id}`, config)
-      console.log(response.data)
-      const {data} = response
-      const info = data
-      setDatas(info)
+    // const propertyInformation = async () => {
+    //   const response = await axios.get(`${process.env.REACT_APP_BASEURL}/agent/property/${id}`, config)
+    //   console.log(response.data)
+    //   const {data} = response
+    //   const info = data
+    //   setDatas(info)
       
-    }
+    // }
 
-    useEffect(()=> {
-      propertyInformation()
-      console.log(datas)
-    }, [])
+    // useEffect(()=> {
+    //   propertyInformation()
+    //   console.log(datas)
+    // }, [])
 
 // const {  title, address, state, land_area, purpose, description, year_of_build, price, no_of_bathrooms, no_of_rooms, no_of_store, no_of_garage } = datas;
 
