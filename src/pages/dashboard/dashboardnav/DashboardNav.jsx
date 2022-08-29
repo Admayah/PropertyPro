@@ -29,7 +29,7 @@ function DashboardNav() {
             {dashtoggle ? dashCancelIcon : dashHamburgerIcon}
           </div>
           <div className="username-and-image">
-            <span className="user-name"> {newUser.firstName}</span>
+            {/* <span className="user-name"> {newUser.firstName}</span> */}
             <img src="/images/image2.jpg" alt="" className="profile-logo" />
           </div>
         </div>
