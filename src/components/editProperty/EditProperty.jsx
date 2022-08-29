@@ -12,7 +12,7 @@ import { editStateProperty } from '../../features/properties/adminProperties'
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect } from 'react'
 
-const EditProperty = ({data}) => {
+const EditProperty = () => {
   
   const [datas, setDatas] = useState([])
 
@@ -31,7 +31,7 @@ const EditProperty = ({data}) => {
       const response = await axios.get(`${process.env.REACT_APP_BASEURL}/agent/property/${id}`, config)
       console.log(response.data)
       const {data} = response
-      const info = data[0]
+      const info = data
       setDatas(info)
       
     }
