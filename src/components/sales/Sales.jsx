@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../footer/Footer";
-// import axios from "axios";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useFetch } from "../../useFetch";
