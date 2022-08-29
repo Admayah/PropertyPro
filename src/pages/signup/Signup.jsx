@@ -43,14 +43,13 @@ export default function Signup() {
       const response = await axios.post(`${process.env.REACT_APP_BASEURL}/signup`, { ...person });
       const { token } = response.data;
       localStorage.setItem("token", token);
+      toast('Account successfully created')
       dispatch(
         addUser({
           id: new Date().getTime().toString(36),
           ...person
         })
       );
-      
-      toast('Account successfully created')
       setDisabled(false);
       setTimeout(navigate("/dashboard"), 10000)
       

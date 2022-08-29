@@ -56,18 +56,18 @@ console.log( title, address, state, land_area, purpose, description, year_of_bui
 // const [editProperty, setEditProperty] = useState([])
 
 const [editProperty, setEditProperty] = useState({ 
-  title: title, 
-  address: address, 
-  state: state, 
-  land_area: land_area, 
-  purpose: purpose, 
-  description: description, 
-  year_of_build: year_of_build, 
-  price: price, 
-  no_of_bathrooms: no_of_bathrooms, 
-  no_of_rooms: no_of_rooms, 
-  no_of_store: no_of_store, 
-  no_of_garage: no_of_garage
+  title, 
+  address, 
+  state, 
+  land_area, 
+  purpose, 
+  description, 
+  year_of_build, 
+  price, 
+  no_of_bathrooms, 
+  no_of_rooms, 
+  no_of_store,
+  no_of_garage
 });
   
 
