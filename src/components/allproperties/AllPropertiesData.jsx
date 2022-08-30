@@ -22,7 +22,7 @@ const {loading, datas} = useFetch();
     }
    newData()
   }, []);
-  console.log('paginate', datas[page])
+  // console.log('paginate', datas[page])
 
   console.log('check======>', check)
 
