@@ -24,7 +24,7 @@ const {loading, datas} = useFetch();
   }, []);
   // console.log('paginate', datas[page])
 
-  console.log('check======>', check)
+  // console.log('check======>', check)
 
   const nextPage = () => {
     setPage((oldPage) => {
