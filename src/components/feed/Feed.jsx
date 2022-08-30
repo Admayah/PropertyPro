@@ -9,6 +9,7 @@ import DashboardNav from "../../pages/dashboard/dashboardnav/DashboardNav";
 import { removeProperty } from "../../features/properties/adminProperties";
 import 'react-toastify/dist/ReactToastify.css';
 import "./feed.css";
+import Button from "../Button/Button";
 
 
 function Feed({ data }) {
@@ -73,7 +74,8 @@ function Feed({ data }) {
         <Sidebar />
         {agentProperties.length === 0 && <div className="empty-container">
           <h1>You haven't post a property</h1>
-          <button><Link to="/post-property">post a property</Link></button>
+          <Button text="post a property" path="/post-property" />
+          {/* <button><Link to="/post-property">post a property</Link></button> */}
           </div>
           }
         <div className="feed-container">

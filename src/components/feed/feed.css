@@ -21,14 +21,16 @@
 .empty-container{
   width: 100%;
   height: calc(100vh - 80px);
-  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.empty-container button {
-  padding: 10px;
+/* .empty-container button {
+  width: ;
   background-color: #000;
   color: #fff;
   text-transform: uppercase;
-}
+} */
 
 .property-content {
   margin: 0 auto;
