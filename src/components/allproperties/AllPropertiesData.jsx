@@ -16,7 +16,7 @@ const {loading, datas} = useFetch();
   console.log(datas)
 
   useEffect(() => {
-    const newData = async () => { 
+    const newData = () => { 
       // const check =  datas[page]
       setProperties(datas[page])
     }
