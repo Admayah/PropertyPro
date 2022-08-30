@@ -60,8 +60,8 @@
 }
 .sidebar-menu {
   display: flex;
-  /* width: 50%; */
-  /* margin: 0 auto; */
+  width: 50%; */
+  /* margin: 0 auto;
   margin-bottom: 20px;
 }
 .sidebar-links:hover{
