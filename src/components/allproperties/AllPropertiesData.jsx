@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useLayoutEffect} from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import Navbar from "../Navbar/Navbar";
 import Footer from "../../components/footer/Footer";
@@ -15,7 +15,7 @@ const {loading, datas} = useFetch();
 
   console.log(datas)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const newData = () => { 
       // const check =  datas[page]
       setProperties(datas[0])
