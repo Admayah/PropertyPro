@@ -71,9 +71,10 @@ function Feed({ data }) {
       <ToastContainer />
       <div className="my-properties-wrapper">
         <Sidebar />
-        {!agentProperties && <div>You haven't post a property</div>}
-        {agentProperties && 
+        {/* {!agentProperties && <div>You haven't post a property</div>} */}
+        
                 <div className="feed-container">
+                {agentProperties ?
                 <div className="feed-card-wrapper">
                   {agentProperties.map(({ id, image_url, title, no_of_rooms, no_of_bathrooms, no_of_garage, no_of_store, address, price, purpose }) => {
                     return (
@@ -132,9 +133,10 @@ function Feed({ data }) {
                       </div>
                     );
                   })}
-                </div>
+                </div> : <div>You haven't post a property</div>
+                }
               </div>
-        }
+        
 
       </div>
     </div>
