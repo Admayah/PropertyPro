@@ -18,7 +18,7 @@ const {loading, datas} = useFetch();
   useEffect(() => {
     const newData = () => { 
       // const check =  datas[page]
-      setProperties(datas[page])
+      setProperties(datas[0])
     }
    newData()
   }, []);
