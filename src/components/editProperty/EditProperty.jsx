@@ -31,8 +31,8 @@ const EditProperty = () => {
       console.log(response.data)
       const {data} = response
       dispatch(addProperty({...data}))
-      const info = data
-      setDatas(info)
+      // const info = data
+      // setDatas(info)
       
     }
 
