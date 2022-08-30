@@ -73,8 +73,8 @@ function Feed({ data }) {
       <div className="my-properties-wrapper">
         <Sidebar />
         {agentProperties.length === 0 && <div className="empty-container">
-          <h1>You haven't post a property</h1>
-          <Button text="post a property" path="/post-property" />
+          <h3>You haven't post a property</h3>
+          <Button className="empty-button" text="post a property" path="/post-property" />
           {/* <button><Link to="/post-property">post a property</Link></button> */}
           </div>
           }
