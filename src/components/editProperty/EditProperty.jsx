@@ -7,7 +7,7 @@ import DashboardNav from '../../pages/dashboard/dashboardnav/DashboardNav'
 import Sidebar from '../sidebar/Sidebar'
 import Footer from '../footer/Footer'
 import { PropertyFeature } from '../propertiesInput/propertyFeatures'
-import { editStateProperty } from '../../features/properties/adminProperties'
+import { addProperty, editStateProperty } from '../../features/properties/adminProperties'
 import 'react-toastify/dist/ReactToastify.css';
 import './style.css'
 
@@ -26,19 +26,20 @@ const EditProperty = () => {
        "Authorization": token,
       }
     }
-    // const propertyInformation = async () => {
-    //   const response = await axios.get(`${process.env.REACT_APP_BASEURL}/agent/property/${id}`, config)
-    //   console.log(response.data)
-    //   const {data} = response
-    //   const info = data
-    //   setDatas(info)
+    const propertyInformation = async () => {
+      const response = await axios.get(`${process.env.REACT_APP_BASEURL}/agent/property/${id}`, config)
+      console.log(response.data)
+      const {data} = response
+      dispatch(addProperty({...data}))
+      const info = data
+      setDatas(info)
       
-    // }
+    }
 
-    // useEffect(()=> {
-    //   propertyInformation()
-    //   console.log(datas)
-    // }, [])
+    useEffect(()=> {
+      propertyInformation()
+      console.log(datas)
+    }, [])
 
 // const {  title, address, state, land_area, purpose, description, year_of_build, price, no_of_bathrooms, no_of_rooms, no_of_store, no_of_garage } = datas;
 
