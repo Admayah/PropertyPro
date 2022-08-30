@@ -31,7 +31,7 @@ function Feed({ data }) {
       const response = await axios.get(`${process.env.REACT_APP_BASEURL}/agent/properties`, config);
       const { data } = response;
       setAgentProperties(data)
-      dispatch(addProperty({...data}))
+      
       // toast('Successful')
     } catch (error) {
       toast.error(`${error.response.data.message}`)
