@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import Sidebar from "../sidebar/Sidebar";
 import DashboardNav from "../../pages/dashboard/dashboardnav/DashboardNav";
 // import EditProperty from "../editProperty/EditProperty";
-import { removeProperty } from "../../features/properties/adminProperties";
+import { addProperty, removeProperty } from "../../features/properties/adminProperties";
 import 'react-toastify/dist/ReactToastify.css';
 import "./feed.css";
 import Button from "../Button/Button";
@@ -31,6 +31,7 @@ function Feed({ data }) {
       const response = await axios.get(`${process.env.REACT_APP_BASEURL}/agent/properties`, config);
       const { data } = response;
       setAgentProperties(data)
+      dispatch(addProperty({...data}))
       // toast('Successful')
     } catch (error) {
       toast.error(`${error.response.data.message}`)
