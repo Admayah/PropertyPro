@@ -21,7 +21,7 @@ const {loading, datas} = useFetch();
       setProperties(check)
     }
    newData()
-  }, [datas]);
+  }, []);
 
   // console.log('check======>', page)
 
