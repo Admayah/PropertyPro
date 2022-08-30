@@ -6,7 +6,7 @@
 .feed-container {
   flex: 9;
   height: calc(100vh - 80px);
-  margin-top: 50px;
+  /* margin-top: 50px; */
 }
 .feed-card-wrapper {
   display: flex;
