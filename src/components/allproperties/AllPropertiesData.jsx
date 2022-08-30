@@ -17,12 +17,11 @@ const {loading, datas} = useFetch();
 
   useEffect(() => {
     const newData = async () => { 
-      const check = await datas[page]
-      setProperties(check)
+      // const check =  datas[page]
+      setProperties(datas[page])
     }
    newData()
   }, []);
-  // console.log('paginate', datas[page])
 
   // console.log('check======>', check)
 
