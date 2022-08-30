@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect} from "react";
+import React, { useState, useLayoutEffect } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import Navbar from "../Navbar/Navbar";
 import Footer from "../../components/footer/Footer";
@@ -13,17 +13,13 @@ const {loading, datas} = useFetch();
   const [page, setPage] = useState(0)
   const [properties, setProperties] = useState([])
 
-  console.log(datas)
-
   useLayoutEffect(() => {
-    const newData = () => { 
-      const check =  datas[page]
+    const newData = async () => { 
+      const check = datas[page]
       setProperties(check)
     }
    newData()
   }, []);
-
-  // console.log('check======>', page)
 
   const nextPage = () => {
     setPage((oldPage) => {
@@ -52,14 +48,13 @@ if (loading) {
     Loading....
     </div>
 }
-console.log(properties)
   return (
     <>
       <Navbar />
       <ToastContainer />
       <div className="all-properties-container">
         <div className="properties-card-wrapper">
-          {properties?.map((item) => (
+          {properties.map((item) => (
             <PropertiesInfo
               key={item.id}
               {...item}
