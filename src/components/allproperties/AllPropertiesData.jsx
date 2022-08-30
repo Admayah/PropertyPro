@@ -18,7 +18,7 @@ const {loading, datas} = useFetch();
   useLayoutEffect(() => {
     const newData = () => { 
       // const check =  datas[page]
-      setProperties(datas)
+      setProperties(datas[page])
     }
    newData()
   }, [properties]);
