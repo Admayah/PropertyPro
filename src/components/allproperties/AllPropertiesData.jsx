@@ -48,6 +48,7 @@ if (loading) {
     Loading....
     </div>
 }
+console.log(properties)
   return (
     <>
       <Navbar />
