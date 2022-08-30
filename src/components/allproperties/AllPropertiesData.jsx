@@ -13,6 +13,8 @@ const {loading, datas} = useFetch();
   const [page, setPage] = useState(0)
   const [properties, setProperties] = useState([])
 
+  console.log(datas)
+
   useEffect(() => {
     const newData = async () => { 
       const check = await datas[page]
