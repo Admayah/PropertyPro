@@ -113,6 +113,7 @@
   align-items: center;
   justify-content: center;
   z-index: 100;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {

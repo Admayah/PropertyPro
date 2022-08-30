@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
@@ -11,34 +11,34 @@ import 'react-toastify/dist/ReactToastify.css';
 import "./feed.css";
 
 
- function Feed({data}) {
+function Feed({ data }) {
 
   const dispatch = useDispatch();
   const navigate = useNavigate()
 
-    const [agentProperties, setAgentProperties] = useState([])
+  const [agentProperties, setAgentProperties] = useState([])
 
-    const token = localStorage.getItem('token');
+  const token = localStorage.getItem('token');
   let config = {
     "headers": {
-     "Authorization": token
+      "Authorization": token
     }
   };
 
-    const getProperties = async () => {
-      try {
-        const response =  await axios.get(`${process.env.REACT_APP_BASEURL}/agent/properties`, config);
-        const {data} =  response;
-        setAgentProperties(data)
-        // toast('Successful')
-      } catch (error) {
-        toast.error(`${error.response.data.message}`)
-      }
+  const getProperties = async () => {
+    try {
+      const response = await axios.get(`${process.env.REACT_APP_BASEURL}/agent/properties`, config);
+      const { data } = response;
+      setAgentProperties(data)
+      // toast('Successful')
+    } catch (error) {
+      toast.error(`${error.response.data.message}`)
+    }
   }
-  
+
 
   useEffect(() => {
-      getProperties()
+    getProperties()
   }, [])
 
 
@@ -47,22 +47,22 @@ import "./feed.css";
   //     return property.id === id;
   //   })
   // }
-    // navigate()
-   const deleteHandler = async (id) => {
-   const newAgentProperties = agentProperties.filter((item) => {
-    return item.id !== id
-   })
-         try {
-        await axios.delete(`${process.env.REACT_APP_BASEURL}/agent/properties/${id}` , config);
-         setAgentProperties(newAgentProperties)
-         toast('Deleted successfully')
-        dispatch(removeProperty(id))
-      } catch (error) {
-        toast.error(`${error.response.data.message}`)
-     }
+  // navigate()
+  const deleteHandler = async (id) => {
+    const newAgentProperties = agentProperties.filter((item) => {
+      return item.id !== id
+    })
+    try {
+      await axios.delete(`${process.env.REACT_APP_BASEURL}/agent/properties/${id}`, config);
+      setAgentProperties(newAgentProperties)
+      toast('Deleted successfully')
+      dispatch(removeProperty(id))
+    } catch (error) {
+      toast.error(`${error.response.data.message}`)
+    }
   }
-  if(agentProperties.length < 0) {
-return <div>You haven't post a property</div>
+  if (agentProperties.length === 0) {
+    return <div>You haven't post a property</div>
   }
 
   return (
@@ -73,7 +73,7 @@ return <div>You haven't post a property</div>
         <Sidebar />
         <div className="feed-container">
           <div className="feed-card-wrapper">
-            {agentProperties.map(({id, image_url, title, no_of_rooms, no_of_bathrooms, no_of_garage, no_of_store, address, price, purpose}) => {
+            {agentProperties.map(({ id, image_url, title, no_of_rooms, no_of_bathrooms, no_of_garage, no_of_store, address, price, purpose }) => {
               return (
                 <div className="property-content">
                   <div className="property-image">
@@ -121,10 +121,10 @@ return <div>You haven't post a property</div>
                     </ul>
                     <div className="property-price">
                       <span> ₦{price}</span>
-                      <button className="btn edit-btn" onClick={()=>{
+                      <button className="btn edit-btn" onClick={() => {
                         navigate(`/edit-property/${id}`)
                       }}>EDIT</button>
-                      <button className="btn delete-btn"  onClick={()=>{deleteHandler(id)}}>DELETE</button>
+                      <button className="btn delete-btn" onClick={() => { deleteHandler(id) }}>DELETE</button>
                     </div>
                   </div>
                 </div>
