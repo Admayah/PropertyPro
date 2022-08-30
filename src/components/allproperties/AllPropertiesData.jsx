@@ -11,7 +11,7 @@ import "./propertiesdata.css";
 function AllPropertiesData() {
 const {loading, datas} = useFetch();
   const [page, setPage] = useState(0)
-  const [properties, setProperties] = useState([])
+  const [properties, setProperties] = useState(null)
 
   console.log(datas)
 
