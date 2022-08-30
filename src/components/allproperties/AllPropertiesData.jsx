@@ -59,7 +59,7 @@ console.log(properties)
       <ToastContainer />
       <div className="all-properties-container">
         <div className="properties-card-wrapper">
-          {properties.map((item) => (
+          {properties?.map((item) => (
             <PropertiesInfo
               key={item.id}
               {...item}
