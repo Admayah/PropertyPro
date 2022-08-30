@@ -23,7 +23,7 @@ const {loading, datas} = useFetch();
    newData()
   }, [properties]);
 
-  // console.log('check======>', check)
+  console.log('check======>', page)
 
   const nextPage = () => {
     setPage((oldPage) => {
