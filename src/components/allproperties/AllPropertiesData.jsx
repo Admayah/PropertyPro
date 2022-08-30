@@ -17,13 +17,13 @@ const {loading, datas} = useFetch();
 
   useLayoutEffect(() => {
     const newData = () => { 
-      // const check =  datas[page]
-      setProperties(datas[page])
+      const check =  datas[page]
+      setProperties(check)
     }
    newData()
-  }, [properties]);
+  }, [datas]);
 
-  console.log('check======>', page)
+  // console.log('check======>', page)
 
   const nextPage = () => {
     setPage((oldPage) => {
