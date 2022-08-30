@@ -61,9 +61,9 @@ function Feed({ data }) {
       toast.error(`${error.response.data.message}`)
     }
   }
-  if (agentProperties.length === 0) {
-    return <div>You haven't post a property</div>
-  }
+  // if (agentProperties.length === 0) {
+  //   return <div>You haven't post a property</div>
+  // }
 
   return (
     <div className="my-properties-cards">
@@ -71,67 +71,71 @@ function Feed({ data }) {
       <ToastContainer />
       <div className="my-properties-wrapper">
         <Sidebar />
-        <div className="feed-container">
-          <div className="feed-card-wrapper">
-            {agentProperties.map(({ id, image_url, title, no_of_rooms, no_of_bathrooms, no_of_garage, no_of_store, address, price, purpose }) => {
-              return (
-                <div className="property-content">
-                  <div className="property-image">
-                    <img src={image_url} alt="" className="property-img" />
-                  </div>
-                  <button className="sale">{purpose}</button>
-
-                  <div className="property-details">
-                    <h3 className="property-title">{title}</h3>
-                    <p className="property-address">{address}</p>
-
-                    <ul className="property-features">
-                      <li className="feature-item">
-                        <a href="/" className="feature-item-link">
-                          <span>
-                            <i className="fa fa-bed property-feature"></i>
-                          </span>
-                          {no_of_rooms} rooms
-                        </a>
-                      </li>
-                      <li className="feature-item">
-                        <a href="/" className="feature-item-link">
-                          <span>
-                            <i className="fa fa-bed property-feature"></i>
-                          </span>
-                          {no_of_bathrooms} baths
-                        </a>
-                      </li>
-                      <li className="feature-item">
-                        <a href="/" className="feature-item-link">
-                          <span>
-                            <i className="fa fa-bed property-feature"></i>
-                          </span>
-                          {no_of_garage} garage
-                        </a>
-                      </li>
-                      <li className="feature-item">
-                        <a href="/" className="feature-item-link">
-                          <span>
-                            <i className="fa fa-bed property-feature"></i>
-                          </span>
-                          {no_of_store} store
-                        </a>
-                      </li>
-                    </ul>
-                    <div className="property-price">
-                      <span> ₦{price}</span>
-                      <button className="btn edit-btn" onClick={() => {
-                        navigate(`/edit-property/${id}`)
-                      }}>EDIT</button>
-                      <button className="btn delete-btn" onClick={() => { deleteHandler(id) }}>DELETE</button>
-                    </div>
-                  </div>
+        {!agentProperties && <div>You haven't post a property</div>}
+        {agentProperties && 
+                <div className="feed-container">
+                <div className="feed-card-wrapper">
+                  {agentProperties.map(({ id, image_url, title, no_of_rooms, no_of_bathrooms, no_of_garage, no_of_store, address, price, purpose }) => {
+                    return (
+                      <div className="property-content">
+                        <div className="property-image">
+                          <img src={image_url} alt="" className="property-img" />
+                        </div>
+                        <button className="sale">{purpose}</button>
+      
+                        <div className="property-details">
+                          <h3 className="property-title">{title}</h3>
+                          <p className="property-address">{address}</p>
+      
+                          <ul className="property-features">
+                            <li className="feature-item">
+                              <a href="/" className="feature-item-link">
+                                <span>
+                                  <i className="fa fa-bed property-feature"></i>
+                                </span>
+                                {no_of_rooms} rooms
+                              </a>
+                            </li>
+                            <li className="feature-item">
+                              <a href="/" className="feature-item-link">
+                                <span>
+                                  <i className="fa fa-bed property-feature"></i>
+                                </span>
+                                {no_of_bathrooms} baths
+                              </a>
+                            </li>
+                            <li className="feature-item">
+                              <a href="/" className="feature-item-link">
+                                <span>
+                                  <i className="fa fa-bed property-feature"></i>
+                                </span>
+                                {no_of_garage} garage
+                              </a>
+                            </li>
+                            <li className="feature-item">
+                              <a href="/" className="feature-item-link">
+                                <span>
+                                  <i className="fa fa-bed property-feature"></i>
+                                </span>
+                                {no_of_store} store
+                              </a>
+                            </li>
+                          </ul>
+                          <div className="property-price">
+                            <span> ₦{price}</span>
+                            <button className="btn edit-btn" onClick={() => {
+                              navigate(`/edit-property/${id}`)
+                            }}>EDIT</button>
+                            <button className="btn delete-btn" onClick={() => { deleteHandler(id) }}>DELETE</button>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
-              );
-            })}
-          </div>
-        </div>
+              </div>
+        }
+
       </div>
     </div>
   );
