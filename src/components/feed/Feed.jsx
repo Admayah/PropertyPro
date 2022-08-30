@@ -61,9 +61,9 @@ function Feed({ data }) {
       toast.error(`${error.response.data.message}`)
     }
   }
-  if (agentProperties.length < 1) {
-    return <div>You haven't post a property</div>
-  }
+  // if (agentProperties.length < 1) {
+  //   return <div>You haven't post a property</div>
+  // }
 
   return (
     <div className="my-properties-cards">
@@ -71,7 +71,7 @@ function Feed({ data }) {
       <ToastContainer />
       <div className="my-properties-wrapper">
         <Sidebar />
-        {!agentProperties && <div>You haven't post a property</div>}
+        {agentProperties.length === 0 && <div>You haven't post a property</div>}
         <div className="feed-container">
           <div className="feed-card-wrapper">
             {agentProperties.map(({ id, image_url, title, no_of_rooms, no_of_bathrooms, no_of_garage, no_of_store, address, price, purpose }) => {
