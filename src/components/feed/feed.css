@@ -18,6 +18,18 @@
     display: flex;
   }
 }
+.empty-container{
+  width: 100%;
+  height: calc(100vh - 80px);
+  margin: auto;
+}
+.empty-container button {
+  padding: 10px;
+  background-color: #000;
+  color: #fff;
+  text-transform: uppercase;
+}
+
 .property-content {
   margin: 0 auto;
   margin-bottom: 10px;

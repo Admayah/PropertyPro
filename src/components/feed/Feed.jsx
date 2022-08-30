@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios'
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import Sidebar from "../sidebar/Sidebar";
 import DashboardNav from "../../pages/dashboard/dashboardnav/DashboardNav";
@@ -71,7 +71,11 @@ function Feed({ data }) {
       <ToastContainer />
       <div className="my-properties-wrapper">
         <Sidebar />
-        {agentProperties.length === 0 && <div>You haven't post a property</div>}
+        {agentProperties.length === 0 && <div className="empty-container">
+          <h1>You haven't post a property</h1>
+          <button><Link to="/post-property">post a property</Link></button>
+          </div>
+          }
         <div className="feed-container">
           <div className="feed-card-wrapper">
             {agentProperties.map(({ id, image_url, title, no_of_rooms, no_of_bathrooms, no_of_garage, no_of_store, address, price, purpose }) => {
