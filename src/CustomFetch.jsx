@@ -19,8 +19,8 @@ const CustomFetch = () => {
         fetchData();
     }, [])
 
-    console.log(post)
-    return post
+    console.log({post})
+    return {post}
     // return {loadings, post};
 }
 
