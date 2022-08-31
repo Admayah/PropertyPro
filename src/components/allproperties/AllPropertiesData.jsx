@@ -15,7 +15,7 @@ function AllPropertiesData() {
   const [page, setPage] = useState(0)
   const [properties, setProperties] = useState([])
 
-  console.log(post)
+  console.log(properties)
 
 //   useLayoutEffect(() => {
 //     const newData = async () => { 
