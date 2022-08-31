@@ -20,6 +20,8 @@ export default function Login() {
   const dispatch = useDispatch();
 
     const [user, setUser] = useState(initialValue)
+    const [isDisabled, setDisabled] = useState(false);
+
 
     const navigate = useNavigate();
 
@@ -41,7 +43,7 @@ export default function Login() {
             })
           );
           toast('User logged in successfully')
-          navigate('/dashboard')
+          setTimeout(navigate("/dashboard"), 10000)
         } catch (error) {
           toast.error(`${error.response.data.message}`)
 
@@ -75,7 +77,9 @@ export default function Login() {
               />
             </div>
               <Link to='#'><button className="login-button" onClick={handleSubmit}>
-                Login
+                
+                {isDisabled ? <i class="fa fa-circle-o-notch fa-spin"></i> : 'Login'}
+
               </button></Link>
           </div>
 

@@ -9,6 +9,11 @@ const initialState = {
 export const propertySlice = createSlice({
     name: 'properties',
     initialState,
+    reducers: {
+        addProperty : (state, action) => {
+            state.adminProperties.push(action.payload)
+        }
+    }
 })
 
 export default propertySlice.reducer

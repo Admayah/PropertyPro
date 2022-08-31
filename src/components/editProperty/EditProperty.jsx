@@ -1,20 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from "react-router-dom";
+import axios from 'axios'
+import { ToastContainer, toast } from 'react-toastify';
+import { useDispatch } from 'react-redux'
 import DashboardNav from '../../pages/dashboard/dashboardnav/DashboardNav'
 import Sidebar from '../sidebar/Sidebar'
 import Footer from '../footer/Footer'
-import './style.css'
-import { useParams, useNavigate } from "react-router-dom";
 import { PropertyFeature } from '../propertiesInput/propertyFeatures'
-import { ToastContainer, toast } from 'react-toastify';
-import axios from 'axios'
-import { useDispatch } from 'react-redux'
-import { editStateProperty } from '../../features/properties/adminProperties'
+import { addProperty, editStateProperty } from '../../features/properties/adminProperties'
 import 'react-toastify/dist/ReactToastify.css';
-import { useEffect } from 'react'
+import './style.css'
 
-const EditProperty = ({data}) => {
+const EditProperty = () => {
   
-  const [datas, setDatas] = useState([])
+  // const [datas, setDatas] = useState([])
 
   const {id} = useParams();
   const dispatch = useDispatch();
@@ -31,31 +30,32 @@ const EditProperty = ({data}) => {
       const response = await axios.get(`${process.env.REACT_APP_BASEURL}/agent/property/${id}`, config)
       console.log(response.data)
       const {data} = response
-      const info = data[0]
-      setDatas(info)
+      dispatch(addProperty({...data}))
+      // const info = data
+      // setDatas(info)
       
     }
 
     useEffect(()=> {
       propertyInformation()
-      console.log(datas)
+      
     }, [])
 
-const {  title, address, state, land_area, purpose, description, year_of_build, price, no_of_bathrooms, no_of_rooms, no_of_store, no_of_garage } = datas;
+// const {  title, address, state, land_area, purpose, description, year_of_build, price, no_of_bathrooms, no_of_rooms, no_of_store, no_of_garage } = datas;
 
 const [editProperty, setEditProperty] = useState({ 
-  title, 
-  address, 
-  state, 
-  land_area, 
-  purpose, 
-  description, 
-  year_of_build, 
-  price, 
-  no_of_bathrooms, 
-  no_of_rooms, 
-  no_of_store,
-  no_of_garage
+  title: "", 
+  address: "", 
+  state: "", 
+  land_area: "", 
+  purpose: "", 
+  description: "", 
+  year_of_build: "", 
+  price: "", 
+  no_of_bathrooms: "", 
+  no_of_rooms: "", 
+  no_of_store: "",
+  no_of_garage: ""
 });
   
 
