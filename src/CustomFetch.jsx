@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const CustomFetch = () => {
     const [post, setPost] = useState([]);
-    const [loading, setLoading] = useState(false);
+    const [loadings, setLoadings] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
@@ -13,14 +13,14 @@ const CustomFetch = () => {
             console.log(data)
             setPost(data)
             // setDatas(paginate(data))
-            setLoading(false)
+            setLoadings(false)
         }
 
         fetchData();
     }, [])
 
     console.log(post)
-    return {loading, post};
+    return {loadings, post};
 }
 
 export default CustomFetch;
