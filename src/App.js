@@ -48,7 +48,7 @@ function App() {
             <Route path="review" element={<Review />} />
           </Route>
           <Route path="*" element={<ErrorPage />} ></Route>
-          <Route path="/hello" element={<CustomFetch />} ></Route>
+          <Route path="/fetchinfo" element={<CustomFetch />} ></Route>
         </Routes>
       </Router>
     </div>
