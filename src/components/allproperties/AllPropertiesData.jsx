@@ -11,7 +11,7 @@ import CustomFetch from "../../CustomFetch";
 
 function AllPropertiesData() {
 // const {loading, datas} = useFetch();
-const {loadings, post} = CustomFetch();
+// const {loadings, post} = CustomFetch();
   const [page, setPage] = useState(0)
   const [properties, setProperties] = useState([])
 
@@ -58,7 +58,7 @@ const {loadings, post} = CustomFetch();
       <ToastContainer />
       <div className="all-properties-container">
         <div className="properties-card-wrapper">
-          {post.map((item) => (
+          {properties.map((item) => (
             <PropertiesInfo
               key={item.id}
               {...item}

@@ -20,7 +20,7 @@ const CustomFetch = () => {
     }, [])
 
     console.log(post)
-    return {loadings, post};
+    // return {loadings, post};
 }
 
 export default CustomFetch;
