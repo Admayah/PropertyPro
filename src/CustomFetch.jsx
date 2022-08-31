@@ -19,6 +19,7 @@ const CustomFetch = () => {
         fetchData();
     }, [])
     console.log(post)
+    return {post};
 }
 
 export default CustomFetch;
