@@ -11,7 +11,7 @@ import CustomFetch from "../../CustomFetch";
 
 function AllPropertiesData() {
 // const {loading, datas} = useFetch();
-const {post} = CustomFetch();
+const {loadings, post} = CustomFetch();
   const [page, setPage] = useState(0)
   const [properties, setProperties] = useState([])
 
@@ -47,11 +47,11 @@ const {post} = CustomFetch();
 //   const handlePage = (index) => {
 //     setPage(index)
 //   }
-// if (loading) {
-//   return <div style={{fontSize: '24px', textAlign: 'center'}}>
-//     Loading....
-//     </div>
-// }
+if (loadings) {
+  return <div style={{fontSize: '24px', textAlign: 'center'}}>
+    Loading....
+    </div>
+}
   return (
     <>
       <Navbar />
