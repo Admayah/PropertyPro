@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const CustomFetch = () => {
@@ -8,19 +8,27 @@ const CustomFetch = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties`)
-            const { data } = response
-            console.log(data)
-            setPost(data)
-            // setDatas(paginate(data))
-            setLoadings(false)
+            setLoadings(true)
+            try {
+                const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties`)
+                const { data } = response
+                console.log(data)
+                setPost(data)
+                // setDatas(paginate(data))
+                setLoadings(false)
+            } catch (error) {
+                setLoadings(false)
+                console.log(error)
+            }
+
+
         }
 
         fetchData();
     }, [])
 
-    console.log({post})
-    return {loadings, post}
+    console.log({ post })
+    return { loadings, post }
     // return {loadings, post};
 }
 
