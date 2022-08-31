@@ -19,7 +19,7 @@ const CustomFetch = () => {
         fetchData();
     }, [])
     console.log(post)
-    return {post};
+    return <>{post}</>;
 }
 
 export default CustomFetch;
