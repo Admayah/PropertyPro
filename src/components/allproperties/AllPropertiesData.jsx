@@ -11,11 +11,11 @@ import CustomFetch from "../../CustomFetch";
 
 function AllPropertiesData() {
 // const {loading, datas} = useFetch();
-// const {loadings, post} = CustomFetch();
+const {post} = CustomFetch();
   const [page, setPage] = useState(0)
   const [properties, setProperties] = useState([])
 
-  console.log(properties)
+  console.log(post)
 
 //   useLayoutEffect(() => {
 //     const newData = async () => { 
