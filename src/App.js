@@ -18,7 +18,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import EditProperty from "./components/editProperty/EditProperty";
 import Agents from "./pages/agents";
 // import { useFetch } from "./useFetch";
-// import CustomFetch from "./CustomFetch";
+import CustomFetch from "./CustomFetch";
 
 
 function App() {
@@ -48,7 +48,7 @@ function App() {
             <Route path="review" element={<Review />} />
           </Route>
           <Route path="*" element={<ErrorPage />} ></Route>
-          {/* <Route path="/fetchinfo" element={<CustomFetch />} ></Route> */}
+          <Route path="/fetchinfo" element={<CustomFetch />} ></Route>
         </Routes>
       </Router>
     </div>
