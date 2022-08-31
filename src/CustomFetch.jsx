@@ -20,6 +20,7 @@ const CustomFetch = () => {
     }, [])
 
     console.log(post)
+    return post
     // return {loadings, post};
 }
 
