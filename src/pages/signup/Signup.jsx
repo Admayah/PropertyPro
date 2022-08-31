@@ -9,6 +9,7 @@ import { addUser } from "../../features/properties/userSlice";
 import InputField from "../../components/propertiesInput/Input";
 import 'react-toastify/dist/ReactToastify.css';
 import "./signup.css";
+import CustomFetch from "../../CustomFetch";
 
 
 
