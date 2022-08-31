@@ -5,7 +5,7 @@ import Footer from "../../components/footer/Footer";
 import PropertiesInfo from "./PropertiesInfo";
 import { useFetch } from "../../useFetch";
 import 'react-toastify/dist/ReactToastify.css';
-import "./propertiesdata.css";
+import "./propertiesdata.css"
 
 
 function AllPropertiesData() {
