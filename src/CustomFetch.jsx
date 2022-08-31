@@ -5,6 +5,7 @@ const CustomFetch = () => {
     const [post, setPost] = useState([]);
     const [loadings, setLoadings] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
+    const [postPerPage, setPostPerPage] = useState(6)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -25,10 +26,14 @@ const CustomFetch = () => {
         }
 
         fetchData();
-    }, [])
+    }, []);
+
+    const indexOfLastPost = currentPage * postPerPage
+    const indexOfFirstPage = indexOfLastPost - postPerPage
+    const currentPost = post.slice(indexOfFirstPage, indexOfLastPost)
 
     console.log({ post })
-    return { loadings, post }
+    return { loadings, currentPost }
     // return {loadings, post};
 }
 

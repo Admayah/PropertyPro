@@ -11,11 +11,11 @@ import CustomFetch from "../../CustomFetch";
 
 function AllPropertiesData() {
 // const {loading, datas} = useFetch();
-const {loadings, post} = CustomFetch();
+const {loadings, currentPost} = CustomFetch();
   const [page, setPage] = useState(0)
   const [properties, setProperties] = useState([])
 
-  console.log(post)
+  console.log(currentPost)
 
 //   useLayoutEffect(() => {
 //     const newData = async () => { 
@@ -58,7 +58,7 @@ if (loadings) {
       <ToastContainer />
       <div className="all-properties-container">
         <div className="properties-card-wrapper">
-          {post.map((item) => (
+          {currentPost.map((item) => (
             <PropertiesInfo
               key={item.id}
               {...item}
