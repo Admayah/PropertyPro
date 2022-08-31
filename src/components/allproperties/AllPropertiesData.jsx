@@ -9,7 +9,7 @@ import "./propertiesdata.css"
 import CustomFetch from "../../CustomFetch";
 
 
-function AllPropertiesData({post, loading}) {
+function AllPropertiesData() {
 const {loading, datas} = useFetch();
 const {loadings, post} = CustomFetch();
   const [page, setPage] = useState(0)
