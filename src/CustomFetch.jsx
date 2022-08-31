@@ -18,9 +18,9 @@ const CustomFetch = () => {
 
         fetchData();
     }, [])
-    
+
     console.log(post)
-    return <>{post.map((item) => item)}</>;
+    return {loading, post};
 }
 
 export default CustomFetch;

@@ -6,43 +6,45 @@ import PropertiesInfo from "./PropertiesInfo";
 import { useFetch } from "../../useFetch";
 import 'react-toastify/dist/ReactToastify.css';
 import "./propertiesdata.css"
+import CustomFetch from "../../CustomFetch";
 
 
-function AllPropertiesData() {
+function AllPropertiesData({post, loading}) {
 const {loading, datas} = useFetch();
+const {loading, post} = CustomFetch();
   const [page, setPage] = useState(0)
   const [properties, setProperties] = useState([])
 
-  useLayoutEffect(() => {
-    const newData = async () => { 
-      const check = datas[page]
-      setProperties(check)
-    }
-   newData()
-  }, []);
+  // useLayoutEffect(() => {
+  //   const newData = async () => { 
+  //     const check = datas[page]
+  //     setProperties(check)
+  //   }
+  //  newData()
+  // }, []);
 
-  const nextPage = () => {
-    setPage((oldPage) => {
-      let nextPage = oldPage + 1
-      if (nextPage > datas.length - 1) {
-        nextPage = 0
-      }
-      return nextPage
-    })
-  }
-  const prevPage = () => {
-    setPage((oldPage) => {
-      let prevPage = oldPage - 1
-      if (prevPage < 0) {
-        prevPage = datas.length - 1
-      }
-      return prevPage
-    })
-  }
+  // const nextPage = () => {
+  //   setPage((oldPage) => {
+  //     let nextPage = oldPage + 1
+  //     if (nextPage > datas.length - 1) {
+  //       nextPage = 0
+  //     }
+  //     return nextPage
+  //   })
+  // }
+  // const prevPage = () => {
+  //   setPage((oldPage) => {
+  //     let prevPage = oldPage - 1
+  //     if (prevPage < 0) {
+  //       prevPage = datas.length - 1
+  //     }
+  //     return prevPage
+  //   })
+  // }
 
-  const handlePage = (index) => {
-    setPage(index)
-  }
+  // const handlePage = (index) => {
+  //   setPage(index)
+  // }
 if (loading) {
   return <div style={{fontSize: '24px', textAlign: 'center'}}>
     Loading....
@@ -54,7 +56,7 @@ if (loading) {
       <ToastContainer />
       <div className="all-properties-container">
         <div className="properties-card-wrapper">
-          {properties.map((item) => (
+          {post.map((item) => (
             <PropertiesInfo
               key={item.id}
               {...item}
@@ -62,7 +64,7 @@ if (loading) {
           ))}
         </div>
       </div>
-      {!loading && (
+      {/* {!loading && (
           <div className='btn-container'>
             <button className='btn prev-btn' onClick={prevPage} style={{backgroundColor: 'crimson', color: 'black'}}>
               prev
@@ -82,7 +84,7 @@ if (loading) {
               next
             </button>
           </div>
-        )}
+        )} */}
       <Footer />
     </>
   );
