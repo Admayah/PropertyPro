@@ -6,7 +6,7 @@ import PropertiesInfo from "./PropertiesInfo";
 import { useFetch } from "../../useFetch";
 import 'react-toastify/dist/ReactToastify.css';
 import "./propertiesdata.css"
-import CustomFetch from "../../CustomFetch";
+// import CustomFetch from "../../CustomFetch";
 
 
 function AllPropertiesData({post, loading}) {
