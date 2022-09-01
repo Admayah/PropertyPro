@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from "react-router-dom";
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import DashboardNav from '../../pages/dashboard/dashboardnav/DashboardNav'
 import Sidebar from '../sidebar/Sidebar'
 import Footer from '../footer/Footer'
@@ -14,6 +14,8 @@ import './style.css'
 const EditProperty = () => {
   
   // const [datas, setDatas] = useState([])
+  const getData = useSelector((state) => state.updateStateProperty)
+  console.log(getData)
 
   const {id} = useParams();
   const dispatch = useDispatch();
