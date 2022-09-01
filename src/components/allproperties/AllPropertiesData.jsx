@@ -12,19 +12,19 @@ import "./propertiesdata.css"
 function AllPropertiesData() {
 const {loading, datas} = useFetch();
 // const {loadings, currentPost} = CustomFetch();
-  const [page, setPage] = useState(0)
+  const [page, setPage] = useState(1)
   const [properties, setProperties] = useState([])
 
   // console.log(currentPost)
 
-  const newData = async () => { 
+  const newData = () => { 
     try {
       const check = datas[page]
       setProperties(check)
     } catch (error) {
       console.log(error)
     }
-
+  }
   useLayoutEffect(() => {
 newData()
   }, []);
