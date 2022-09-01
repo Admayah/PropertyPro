@@ -10,20 +10,55 @@ import CustomFetch from "../../CustomFetch";
 
 
 function AllPropertiesData() {
-const {loading, datas} = useFetch();
-console.log('this is the data', datas[0])
-// const {loadings, currentPost} = CustomFetch();
-  const [page, setPage] = useState(1)
+
+  const { loading, datas } = useFetch()
+  const [page, setPage] = useState(0)
   const [properties, setProperties] = useState([])
 
 
-  useEffect(()=>{
-    const fetchData = () => {
-      const newData = datas[page]
-      setProperties(newData)
-    }
-    fetchData()
-  }, [])
+  useEffect(() => {
+    if (loading) return
+    setProperties(datas[page])
+  }, [loading, page])
+
+  const nextPage = () => {
+    setPage((oldPage) => {
+      let nextPage = oldPage + 1
+      if (nextPage > datas.length - 1) {
+        nextPage = 0
+      }
+      return nextPage
+    })
+  }
+  const prevPage = () => {
+    setPage((oldPage) => {
+      let prevPage = oldPage - 1
+      if (prevPage < 0) {
+        prevPage = datas.length - 1
+      }
+      return prevPage
+    })
+  }
+
+  const handlePage = (index) => {
+    setPage(index)
+  }
+
+
+// const {loading, datas} = useFetch();
+// console.log('this is the data', datas[0])
+// // const {loadings, currentPost} = CustomFetch();
+//   const [page, setPage] = useState(1)
+
+
+  // useEffect(()=>{
+  //   const fetchData = async () => {
+  //     const newData = datas[page]
+  //     setProperties(newData)
+  //     console.log('this are the properties', properties)
+  //   }
+  //   fetchData()
+  // }, [])
 
   // console.log(currentPost)
 
@@ -80,9 +115,9 @@ if (loading) {
           ))}
         </div>
       </div>
-      {/* {!loading && (
+      {!loading && (
           <div className='btn-container'>
-            <button className='btn prev-btn' onClick={prevPage} style={{backgroundColor: 'crimson', color: 'black'}}>
+            <button className='prev-btn' onClick={prevPage}>
               prev
             </button>
             {datas.map((item, index) => {
@@ -96,11 +131,11 @@ if (loading) {
                 </button>
               )
             })}
-            <button className='btn next-btn' onClick={nextPage} style={{backgroundColor: 'crimson', color: 'black'}}>
+            <button className='next-btn' onClick={nextPage}>
               next
             </button>
           </div>
-        )} */}
+        )}
       <Footer />
     </>
   );

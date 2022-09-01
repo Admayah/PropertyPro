@@ -6,17 +6,11 @@ export const useFetch = () => {
     const [loading, setLoading] = useState(true)
     const [datas, setDatas] = useState([]);
     const getProperties = async () => {
-        try {
             const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties`)
             const { data } = response
             console.log(data)
             setDatas(paginate(data))
             setLoading(false)
-        } catch (error) {
-            console.log(error)
-            setLoading(false)
-        }
-
     }
 
     useEffect(() => {
