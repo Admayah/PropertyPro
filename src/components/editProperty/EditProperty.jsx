@@ -47,22 +47,22 @@ const EditProperty = () => {
     const getData = useSelector((state) => state.updateProperty.updateProperty[0])
     console.log('store data', getData)
 
-const {  title, address, state, land_area, purpose, description, year_of_build, price, no_of_bathrooms, no_of_rooms, no_of_store, no_of_garage } = getData;
+// const {  title, address, state, land_area, purpose, description, year_of_build, price, no_of_bathrooms, no_of_rooms, no_of_store, no_of_garage } = getData;
 // console.log(title)
 
 const [editProperty, setEditProperty] = useState({ 
-  title: title,
-  address: address,
-  state: state, 
-  land_area: land_area,
-  purpose: purpose, 
-  description: description, 
-  year_of_build: year_of_build, 
-  price: price, 
-  no_of_bathrooms: no_of_bathrooms, 
-  no_of_rooms: no_of_rooms, 
-  no_of_store: no_of_store,
-  no_of_garage: no_of_garage
+  title: getData.title,
+  address: getData.address,
+  state: getData.state, 
+  land_area: getData.land_area,
+  purpose: getData.purpose, 
+  description: getData.description, 
+  year_of_build: getData.year_of_build, 
+  price: getData.price, 
+  no_of_bathrooms: getData.no_of_bathrooms, 
+  no_of_rooms: getData.no_of_rooms, 
+  no_of_store: getData.no_of_store,
+  no_of_garage: getData.no_of_garage
 });
   
 
