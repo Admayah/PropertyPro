@@ -25,28 +25,28 @@ const {loadings, currentPost} = CustomFetch();
 //    newData()
 //   }, []);
 
-//   const nextPage = () => {
-//     setPage((oldPage) => {
-//       let nextPage = oldPage + 1
-//       if (nextPage > datas.length - 1) {
-//         nextPage = 0
-//       }
-//       return nextPage
-//     })
-//   }
-//   const prevPage = () => {
-//     setPage((oldPage) => {
-//       let prevPage = oldPage - 1
-//       if (prevPage < 0) {
-//         prevPage = datas.length - 1
-//       }
-//       return prevPage
-//     })
-//   }
+  const nextPage = () => {
+    setPage((oldPage) => {
+      let nextPage = oldPage + 1
+      if (nextPage > currentPost.length - 1) {
+        nextPage = 0
+      }
+      return nextPage
+    })
+  }
+  const prevPage = () => {
+    setPage((oldPage) => {
+      let prevPage = oldPage - 1
+      if (prevPage < 0) {
+        prevPage = currentPost.length - 1
+      }
+      return prevPage
+    })
+  }
 
-//   const handlePage = (index) => {
-//     setPage(index)
-//   }
+  // const handlePage = (index) => {
+  //   setPage(index)
+  // }
 if (loadings) {
   return <div style={{fontSize: '24px', textAlign: 'center'}}>
     Loading....
@@ -66,17 +66,17 @@ if (loadings) {
           ))}
         </div>
       </div>
-      {/* {!loading && (
+      {!loadings && (
           <div className='btn-container'>
             <button className='btn prev-btn' onClick={prevPage} style={{backgroundColor: 'crimson', color: 'black'}}>
               prev
             </button>
-            {datas.map((item, index) => {
+            {currentPost.map((item, index) => {
               return (
                 <button
                   key={index}
                   className={`page-btn ${index === page ? 'active-btn' : null}`}
-                  onClick={() => handlePage(index)}
+                  // onClick={() => handlePage(index)}
                 >
                   {index + 1}
                 </button>
@@ -86,7 +86,7 @@ if (loadings) {
               next
             </button>
           </div>
-        )} */}
+        )}
       <Footer />
     </>
   );
