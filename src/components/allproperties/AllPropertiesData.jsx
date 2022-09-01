@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import Navbar from "../Navbar/Navbar";
 import Footer from "../../components/footer/Footer";
@@ -13,8 +13,17 @@ function AllPropertiesData() {
 const {loading, datas} = useFetch();
 console.log('this is the data', datas[0])
 // const {loadings, currentPost} = CustomFetch();
-  // const [page, setPage] = useState(1)
-  // const [properties, setProperties] = useState([])
+  const [page, setPage] = useState(1)
+  const [properties, setProperties] = useState([])
+
+
+  useEffect(()=>{
+    const fetchData = () => {
+      const newData = datas[page]
+      setProperties(newData)
+    }
+    fetchData()
+  }, [])
 
   // console.log(currentPost)
 
@@ -63,7 +72,7 @@ if (loading) {
       <ToastContainer />
       <div className="all-properties-container">
         <div className="properties-card-wrapper">
-          {datas.map((item) => (
+          {properties.map((item) => (
             <PropertiesInfo
               key={item.id}
               {...item}
