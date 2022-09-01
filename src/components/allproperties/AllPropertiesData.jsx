@@ -11,7 +11,7 @@ import CustomFetch from "../../CustomFetch";
 
 function AllPropertiesData() {
 const {loading, datas} = useFetch();
-console.log(datas)
+console.log(datas[0])
 // const {loadings, currentPost} = CustomFetch();
   // const [page, setPage] = useState(1)
   // const [properties, setProperties] = useState([])
@@ -22,7 +22,7 @@ console.log(datas)
 //     try {
 //       const check = datas[page]
 //       setProperties(check)
-//     } catch (error) {
+//     } catch (error) {fa
 //       console.log(error)
 //     }
 //   }
