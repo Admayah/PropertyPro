@@ -7,11 +7,7 @@ const Pagination = ({postsPerPage, totalPosts}) => {
 pageNumber.push(i)
     }
 
-  return (
-    <div>
-        {pageNumber.map((num) => num)}
-    </div>
-  )
+  return {pageNumber}
 }
 
 export default Pagination
