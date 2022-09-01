@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Pagination from './Pagination';
+import AllPropertiesData from './components/allproperties/AllPropertiesData';
 
 const CustomFetch = () => {
     const [post, setPost] = useState([]);
@@ -31,12 +32,17 @@ const CustomFetch = () => {
         fetchData();
     }, []);
 
-    const indexOfLastPost = currentPage * postPerPage
-    const indexOfFirstPage = indexOfLastPost - postPerPage
-    const currentPost = post.slice(indexOfFirstPage, indexOfLastPost)
+    return (
+        <>
+        <AllPropertiesData post={currentPage} loading={loadings} />
+        </>
+    )
+    // const indexOfLastPost = currentPage * postPerPage
+    // const indexOfFirstPage = indexOfLastPost - postPerPage
+    // const currentPost = post.slice(indexOfFirstPage, indexOfLastPost)
 
-    console.log({ post, currentPost })
-    return { loadings, currentPost }
+    // console.log({ post, currentPost })
+    // return { loadings, currentPost }
     // return {loadings, post};
 }
 
