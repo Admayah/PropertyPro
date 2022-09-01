@@ -15,8 +15,7 @@ const CustomFetch = () => {
                 const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties`)
                 const { data } = response
                 console.log(data)
-                setPost(data)
-                Pagination(postPerPage, post.length)
+                setPost(Pagination(postPerPage, data.length))      
                 // setDatas(paginate(data))
                 setLoadings(false)
             } catch (error) {
