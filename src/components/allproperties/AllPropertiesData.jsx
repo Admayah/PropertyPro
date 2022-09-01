@@ -63,7 +63,7 @@ if (loading) {
       <ToastContainer />
       <div className="all-properties-container">
         <div className="properties-card-wrapper">
-          {post.map((item) => (
+          {datas.map((item) => (
             <PropertiesInfo
               key={item.id}
               {...item}
