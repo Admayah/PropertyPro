@@ -31,15 +31,15 @@ const CustomFetch = () => {
 
         fetchData();
     }, []);
-
+    const indexOfLastPost = currentPage * postPerPage
+    const indexOfFirstPage = indexOfLastPost - postPerPage
+    const currentPost = posts.slice(indexOfFirstPage, indexOfLastPost)
     return (
         <>
         <AllPropertiesData post={posts} loading={loadings} />
         </>
     )
-    // const indexOfLastPost = currentPage * postPerPage
-    // const indexOfFirstPage = indexOfLastPost - postPerPage
-    // const currentPost = post.slice(indexOfFirstPage, indexOfLastPost)
+
 
     // console.log({ post, currentPost })
     // return { loadings, currentPost }
