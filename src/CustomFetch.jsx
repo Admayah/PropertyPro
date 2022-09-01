@@ -4,7 +4,7 @@ import Pagination from './Pagination';
 import AllPropertiesData from './components/allproperties/AllPropertiesData';
 
 const CustomFetch = () => {
-    const [post, setPost] = useState([]);
+    const [posts, setPosts] = useState([]);
     const [loadings, setLoadings] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [postPerPage, setPostPerPage] = useState(6)
@@ -18,7 +18,7 @@ const CustomFetch = () => {
                 console.log(data)
                 // const check = Pagination(postPerPage, data.length)
                 // console.log('pagination check', check)
-                setPost(data)      
+                setPosts(data)      
                 // setDatas(paginate(data))
                 setLoadings(false)
             } catch (error) {
@@ -34,7 +34,7 @@ const CustomFetch = () => {
 
     return (
         <>
-        <AllPropertiesData post={currentPage} loading={loadings} />
+        <AllPropertiesData post={posts} loading={loadings} />
         </>
     )
     // const indexOfLastPost = currentPage * postPerPage
