@@ -34,7 +34,7 @@ const EditProperty = () => {
       const {data} = response
       const destructureData = data[0]
       console.log(destructureData)
-      setDatas(...destructureData)
+      setDatas(destructureData)
       dispatch(updateStateProperty(destructureData))
       // const info = data
       // setDatas(info)
