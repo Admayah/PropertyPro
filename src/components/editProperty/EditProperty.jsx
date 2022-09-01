@@ -7,7 +7,7 @@ import DashboardNav from '../../pages/dashboard/dashboardnav/DashboardNav'
 import Sidebar from '../sidebar/Sidebar'
 import Footer from '../footer/Footer'
 import { PropertyFeature } from '../propertiesInput/propertyFeatures'
-import { addProperty, editStateProperty } from '../../features/properties/adminProperties'
+import { updateStateProperty, editStateProperty } from '../../features/properties/adminProperties'
 import 'react-toastify/dist/ReactToastify.css';
 import './style.css'
 
@@ -30,7 +30,7 @@ const EditProperty = () => {
       const response = await axios.get(`${process.env.REACT_APP_BASEURL}/agent/property/${id}`, config)
       console.log(response.data)
       const {data} = response
-      dispatch(addProperty({...data}))
+      dispatch(updateStateProperty({...data}))
       // const info = data
       // setDatas(info)
       
