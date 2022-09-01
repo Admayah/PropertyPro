@@ -16,6 +16,7 @@ const CustomFetch = () => {
                 const { data } = response
                 console.log(data)
                 setPost(data)
+                Pagination(postPerPage, post.length)
                 // setDatas(paginate(data))
                 setLoadings(false)
             } catch (error) {
@@ -33,7 +34,7 @@ const CustomFetch = () => {
     const indexOfFirstPage = indexOfLastPost - postPerPage
     const currentPost = post.slice(indexOfFirstPage, indexOfLastPost)
 
-    console.log({ post })
+    console.log({ post, currentPost })
     return { loadings, currentPost }
     // return {loadings, post};
 }
