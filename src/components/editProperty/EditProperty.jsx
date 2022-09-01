@@ -40,8 +40,7 @@ const EditProperty = () => {
     }
 
     useEffect(()=> {
-      propertyInformation()
-      
+      propertyInformation() 
     }, [])
 
     const getData = useSelector((state) => state.updateProperty.updateProperty[0])
@@ -51,18 +50,18 @@ const EditProperty = () => {
 // console.log(title)
 
 const [editProperty, setEditProperty] = useState({ 
-  title: getData.title,
-  address: getData.address,
-  state: getData.state, 
-  land_area: getData.land_area,
-  purpose: getData.purpose, 
-  description: getData.description, 
-  year_of_build: getData.year_of_build, 
-  price: getData.price, 
-  no_of_bathrooms: getData.no_of_bathrooms, 
-  no_of_rooms: getData.no_of_rooms, 
-  no_of_store: getData.no_of_store,
-  no_of_garage: getData.no_of_garage
+  title: "",
+  address: "",
+  state: "", 
+  land_area: "",
+  purpose: "", 
+  description: "", 
+  year_of_build: "", 
+  price: "", 
+  no_of_bathrooms: "", 
+  no_of_rooms: "", 
+  no_of_store: "",
+  no_of_garage: ""
 });
   
 

@@ -22,6 +22,7 @@ export const useFetch = () => {
     useEffect(() => {
         getProperties()
     }, [])
+    console.log(datas)
     return { loading, datas }
 }
 // import React, { useState, useEffect } from "react";
