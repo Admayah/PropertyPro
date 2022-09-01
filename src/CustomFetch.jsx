@@ -17,7 +17,7 @@ const CustomFetch = () => {
                 console.log(data)
                 const check = Pagination(postPerPage, data.length)
                 console.log('pagination check', check)
-                setPost()      
+                setPost(data)      
                 // setDatas(paginate(data))
                 setLoadings(false)
             } catch (error) {
