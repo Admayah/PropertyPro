@@ -14,7 +14,7 @@ import './style.css'
 const EditProperty = () => {
   
   // const [datas, setDatas] = useState([])
-  const getData = useSelector((state) => state.updateProperty.updateProperty[0])
+  const getData = useSelector((state) => state.updateProperty.updateProperty)
   console.log(getData)
 
   const {id} = useParams();
