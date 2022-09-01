@@ -18,6 +18,7 @@ const CustomFetch = () => {
                 console.log(data)
                 // const check = Pagination(postPerPage, data.length)
                 // console.log('pagination check', check)
+                console.log('backend data', data)
                 setPosts(data)      
                 // setDatas(paginate(data))
                 setLoadings(false)
@@ -31,6 +32,7 @@ const CustomFetch = () => {
 
         fetchData();
     }, []);
+    console.log(posts)
     const indexOfLastPost = currentPage * postPerPage
     const indexOfFirstPage = indexOfLastPost - postPerPage
     const currentPost = posts.slice(indexOfFirstPage, indexOfLastPost)
