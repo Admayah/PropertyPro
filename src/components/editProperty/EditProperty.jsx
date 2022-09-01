@@ -13,9 +13,8 @@ import './style.css'
 
 const EditProperty = () => {
   
-  const [datas, setDatas] = useState({})
-  const getData = useSelector((state) => state.updateProperty.updateProperty)
-  console.log(getData)
+  // const [datas, setDatas] = useState([])
+
 
   const {id} = useParams();
   const dispatch = useDispatch();
@@ -34,7 +33,6 @@ const EditProperty = () => {
       const {data} = response
       const destructureData = data[0]
       console.log(destructureData)
-      setDatas(destructureData)
       dispatch(updateStateProperty(destructureData))
       // const info = data
       // setDatas(info)
@@ -46,7 +44,10 @@ const EditProperty = () => {
       
     }, [])
 
-const {  title, address, state, land_area, purpose, description, year_of_build, price, no_of_bathrooms, no_of_rooms, no_of_store, no_of_garage } = datas;
+    const getData = useSelector((state) => state.updateProperty.updateProperty[0])
+    console.log('store data', getData)
+
+const {  title, address, state, land_area, purpose, description, year_of_build, price, no_of_bathrooms, no_of_rooms, no_of_store, no_of_garage } = getData;
 
 const [editProperty, setEditProperty] = useState({ 
   title,
@@ -62,7 +63,7 @@ const [editProperty, setEditProperty] = useState({
   no_of_store,
   no_of_garage
 });
-  console.log('this are data from backend', datas)
+  
 
   const editHandler = (e) => {
     setEditProperty({
