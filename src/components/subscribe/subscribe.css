@@ -4,6 +4,7 @@
     background-color: #F3F3FA;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .subscribe-img {
     width: 13.563rem;
@@ -12,6 +13,9 @@
 }
 .subscribe-text-wrapper {
     width: 30rem;
+    /* display: flex;
+    align-items: center;
+    flex-direction: column; */
     /* border: 1px solid black; */
     margin-left: 6rem;
 }
@@ -21,6 +25,8 @@
     
 }
 .subscribe-input input{
+    width: 15rem;
+    padding: 0.25rem;
     opacity: 0.5;
 }
 .subscribe-btn {
@@ -29,4 +35,6 @@
     color: #1C3988;;
     border: 1px solid #1C3988;
     margin-left: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
 }

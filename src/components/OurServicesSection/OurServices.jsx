@@ -6,7 +6,7 @@ export default function OurServices() {
   return (
     <div className="our-services-container">
       <div className="our-services-img">
-        <img src="/images/representation.jpg" alt="services" className="photo" width={250} height={250}/>
+        <img src="/images/abt.svg" alt="services" className="photo" width={250} height={250}/>
       </div>
       <div className="our-service-info">
         <h5 className="our-service-title">who we are</h5>
