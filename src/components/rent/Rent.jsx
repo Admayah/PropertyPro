@@ -58,7 +58,7 @@ console.log('all data', allData)
       return prevPage
     })
   }
-
+console.log(page)
   const handlePage = (index) => {
     console.log(index)
     setPage(index)
