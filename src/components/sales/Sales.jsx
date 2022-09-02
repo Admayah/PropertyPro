@@ -30,9 +30,10 @@ console.log('all data', allData)
      )
      setFilterSale(newData)
     console.log('this are sale properties only====>', newData)
-    const newProps = paginate(newData)
-    console.log(newProps)
-    setSaleProps(newProps[page])
+    // const newProps = 
+    // console.log(newProps)
+    setSaleProps(paginate(newData)[page])
+    console.log(saleProps)
   //  const newData = datas.filter((item) => item.purpose === 'sale')
   //   setSaleProps(newData[page])
   }, [loading, page]);
