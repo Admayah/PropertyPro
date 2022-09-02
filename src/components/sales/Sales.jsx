@@ -26,7 +26,7 @@ function Sales() {
   const nextPage = () => {
     setPage((oldPage) => {
       let nextPage = oldPage + 1
-      if (nextPage > datas.length - 1) {
+      if (nextPage > saleProps.length - 1) {
         nextPage = 0
       }
       return nextPage
@@ -36,7 +36,7 @@ function Sales() {
     setPage((oldPage) => {
       let prevPage = oldPage - 1
       if (prevPage < 0) {
-        prevPage = datas.length - 1
+        prevPage = saleProps.length - 1
       }
       return prevPage
     })
@@ -65,7 +65,7 @@ function Sales() {
           <button className='btn prev-btn' onClick={prevPage}>
             prev
           </button>
-          {datas.map((item, index) => {
+          {saleProps.map((item, index) => {
             return (
               <button
                 key={index}

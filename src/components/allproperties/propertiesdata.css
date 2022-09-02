@@ -125,6 +125,7 @@
 }
 .prev-btn,
 .next-btn {
+  width: 3.75rem;
   background: #1C3988;
   border-color: transparent;
   font-weight: bold;
@@ -133,6 +134,7 @@
   margin: 0.5rem;
   font-size: 1rem;
   cursor: pointer;
+  border-radius: .3rem;
 }
 
 @media screen and (min-width: 775px) {
