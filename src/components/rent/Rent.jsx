@@ -60,7 +60,7 @@ console.log('all data', allData)
   const handlePage = (index) => {
     setPage(index)
   }
-
+console.log('this are rent properties', rentProps)
   return (
     <>
      <Navbar />
