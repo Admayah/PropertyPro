@@ -45,6 +45,7 @@ const EditProperty = () => {
 
     const {updateProperty} = useSelector((state) => state.updateProperty)
     console.log('store data', updateProperty)
+    console.log('get title from store data', updateProperty.title)
 
 // const {  title, address, state, land_area, purpose, description, year_of_build, price, no_of_bathrooms, no_of_rooms, no_of_store, no_of_garage } = getData;
 // console.log(title)
