@@ -15,15 +15,16 @@ function Sales() {
 
   // const salesPoperties = 
 
-
+console.log('all data', datas)
 
 
 
   useEffect(() => {
     if (loading) return
-   const newData = datas.filter((item) => item.purpose === 'sale')
-    setSaleProps(newData[page])
-  }, [page]);
+    setSaleProps(datas[page])
+  //  const newData = datas.filter((item) => item.purpose === 'sale')
+  //   setSaleProps(newData[page])
+  }, [loading, page]);
 
 
   const nextPage = () => {
