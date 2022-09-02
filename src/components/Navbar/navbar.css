@@ -1,7 +1,7 @@
 .navbar-container {
   width: 100%;
-  background-color: #312D2A;
-  color: white;
+  /* background-color: #F3F3FA; */
+  color: #000;
   max-width: 1536px;
   margin: 0 auto;
   border-bottom: 1px solid #F98547;
@@ -15,7 +15,7 @@
   justify-content: space-between;
 }
 .navbar-left {
-  color: white;
+  /* color: white; */
   padding-left: 0.625rem;
   display: flex;
   align-items: center;
@@ -24,7 +24,7 @@
 
 .logo {
   font-size: 1.875rem;
-  color: white;
+  /* color: white; */
   padding-right: 0.625rem;
   border-radius: 50%;
   object-fit: cover;
@@ -79,6 +79,7 @@
 .navbar-menu {
   padding-right: 1.25rem;
   font-size: 1.25rem;
+  color: #000;
 }
 @media (max-width: 768px) {
   .navbar-menu {
@@ -101,7 +102,7 @@
 
 .navbar-property-link {
   text-decoration: none;
-  color: #fff;
+  color: #000;
 }
 
 .position-hamburger-icon {

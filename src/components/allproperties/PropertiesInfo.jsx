@@ -46,7 +46,7 @@ function PropertiesInfo(props) {
               <i className="fa fa-whatsapp wb-color"></i> 09073645165
             </span>
           </div>
-          <Link to={`/properties/${props.id}`} style={{color: 'blue'}}> Read More</Link>
+          <Link to={`/properties/${props.id}`} style={{color: 'blue'}}> Read More </Link>
         </div>
       </div>
     </>

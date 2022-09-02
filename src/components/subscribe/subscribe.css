@@ -1,12 +1,32 @@
 .subscribe-container {
+    width: 100%;
+    padding: 3rem 0;
     background-color: #F3F3FA;
+    display: flex;
+    justify-content: center;
 }
 .subscribe-img {
     width: 13.563rem;
     height: 13.563rem;
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
 }
 .subscribe-text-wrapper {
-    width: 50rem;
-    border: 1px solid black;
+    width: 30rem;
+    /* border: 1px solid black; */
+    margin-left: 6rem;
+}
+.subscribe-input {
+    padding-top: 1rem;
+    display: flex;
+    
+}
+.subscribe-input input{
+    opacity: 0.5;
+}
+.subscribe-btn {
+    width: 7.875rem;
+    padding: 0.813rem 1.5rem;
+    color: #1C3988;;
+    border: 1px solid #1C3988;
+    margin-left: 1rem;
 }
