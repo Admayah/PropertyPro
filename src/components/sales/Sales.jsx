@@ -28,11 +28,12 @@ console.log('all data', allData)
       return item.purpose === "Sale"
     }
      )
-     setFilterSale(newData)
+     
     console.log('this are sale properties only====>', newData)
     // const newProps = 
     // console.log(newProps)
     setSaleProps(paginate(newData))
+    setFilterSale(saleProps[page])
     console.log(saleProps)
   //  const newData = datas.filter((item) => item.purpose === 'sale')
   //   setSaleProps(newData[page])
@@ -42,7 +43,7 @@ console.log('all data', allData)
   const nextPage = () => {
     setPage((oldPage) => {
       let nextPage = oldPage + 1
-      if (nextPage > filterSale.length - 1) {
+      if (nextPage > setSaleProps.length - 1) {
         nextPage = 0
       }
       return nextPage
@@ -52,7 +53,7 @@ console.log('all data', allData)
     setPage((oldPage) => {
       let prevPage = oldPage - 1
       if (prevPage < 0) {
-        prevPage = filterSale.length - 1
+        prevPage = setSaleProps.length - 1
       }
       return prevPage
     })
@@ -81,7 +82,7 @@ console.log('this are sales properties', saleProps)
           <button className='btn prev-btn' onClick={prevPage}>
             prev
           </button>
-          {filterSale.map((item, index) => {
+          {setSaleProps.map((item, index) => {
             return (
               <button
                 key={index}
