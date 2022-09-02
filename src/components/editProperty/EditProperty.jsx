@@ -52,16 +52,16 @@ const EditProperty = () => {
 const [editProperty, setEditProperty] = useState({ 
   title: updateProperty?.title,
   address: updateProperty?.address,
-  state, 
-  land_area,
-  purpose, 
-  description, 
-  year_of_build, 
-  price, 
-  no_of_bathrooms, 
-  no_of_rooms, 
-  no_of_store,
-  no_of_garage
+  state: updateProperty.state, 
+  land_area: updateProperty.land_area,
+  purpose: updateProperty.purpose, 
+  description: updateProperty.description, 
+  year_of_build: updateProperty.year_of_build, 
+  price: updateProperty.price, 
+  no_of_bathrooms: updateProperty.no_of_bathrooms, 
+  no_of_rooms: updateProperty.no_of_rooms, 
+  no_of_store: updateProperty.no_of_store,
+  no_of_garage: updateProperty.no_of_garage
 });
   
 
