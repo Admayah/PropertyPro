@@ -26,7 +26,7 @@ export default function Dashboard() {
   {/* <img src="img_avatar.png" alt="Avatar" style="width:100%" /> */}
   <div class="db-container">
   <i class="fa fa-user fa-5x"  aria-hidden="true" ></i>
-    <p>Profile</p>
+    <h1>Profile</h1>
   </div>
 </div>
           </div>
