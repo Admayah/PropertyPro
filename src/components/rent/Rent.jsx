@@ -81,7 +81,7 @@ console.log('this are rent properties', rentProps)
             <button className='btn prev-btn' onClick={prevPage} style={{backgroundColor: 'crimson', color: 'black'}}>
               prev
             </button>
-            {datas.map((item, index) => {
+            {rentProps.map((item, index) => {
               return (
                 <button
                   key={index}
