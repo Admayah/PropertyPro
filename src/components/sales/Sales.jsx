@@ -13,6 +13,7 @@ function Sales() {
   const [page, setPage] = useState(0)
 
   const [saleProps, setSaleProps] = useState([]);
+  const [filterSale, setFilterSale] = useState([]);
 
   // const salesPoperties = datas
 
@@ -27,6 +28,7 @@ console.log('all data', allData)
       return item.purpose === "Sale"
     }
      )
+     setFilterSale(newData)
     console.log('this are sale properties only====>', newData)
     const newProps = paginate(newData)
     setSaleProps(newProps[page])
@@ -38,7 +40,7 @@ console.log('all data', allData)
   const nextPage = () => {
     setPage((oldPage) => {
       let nextPage = oldPage + 1
-      if (nextPage > saleProps.length - 1) {
+      if (nextPage > filterSale.length - 1) {
         nextPage = 0
       }
       return nextPage
@@ -48,7 +50,7 @@ console.log('all data', allData)
     setPage((oldPage) => {
       let prevPage = oldPage - 1
       if (prevPage < 0) {
-        prevPage = saleProps.length - 1
+        prevPage = filterSale.length - 1
       }
       return prevPage
     })
@@ -77,7 +79,7 @@ console.log('this are sales properties', saleProps)
           <button className='btn prev-btn' onClick={prevPage}>
             prev
           </button>
-          {saleProps.map((item, index) => {
+          {filterSale.map((item, index) => {
             return (
               <button
                 key={index}

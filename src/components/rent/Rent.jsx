@@ -15,7 +15,8 @@ function Rent() {
  const {loading, allData} = useFetch();
  const [page, setPage] = useState(0);
 
- const [rentProperties, setRentProperties] = useState([])
+ const [rentProperties, setRentProperties] = useState([]);
+ const [filterRent, setFilterRent] = useState([]);
 
 
  useEffect(() => {
@@ -23,6 +24,7 @@ function Rent() {
   const rentData = allData.filter((item) => {
     return item.purpose === "Rent"
   })
+  setFilterRent(newData)
   console.log("this are rent data only", rentData)
   const newRentInfo = paginate(rentData)
   console.log('paginate rent info', newRentInfo)
@@ -32,7 +34,7 @@ function Rent() {
  const nextPage = () => {
   setPage((oldPage) => {
     let nextPage = oldPage + 1
-    if (nextPage > rentProperties.length - 1) {
+    if (nextPage > filterRent.length - 1) {
       nextPage = 0;
     }
     return nextPage
@@ -43,7 +45,7 @@ function Rent() {
  const prevPage = () => {
   setPage((oldPage) => {
     let prevPage = oldPage - 1
-    if (nextPage > rentProperties.length - 1) {
+    if (nextPage > filterRent.length - 1) {
       nextPage = 0;
     }
     return prevPage;
@@ -72,7 +74,7 @@ function Rent() {
             <button className='btn prev-btn' onClick={prevPage} style={{backgroundColor: 'crimson', color: 'black'}}>
               prev
             </button>
-            {rentProperties.map((item, index) => {
+            {filterRent.map((item, index) => {
               return (
                 <button
                   key={index}
