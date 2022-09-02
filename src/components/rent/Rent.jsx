@@ -7,45 +7,59 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "./rent.css";
 import { useFetch } from "../../useFetch";
+import paginate from "../../utils";
 import PropertiesInfo from "../allproperties/PropertiesInfo";
 
 
 function Rent() {
-  const {loading, datas} = useFetch();
+  const { loading, allData, datas } = useFetch();
   const [page, setPage] = useState(0)
 
   const [rentProps, setRentProps] = useState([]);
 
- const rentPoperties = rentProps.filter((item) => item.purpose === 'rent')
+  // const salesPoperties = datas
 
- useEffect(() => {
-  if (loading) return
- setRentProps(datas[page])
-}, [page]);
+console.log('all data', allData)
 
 
-const nextPage = () => {
-  setPage((oldPage) => {
-    let nextPage = oldPage + 1
-    if (nextPage > datas.length - 1) {
-      nextPage = 0
+
+  useEffect(() => {
+    if (loading) return
+    const newData = allData.filter((item) => {
+      console.log(item.purpose)
+      return item.purpose === "Rent"
     }
-    return nextPage
-  })
-}
-const prevPage = () => {
-  setPage((oldPage) => {
-    let prevPage = oldPage - 1
-    if (prevPage < 0) {
-      prevPage = datas.length - 1
-    }
-    return prevPage
-  })
-}
+     )
+    console.log('this are sale properties only====>', newData)
+    const newProps = paginate(newData)
+    setRentProps(newProps[page])
+  //  const newData = datas.filter((item) => item.purpose === 'sale')
+  //   setSaleProps(newData[page])
+  }, [loading, page]);
 
-const handlePage = (index) => {
-  setPage(index)
-}
+
+  const nextPage = () => {
+    setPage((oldPage) => {
+      let nextPage = oldPage + 1
+      if (nextPage > rentProps.length - 1) {
+        nextPage = 0
+      }
+      return nextPage
+    })
+  }
+  const prevPage = () => {
+    setPage((oldPage) => {
+      let prevPage = oldPage - 1
+      if (prevPage < 0) {
+        prevPage = rentProps.length - 1
+      }
+      return prevPage
+    })
+  }
+
+  const handlePage = (index) => {
+    setPage(index)
+  }
 
   return (
     <>
@@ -53,7 +67,7 @@ const handlePage = (index) => {
       <ToastContainer />
       <div className="all-properties-container">
         <div className="properties-card-wrapper">
-          {rentPoperties.map((item) => (
+          {rentProps.map((item) => (
             <PropertiesInfo
               key={item.id}
               {...item}
