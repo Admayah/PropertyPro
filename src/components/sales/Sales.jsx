@@ -27,7 +27,7 @@ console.log('all data', allData)
     }
      )
     console.log('this are sale properties only====>', newData)
-    setSaleProps(newData[page])
+    setSaleProps(newData)
   //  const newData = datas.filter((item) => item.purpose === 'sale')
   //   setSaleProps(newData[page])
   }, [loading, page]);
