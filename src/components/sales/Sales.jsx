@@ -48,7 +48,7 @@ function Sales() {
   const handlePage = (index) => {
     setPage(index)
   }
-
+console.log('this are sales properties', saleProps)
   return (
     <>
       <Navbar />
