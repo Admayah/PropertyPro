@@ -69,7 +69,7 @@ console.log('this are sales properties', saleProps)
       <ToastContainer />
       <div className="all-properties-container">
         <div className="properties-card-wrapper">
-          {saleProps.map((item) => (
+          {filterSale.map((item) => (
             <PropertiesInfo
               key={item.id}
               {...item}
