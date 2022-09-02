@@ -25,7 +25,7 @@ export default function Dashboard() {
           <div class="card">
   {/* <img src="img_avatar.png" alt="Avatar" style="width:100%" /> */}
   <div class="db-container">
-  <i class="fa fa-user" aria-hidden="true"></i>
+  <i class="fa fa-user" aria-hidden="true" fa-3x></i>
     <p>Profile</p>
   </div>
 </div>
