@@ -12,65 +12,53 @@ import PropertiesInfo from "../allproperties/PropertiesInfo";
 
 
 function Rent() {
-  const { loading, allData, datas } = useFetch();
-  const [page, setPage] = useState(0)
+ const {loading, allData} = useFetch();
+ const [page, setPage] = useState(0);
 
-  const [rentProps, setRentProps] = useState([]);
-
-  // const salesPoperties = datas
-
-console.log('all data', allData)
+ const [rentProperties, setRentProperties] = useState([])
 
 
+ useEffect(() => {
+  const rentData = allData.filter((item) => {
+    return item.purpose === "Rent"
+  })
+  console.log("this are rent data only", rentData)
+  const newRentInfo = paginate(rentData)
+  console.log('paginate rent info', newRentInfo)
+  setRentProperties(newRentInfo[page])
+ }, [loading, page]);
 
-  useEffect(() => {
-    if (loading) return
-    const newData = allData.filter((item) => {
-      console.log(item.purpose)
-      return item.purpose === "Rent"
+ const nextPage = () => {
+  setPage((oldPage) => {
+    let nextPage = oldPage + 1
+    if (nextPage > rentProperties.length - 1) {
+      nextPage = 0;
     }
-     )
-    console.log('this are sale properties only====>', newData)
-    const newProps = paginate(newData)
-    console.log(newProps)
-    setRentProps(newProps[page])
-    console.log(rentProps)
-  //  const newData = datas.filter((item) => item.purpose === 'sale')
-  //   setSaleProps(newData[page])
-  }, [loading, page]);
+    return nextPage
+  })
+ };
 
+ 
+ const prevPage = () => {
+  setPage((oldPage) => {
+    let prevPage = oldPage - 1
+    if (nextPage > rentProperties.length - 1) {
+      nextPage = 0;
+    }
+    return prevPage;
+  })
+ };
 
-  const nextPage = () => {
-    setPage((oldPage) => {
-      let nextPage = oldPage + 1
-      if (nextPage > rentProps.length - 1) {
-        nextPage = 0
-      }
-      return nextPage
-    })
-  }
-  const prevPage = () => {
-    setPage((oldPage) => {
-      let prevPage = oldPage - 1
-      if (prevPage < 0) {
-        prevPage = rentProps.length - 1
-      }
-      return prevPage
-    })
-  }
-console.log(page)
-  const handlePage = (index) => {
-    console.log(index)
-    setPage(index)
-  }
-console.log('this are rent properties', rentProps)
+ const handlePage = (index) => {
+  setPage(index)
+ }
   return (
     <>
      <Navbar />
       <ToastContainer />
       <div className="all-properties-container">
         <div className="properties-card-wrapper">
-          {rentProps.map((item) => (
+          {rentProperties.map((item) => (
             <PropertiesInfo
               key={item.id}
               {...item}
@@ -83,7 +71,7 @@ console.log('this are rent properties', rentProps)
             <button className='btn prev-btn' onClick={prevPage} style={{backgroundColor: 'crimson', color: 'black'}}>
               prev
             </button>
-            {rentProps.map((item, index) => {
+            {rentProperties.map((item, index) => {
               return (
                 <button
                   key={index}
