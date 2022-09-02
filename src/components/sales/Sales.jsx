@@ -53,7 +53,7 @@ console.log('all data', allData)
     setPage((oldPage) => {
       let prevPage = oldPage - 1
       if (prevPage < 0) {
-        prevPage = saleProps.length - 1
+        prevPage = filterSale.length - 1
       }
       return prevPage
     })
