@@ -4,6 +4,7 @@ import Footer from "../footer/Footer";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useFetch } from "../../useFetch";
+import paginate from "../../utils";
 import PropertiesInfo from "../allproperties/PropertiesInfo";
 
 
@@ -27,7 +28,8 @@ console.log('all data', allData)
     }
      )
     console.log('this are sale properties only====>', newData)
-    setSaleProps(newData)
+    const newProps = paginate(newData)
+    setSaleProps(newProps[page])
   //  const newData = datas.filter((item) => item.purpose === 'sale')
   //   setSaleProps(newData[page])
   }, [loading, page]);
