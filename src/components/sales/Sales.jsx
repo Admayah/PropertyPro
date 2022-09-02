@@ -32,7 +32,7 @@ console.log('all data', allData)
     console.log('this are sale properties only====>', newData)
     // const newProps = 
     // console.log(newProps)
-    setSaleProps(paginate(newData)[page])
+    setSaleProps(paginate(newData))
     console.log(saleProps)
   //  const newData = datas.filter((item) => item.purpose === 'sale')
   //   setSaleProps(newData[page])
