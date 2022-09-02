@@ -21,7 +21,7 @@ console.log('all data', allData)
 
   useEffect(() => {
     if (loading) return
-    const newData = allData.filter((item) => item.purpose = "sale")
+    const newData = allData.filter((item) => item.purpose === "sale")
     console.log('this are sale properties only====>', newData)
     setSaleProps(datas[page])
   //  const newData = datas.filter((item) => item.purpose === 'sale')
