@@ -21,7 +21,15 @@ export default function Dashboard() {
             />
           </div> */}
           <Sidebar />
-          <div className="dashboard-content"></div>
+          <div className="dashboard-content">
+          <div class="card">
+  {/* <img src="img_avatar.png" alt="Avatar" style="width:100%" /> */}
+  <div class="db-container">
+    <h4><b>John Doe</b></h4>
+    <p>Architect & Engineer</p>
+  </div>
+</div>
+          </div>
         </div>
       </div>
     </>
