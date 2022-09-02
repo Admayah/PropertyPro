@@ -1,0 +1,12 @@
+.subscribe-container {
+    background-color: #F3F3FA;
+}
+.subscribe-img {
+    width: 13.563rem;
+    height: 13.563rem;
+    border: 1px solid yellow;
+}
+.subscribe-text-wrapper {
+    width: 50rem;
+    border: 1px solid black;
+}

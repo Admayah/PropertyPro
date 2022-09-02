@@ -3,6 +3,7 @@ import Footer from "../../components/footer/Footer";
 import Hero from "../../components/Herosection/Hero";
 import Navbar from "../../components/Navbar/Navbar";
 import OurServices from "../../components/OurServicesSection/OurServices";
+import Subscribe from "../../components/subscribe/Subscribe";
 
 
 function Homepage() {
@@ -11,6 +12,7 @@ function Homepage() {
       <Navbar />
       <Hero />
       <OurServices />
+      <Subscribe />
       <Footer />
     </>
   );

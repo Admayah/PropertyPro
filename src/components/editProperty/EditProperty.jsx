@@ -103,7 +103,7 @@ console.log(editProperty)
                 <input
                   type="text"
                   className="property-data"
-                  placeholder="Title"
+                  // placeholder="Title"
                   name="title"
                   value={editProperty.title}
                   onChange={editHandler}
@@ -113,7 +113,7 @@ console.log(editProperty)
                 <input
                   type="text"
                   className="property-data"
-                  placeholder="year-of-build"
+                  // placeholder="year-of-build"
                   name="year_of_build"
                   value={editProperty.type}
                   onChange={editHandler}
@@ -123,7 +123,7 @@ console.log(editProperty)
                 <input
                   type="text"
                   className="property-data"
-                  placeholder="price"
+                  // placeholder="price"
                   name="price"
                   value={editProperty.price}
                   onChange={editHandler}
@@ -146,7 +146,7 @@ console.log(editProperty)
                 <select
                   value={editProperty.no_of_rooms}
                   name='no_of_rooms'
-                  placeholder="no-of-room"
+                  // placeholder="no-of-room"
                   className="property-option"
                   onChange={editHandler}
                   >
@@ -161,7 +161,7 @@ console.log(editProperty)
               <div className="property-data-input-field">
                 <select
                   value={editProperty.no_of_bathrooms}
-                  placeholder="no-of-no_of_bathrooms"
+                  // placeholder="no-of-no_of_bathrooms"
                   name='no_of_bathrooms'
                   className="property-option"
                   onChange={editHandler}
@@ -178,7 +178,7 @@ console.log(editProperty)
                 <select
                   value={editProperty.no_of_garage}
                   name='no_of_garage'
-                  placeholder="no-of-garage"
+                  // placeholder="no-of-garage"
                   className="property-option"
                   onChange={editHandler}
                   >
@@ -194,7 +194,7 @@ console.log(editProperty)
                 <select
                   value={editProperty.no_of_store}
                   name='no_of_store'
-                  placeholder="no-of-store"
+                  // placeholder="no-of-store"
                   className="property-option"
                   onChange={editHandler}
                   >
@@ -214,7 +214,7 @@ console.log(editProperty)
                   <input
                     type="text"
                     className="property-data"
-                    placeholder="State"
+                    // placeholder="State"
                     name='state'
                     value={editProperty.state}
                     onChange={editHandler}
@@ -225,7 +225,7 @@ console.log(editProperty)
                     type="text"
                     className="property-data"
                     name="address"
-                    placeholder="address"
+                    // placeholder="address"
                     value={editProperty.address}
                     onChange={editHandler}
                   />
@@ -238,7 +238,7 @@ console.log(editProperty)
                   <input
                     type="text"
                     className="property-data"
-                    placeholder="land-area"
+                    // placeholder="land-area"
                     name="land_area"
                     value={editProperty.land_area}
                     onChange={editHandler}
@@ -253,7 +253,7 @@ console.log(editProperty)
                     type="text"
                     className="property-data"
                     name="image_url"
-                    placeholder="image_url"
+                    // placeholder="image_url"
                     onChange={editHandler}
                     value={editProperty.image_url}
 
@@ -275,7 +275,8 @@ console.log(editProperty)
                     className="property-desc"
                     onChange={editHandler}
                     value={editProperty.description}
-                    placeholder="property description" />
+                    // placeholder="property description" 
+                    />
                 </div>
               </div>
             </div>
