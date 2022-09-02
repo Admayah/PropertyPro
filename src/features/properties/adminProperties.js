@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     adminProperties: [],
-    updateProperty: []
+    updateProperty: {}
 };
 
 console.log(initialState)
@@ -15,7 +15,7 @@ export const adminPropertySlice = createSlice({
             state.adminProperties.push(action.payload)
         },
         updateStateProperty: (state, action) => {
-            state.updateProperty.push(action.payload)
+            state.updateProperty = action.payload
         },
         editStateProperty: (state, action) => {
             const propertyId = action.payload
