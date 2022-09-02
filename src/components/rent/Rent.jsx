@@ -19,6 +19,7 @@ function Rent() {
 
 
  useEffect(() => {
+  if (loading) return
   const rentData = allData.filter((item) => {
     return item.purpose === "Rent"
   })
