@@ -43,7 +43,7 @@ console.log('all data', allData)
   const nextPage = () => {
     setPage((oldPage) => {
       let nextPage = oldPage + 1
-      if (nextPage > setSaleProps.length - 1) {
+      if (nextPage > saleProps.length - 1) {
         nextPage = 0
       }
       return nextPage
@@ -53,7 +53,7 @@ console.log('all data', allData)
     setPage((oldPage) => {
       let prevPage = oldPage - 1
       if (prevPage < 0) {
-        prevPage = setSaleProps.length - 1
+        prevPage = saleProps.length - 1
       }
       return prevPage
     })
@@ -82,7 +82,7 @@ console.log('this are sales properties', saleProps)
           <button className='btn prev-btn' onClick={prevPage}>
             prev
           </button>
-          {setSaleProps.map((item, index) => {
+          {saleProps.map((item, index) => {
             return (
               <button
                 key={index}
