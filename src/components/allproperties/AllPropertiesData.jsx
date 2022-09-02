@@ -116,7 +116,7 @@ if (loading) {
         </div>
       </div>
       {!loading && (
-          <div className='btn-container'>
+          <div className='btn-containers'>
             <button className='prev-btn' onClick={prevPage}>
               prev
             </button>
