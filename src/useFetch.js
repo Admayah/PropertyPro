@@ -5,10 +5,12 @@ import axios from "axios";
 export const useFetch = () => {
     const [loading, setLoading] = useState(true)
     const [datas, setDatas] = useState([]);
+    const [allData, setAllData] = useState([])
     const getProperties = async () => {
             const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties`)
             const { data } = response
             console.log(data)
+            setAllData(data)
             setDatas(paginate(data))
             setLoading(false)
     }
@@ -17,7 +19,7 @@ export const useFetch = () => {
         getProperties()
     }, [])
     console.log(datas)
-    return { loading, datas }
+    return { loading, datas, allData }
 }
 // import React, { useState, useEffect } from "react";
 // import axios from "axios";

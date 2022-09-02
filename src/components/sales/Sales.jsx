@@ -8,14 +8,14 @@ import PropertiesInfo from "../allproperties/PropertiesInfo";
 
 
 function Sales() {
-  const { loading, datas } = useFetch();
+  const { loading, allData, datas } = useFetch();
   const [page, setPage] = useState(0)
 
   const [saleProps, setSaleProps] = useState([]);
 
-  // const salesPoperties = 
+  // const salesPoperties = datas
 
-console.log('all data', datas)
+console.log('all data', allData)
 
 
 
