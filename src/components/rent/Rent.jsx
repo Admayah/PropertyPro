@@ -24,7 +24,7 @@ function Rent() {
   const rentData = allData.filter((item) => {
     return item.purpose === "Rent"
   })
-  setFilterRent(newData)
+  setFilterRent(rentData)
   console.log("this are rent data only", rentData)
   const newRentInfo = paginate(rentData)
   console.log('paginate rent info', newRentInfo)
