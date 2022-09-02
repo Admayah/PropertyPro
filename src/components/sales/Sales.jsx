@@ -13,13 +13,16 @@ function Sales() {
 
   const [saleProps, setSaleProps] = useState([]);
 
-  const salesPoperties = saleProps.filter((item) => item.purpose === 'sale')
+  // const salesPoperties = 
+
+
 
 
 
   useEffect(() => {
     if (loading) return
-    setSaleProps(datas[page])
+   const newData = datas.filter((item) => item.purpose === 'sale')
+    setSaleProps(newData[page])
   }, [page]);
 
 
@@ -52,7 +55,7 @@ function Sales() {
       <ToastContainer />
       <div className="all-properties-container">
         <div className="properties-card-wrapper">
-          {salesPoperties.map((item) => (
+          {saleProps.map((item) => (
             <PropertiesInfo
               key={item.id}
               {...item}
