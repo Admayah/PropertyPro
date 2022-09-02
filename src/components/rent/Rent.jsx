@@ -34,6 +34,7 @@ console.log('all data', allData)
     const newProps = paginate(newData)
     console.log(newProps)
     setRentProps(newProps[page])
+    console.log(rentProps)
   //  const newData = datas.filter((item) => item.purpose === 'sale')
   //   setSaleProps(newData[page])
   }, [loading, page]);
