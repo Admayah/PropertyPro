@@ -58,6 +58,7 @@ console.log('all data', allData)
   }
 
   const handlePage = (index) => {
+    console.log(index)
     setPage(index)
   }
 console.log('this are rent properties', rentProps)
