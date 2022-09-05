@@ -36,9 +36,9 @@
   justify-content: center;
   align-items: center;
 }
-input[type="file"] {
+/* input[type="file"] {
   display: none;
-}
+} */
 
 .profile-input {
   border: none;
