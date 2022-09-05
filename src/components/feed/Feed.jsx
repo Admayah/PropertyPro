@@ -72,7 +72,7 @@ function Feed({ data }) {
 
   return (
     <div className="my-properties-cards">
-      {isModal && <Modal />}
+      {/* {isModal && <Modal />} */}
       <DashboardNav />
       <ToastContainer />
       <div className="my-properties-wrapper">
