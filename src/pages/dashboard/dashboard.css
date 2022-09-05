@@ -24,6 +24,7 @@
 .dashboard-content {
   flex: 9.5;
   background-color: #f6f8f9;
+  padding: 3rem;
 }
 .first-card-container {
   display: flex;
