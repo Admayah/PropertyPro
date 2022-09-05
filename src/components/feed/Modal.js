@@ -4,7 +4,7 @@ const Modal = ({closeModal}) => {
 
     const [isOpen, setIsOpen] = useState(false)
 
-    const showModal = () => useState(true)
+    // const showModal = () => useState(true)
     // const closeModal = () => useState(false)
     return (
         <section className="modal-container">
