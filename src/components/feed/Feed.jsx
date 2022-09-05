@@ -62,6 +62,7 @@ function Feed({ data }) {
       setAgentProperties(newAgentProperties)
       toast('Deleted successfully')
       dispatch(removeProperty(id))
+      setOpenModal(false)
     } catch (error) {
       toast.error(`${error.response.data.message}`)
     }

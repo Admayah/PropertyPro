@@ -15,10 +15,7 @@ const Modal = ({closeModal, deleteItem}) => {
                     <button
                         type='button'
                         className='btn confirm-btn'
-                        onClick={() => {
-                            deleteItem()
-                            closeModal(false)
-                            }}
+                        onClick={deleteItem}
                     >
                         confirm
                     </button>
