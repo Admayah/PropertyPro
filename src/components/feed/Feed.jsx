@@ -10,6 +10,7 @@ import { addProperty, removeProperty } from "../../features/properties/adminProp
 import 'react-toastify/dist/ReactToastify.css';
 import "./feed.css";
 import Button from "../Button/Button";
+import Modal from "./Modal";
 
 
 function Feed({ data }) {
@@ -18,6 +19,7 @@ function Feed({ data }) {
   const navigate = useNavigate()
 
   const [agentProperties, setAgentProperties] = useState([])
+  const [openModal, setOpenModal] = useState(false)
 
   const token = localStorage.getItem('token');
   let config = {
@@ -43,6 +45,7 @@ function Feed({ data }) {
     getProperties()
   }, [])
 
+   
 
   // const editHandler = async (id) => {
   //   const editProperty = agentProperties.filter((property) => {
@@ -69,6 +72,7 @@ function Feed({ data }) {
 
   return (
     <div className="my-properties-cards">
+      {isModal && <Modal />}
       <DashboardNav />
       <ToastContainer />
       <div className="my-properties-wrapper">
@@ -132,7 +136,14 @@ function Feed({ data }) {
                       <button className="btn edit-btn" onClick={() => {
                         navigate(`/edit-property/${id}`)
                       }}>EDIT</button>
-                      <button className="btn delete-btn" onClick={() => { deleteHandler(id) }}>DELETE</button>
+                      <button className="btn delete-btn" 
+                      onClick={()=>{
+                        setOpenModal(true)
+                      }}
+                      // onClick={() => { deleteHandler(id) }}
+                      
+                      >DELETE</button>
+                      {openModal && <Modal closeModal={setOpenModal}/>}
                     </div>
                   </div>
                 </div>
