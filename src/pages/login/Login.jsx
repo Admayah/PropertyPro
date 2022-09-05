@@ -36,13 +36,15 @@ export default function Login() {
       const response = await axios.post(`${process.env.REACT_APP_BASEURL}/login`, { ...user });
       const { token } = response.data;
       localStorage.setItem("token", token);
+      toast('User logged in successfully')
+      setDisabled(true)
       dispatch(
         addUser({
           id: new Date().getTime().toString(36),
           ...user,
         })
       );
-      toast('User logged in successfully')
+     
       setTimeout(navigate("/dashboard"), 10000)
     } catch (error) {
       toast.error(`${error.response.data.message}`)
