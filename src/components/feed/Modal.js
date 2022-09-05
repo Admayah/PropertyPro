@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './modal.css'
 
-const Modal = ({closeModal}) => {
+const Modal = ({closeModal, deleteItem}) => {
 
     const [isOpen, setIsOpen] = useState(false)
 
@@ -15,6 +15,7 @@ const Modal = ({closeModal}) => {
                     <button
                         type='button'
                         className='btn confirm-btn'
+                        onClick={deleteItem}
                     >
                         confirm
                     </button>

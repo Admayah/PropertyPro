@@ -143,7 +143,7 @@ function Feed({ data }) {
                       // onClick={() => { deleteHandler(id) }}
                       
                       >DELETE</button>
-                      {openModal && <Modal closeModal={setOpenModal}/>}
+                      {openModal && <Modal closeModal={setOpenModal} deleteItem={deleteHandler(id)}/>}
                     </div>
                   </div>
                 </div>
