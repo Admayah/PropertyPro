@@ -11,38 +11,51 @@ import CustomFetch from "../../CustomFetch";
 
 function AllPropertiesData() {
 
-  const { loading, datas } = useFetch()
-  const [page, setPage] = useState(0)
+  // const { loading, datas } = useFetch()
+  // const [page, setPage] = useState(0)
+  const [loading, setLoading] = useState(false)
   const [properties, setProperties] = useState([])
 
 
-  useEffect(() => {
-    if (loading) return
-    setProperties(datas[page])
-  }, [loading, page])
 
-  const nextPage = () => {
-    setPage((oldPage) => {
-      let nextPage = oldPage + 1
-      if (nextPage > datas.length - 1) {
-        nextPage = 0
-      }
-      return nextPage
-    })
-  }
-  const prevPage = () => {
-    setPage((oldPage) => {
-      let prevPage = oldPage - 1
-      if (prevPage < 0) {
-        prevPage = datas.length - 1
-      }
-      return prevPage
-    })
-  }
+useEffect(() => {
+  setLoading(true)
+  const getProperties = async () => {
+    const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties`)
+    const { data } = response
+    console.log(data)
+    setProperties(data)
+    // setDatas(paginate(data))
+    setLoading(false)
+}
+}, [])
+  // useEffect(() => {
+  //   if (loading) return
+  //   setProperties(datas[page])
+  // }, [loading, page])
 
-  const handlePage = (index) => {
-    setPage(index)
-  }
+  // const nextPage = () => {
+  //   setPage((oldPage) => {
+  //     let nextPage = oldPage + 1
+  //     if (nextPage > datas.length - 1) {
+  //       nextPage = 0
+  //     }
+  //     return nextPage
+  //   })
+  // }
+  // const prevPage = () => {
+  //   setPage((oldPage) => {
+  //     let prevPage = oldPage - 1
+  //     if (prevPage < 0) {
+  //       prevPage = datas.length - 1
+  //     }
+  //     return prevPage
+  //   })
+  // }
+
+  // const handlePage = (index) => {
+  //   setPage(index)
+  // }
 
 
 // const {loading, datas} = useFetch();
@@ -115,7 +128,7 @@ if (loading) {
           ))}
         </div>
       </div>
-      {!loading && (
+      {/* {!loading && (
           <div className='btn-containers'>
             <button className='prev-btn' onClick={prevPage}>
               prev
@@ -135,7 +148,7 @@ if (loading) {
               next
             </button>
           </div>
-        )}
+        )} */}
       <Footer />
     </>
   );
