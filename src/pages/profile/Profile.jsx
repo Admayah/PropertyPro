@@ -4,97 +4,130 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import DashboardNav from "../dashboard/dashboardnav/DashboardNav";
 import "./profile.css";
 
-function Profile() {
+function Profile(props) {
   return (
     <>
       <DashboardNav />
       <div className="profile-dashboard-container">
         <Sidebar />
-        <div className="profile-container">
-          <h3>My Profile</h3>
-          <div className="user-profile-wrapper">
-            <div className="properties-title-wrapper">
-              <div className="property-location">
-                <div className="property-location-header">
-                  Contact Information
-                </div>
-                <div className="property-infos">
-                  <span className="profile-input-container">
-                    <InputField
-                      type='text'
-                      className='profile-input'
-                      placeholder='Enter first name'
-                      name='firstName'
-                    />
-                  </span>
-                  <span className="profile-input-container">
-                    <InputField
-                      type='text'
-                      className='profile-input'
-                      placeholder='Enter last name'
-                      name='lastName'
-                    />
-                  </span>
-                </div>
-                <div className="property-infos">
-                  <span className="profile-input-container">
-                    <InputField
-                      type='email'
-                      className='profile-input'
-                      placeholder='Enter Email Address'
-                      name='email'
-                    />
-                  </span>
-                  <span className="profile-input-container">
-                    <InputField
-                      type='tel'
-                      className='profile-input'
-                      placeholder='Enter Phone Number'
-                      name='phoneNo'
-                    />
-                  </span>
-                </div>
+    <div className="container addbook">
+      <div className="row">
+        <div className="col-sm-12">
+          <form onSubmit={props.handleSubmit}>
+            <div className="col-sm-4">
+              <div className="form-group">
+                <label>First Name</label>
+                <input
+                  type="text"
+                  name="firstname"
+                  value={props.firstname}
+                  className="form-control"
+                  onChange={props.handlefirstChange}
+                />
               </div>
             </div>
-            <div className="properties-title-wrapper">
-              <div className="property-location">
-                <div className="property-location-header">Change Password</div>
-                <InputField
-                      type='password'
-                      className='profile-input'
-                      placeholder='Enter Old Password'
-                      name='password'
-                    />
-                <div className="property-infos">
-                  <span className="profile-input-container">
-                    <InputField
-                      type='password'
-                      className='profile-input'
-                      placeholder='Enter New Password'
-                      name='email'
-                    />
-                  </span>
-                  <span className="profile-input-container">
-                    <InputField
-                      type='password'
-                      className='profile-input'
-                      placeholder='Confirm New Password'
-                      name='phoneNo'
-                    />
-                  </span>
-                </div>
-                <div className="property-infos">
-                  <label className="photo-wrapper profile-input-container">
-                    <span className="profile">
-                      Upload Profile Photo
-                      <input type="file" profile-input-container="photo" />
-                    </span>
-                  </label>
-                </div>
+            <div className="col-sm-4">
+              <div className="form-group">
+                <label>Last Name</label>
+                <input
+                  type="text"
+                  name="lastname"
+                  value={props.lastname}
+                  className="form-control"
+                  onChange={props.handlelastChange}
+                />
               </div>
             </div>
-          </div>
+            {/* <div className="col-sm-4">
+              <div className="form-group">
+                <label>Book Name</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="bookname"
+                  value={props.bookname}
+                />
+              </div>
+            </div> */}
+            <div className="col-sm-4">
+              <div className="form-group">
+                <label>Email</label>
+                <input
+                  type="email"
+                  className="form-control"
+                  name="email"
+                  value={props.email}
+                />
+              </div>
+            </div>
+            {/* <div className="col-sm-4">
+              <div className="form-group">
+                <label>Launch Date</label>
+                <input
+                  type="tel"
+                  className="form-control"
+                  name="phone"
+                  value={props.phone}
+                />
+              </div>
+            </div> */}
+            <div className="col-sm-4">
+              <div className="form-group">
+                <label>Phone Number</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="phone"
+                  value={props.phone}
+                />
+              </div>
+            </div>
+            <div className="col-sm-4">
+              <div className="form-group">
+                <label>state</label>
+                <input
+                  type="email"
+                  className="form-control"
+                  name="state"
+                  value={props.state}
+                />
+              </div>
+            </div>
+            <div className="col-sm-4">
+              <div className="form-group">
+                <label>Address</label>
+                <input type="text" className="form-control" name="address" />
+              </div>
+            </div>
+            <div className="col-sm-4">
+              <div className="form-group">
+                <label>City</label>
+                <input type="text" className="form-control" />
+              </div>
+            </div>
+            <div className="col-sm-4">
+              <div className="form-group">
+                <label>State</label>
+                <input type="text" className="form-control" />
+              </div>
+            </div>
+            <div className="col-sm-4">
+              <div className="form-group">
+                <label>Pincode</label>
+                <input type="text" className="form-control" />
+              </div>
+            </div>
+            <div className="col-sm-4">
+              <div className="form-group">
+                <button type="submit" className="btn btn-default">
+                  Save
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
+      </div>
+    </div>
       </div>
     </>
   );

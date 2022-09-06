@@ -44,3 +44,25 @@
   border: none;
   outline: none;
 }
+
+
+
+
+.addbook {
+  background: #fff;
+  box-shadow: 0 0 28px rgba(0, 0, 0, 0.07);
+  margin-top: 90px;
+  padding: 30px;
+}
+.addbook form {
+  width: 100%;
+}
+
+.addbook form .col-sm-4 {
+  display: inline-block;
+}
+
+.addbook .btn-default {
+  background: #111;
+  color: #fff;
+}
