@@ -31,6 +31,7 @@ useEffect(() => {
     // setDatas(paginate(data))
     setLoading(false)
 }
+getProperties()
 }, [])
   // useEffect(() => {
   //   if (loading) return
