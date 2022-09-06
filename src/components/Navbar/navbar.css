@@ -1,10 +1,12 @@
 .navbar-container {
   width: 100%;
-  /* background-color: #F3F3FA; */
+  background-color: #F3F3FA;
   color: #000;
   max-width: 1536px;
   margin: 0 auto;
   border-bottom: 1px solid #F98547;
+  position: fixed;
+  z-index: 2;
 }
 .navbar-wrapper {
   width: 90%;

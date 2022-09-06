@@ -83,13 +83,13 @@ export default function Signup() {
 				<div class="top_link"><a href="#"><img src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download" alt="" />Return home</a></div>
 				<div class="contact">
 					<form action="">
-						<h3>SIGN IN</h3>
+						<h3>SIGN UP</h3>
 						<input type="text" placeholder="FIRSTNAME" />
 						<input type="text" placeholder="LASTNAME" />
             <input type="text" placeholder="EMAIL" />
             <input type="text" placeholder="PASSWORD" />
             <input type="text" placeholder="PHONE NUMBER" />
-						<button class="submit">LET'S GO</button>
+						<button class="submit">CREATE AN ACCOUNT</button>
 					</form>
 				</div>
 			</div>
