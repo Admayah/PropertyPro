@@ -153,12 +153,18 @@
 
 .main-header_container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   margin: 20px;
-  padding: 20px;
+
+
   height: 150px; /*force height since there is no content*/
   background-color: #e3e4e6;
   color: slategray;
+}
+.main-header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
 }
 .main-header__info {
   display: flex;
