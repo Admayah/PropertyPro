@@ -15,7 +15,6 @@ export default function Dashboard() {
 
   return (
     <>
-      <DashboardNav />
       <div className="grid-container">
         <aside className="sidenav">
           <Sidebar />
@@ -41,6 +40,8 @@ export default function Dashboard() {
         </ul>
       </aside> */}
           <main className="main">
+      <DashboardNav />
+
             <div className="main-header">
               <div className="main-header_container">
                 <div className="main-header__wrapper">
