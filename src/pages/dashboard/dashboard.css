@@ -151,7 +151,7 @@
   cursor: pointer;
 }
 
-.main-header {
+.main-header_container {
   display: flex;
   justify-content: space-between;
   margin: 20px;
@@ -159,6 +159,25 @@
   height: 150px; /*force height since there is no content*/
   background-color: #e3e4e6;
   color: slategray;
+}
+.main-header__info {
+  display: flex;
+}
+.main-header__list {
+  overflow: hidden;
+  padding: 0 15px;
+  text-align: center;
+  float: left;
+  width: 33.33%;
+}
+
+.main-header__list a{
+  padding: 6px;
+  border: 1px solid #fff;
+  border-radius: 2px;
+  display: block;
+  text-align: left;
+  line-height: 1.2;
 }
 
 .main-overview {

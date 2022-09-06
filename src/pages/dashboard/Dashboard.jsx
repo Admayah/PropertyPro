@@ -10,25 +10,25 @@ import Footer from "../../components/footer/Footer";
 
 export default function Dashboard() {
   const getToken = localStorage.getItem("token")
-  const decodedToken =  jwt_decode(getToken)
-  const {newUser} = decodedToken
+  const decodedToken = jwt_decode(getToken)
+  const { newUser } = decodedToken
 
   return (
     <>
-<DashboardNav />
-<div className="grid-container">
-<aside className="sidenav">
-<Sidebar />
-</aside>
-  
-      {/* <div className="menu-icon">
+      <DashboardNav />
+      <div className="grid-container">
+        <aside className="sidenav">
+          <Sidebar />
+        </aside>
+        <div className="dashboard-content">
+          {/* <div className="menu-icon">
         <i className="fas fa-bars"></i>
       </div> */}
-      {/* <header className="header">
+          {/* <header className="header">
         <div className="header__search">Search...</div>
         <div className="header__avatar">Your face</div>
       </header> */}
-      {/* <aside className="sidenav">
+          {/* <aside className="sidenav">
         <div className="sidenav__close-icon">
           <i className="fas fa-times"></i>
         </div>
@@ -40,48 +40,67 @@ export default function Dashboard() {
           <li className="sidenav__list-item">Item five</li>
         </ul>
       </aside> */}
-      <main className="main">
-        <div className="main-header">
-          <div className="main-header__heading">Hello {newUser.first_name}</div>
-          <div className="main-header__updates">Recent Items</div>
-        </div>
-        <div className="main-overview">
-          <div className="overviewcard">
-            <div className="overviewcard__icon">
-            <i class="fa fa-dashboard fa-5x" aria-hidden="true" ></i>
+          <main className="main">
+            <div className="main-header">
+              <div className="main-header_container">
+                <div className="main-header__heading">Hello {newUser.first_name}</div>
+                <div className="main-header__updates">Recent Items</div>
+              </div>
+              <div className="main-header__info">
+                <div className="main-header__list">
+                  <a href="#">
+                    <span className="main-header__text">
+                      Enquires
+                    </span>
+                  </a>
+                </div>
+                <div className="main-header__list">
+                  <a href="#">
+                    <span className="main-header__text">
+                      Messages
+                    </span>
+                  </a>
+                </div>
+
+              </div>
             </div>
-            <div className="overviewcard__info">Properties</div>
-          </div>
-          <div className="overviewcard">
-            <div className="overviewcard__icon">
-            <i class="fa fa-id-card-o fa-5x" aria-hidden="true" ></i>
+            <div className="main-overview">
+              <div className="overviewcard">
+                <div className="overviewcard__icon">
+                  <i class="fa fa-dashboard fa-5x" aria-hidden="true" ></i>
+                </div>
+                <div className="overviewcard__info">Properties</div>
+              </div>
+              <div className="overviewcard">
+                <div className="overviewcard__icon">
+                  <i class="fa fa-id-card-o fa-5x" aria-hidden="true" ></i>
+                </div>
+                <div className="overviewcard__info">Subscription</div>
+              </div>
+              <div className="overviewcard">
+                <div className="overviewcard__icon">
+                  <i className="fa fa-user fa-5x" aria-hidden="true" ></i>
+                </div>
+                <div className="overviewcard__info">Profile</div>
+              </div>
+              <div className="overviewcard">
+                <div className="overviewcard__icon">Overview</div>
+                <div className="overviewcard__info">Card</div>
+              </div>
             </div>
-            <div className="overviewcard__info">Subscription</div>
-          </div>
-          <div className="overviewcard">
-            <div className="overviewcard__icon">
-            <i className="fa fa-user fa-5x" aria-hidden="true" ></i>
+            <div className="main-cards">
+              <div className="card">Card</div>
+              <div className="card">Card</div>
+              <div className="card">Card</div>
             </div>
-            <div className="overviewcard__info">Profile</div>
-          </div>
-          <div className="overviewcard">
-            <div className="overviewcard__icon">Overview</div>
-            <div className="overviewcard__info">Card</div>
-          </div>
+            <Footer />
+          </main>
         </div>
-        <div className="main-cards">
-          <div className="card">Card</div>
-          <div className="card">Card</div>
-          <div className="card">Card</div>
-        </div>
-        <Footer />
-      </main>
-      
-      {/* <footer className="footer">
+        {/* <footer className="footer">
         <div className="footer__copyright">&copy; 2019 BB</div>
         <div className="footer__signature">Made with love by pure genius</div>
       </footer> */}
-    </div>
+      </div>
       {/* <div className="dashboard-container">
         <DashboardNav />
         <div className="dashboard-wrapper">
