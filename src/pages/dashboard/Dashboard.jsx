@@ -43,8 +43,8 @@ export default function Dashboard() {
           <main className="main">
             <div className="main-header">
               <div className="main-header_container">
-                <div className="main-header__heading">Hello {newUser.first_name}</div>
-                <div className="main-header__updates">Recent Items</div>
+                <span className="main-header__heading">Hello {newUser.first_name}</span>
+                <span className="main-header__updates">Recent Items</span>
               </div>
               <div className="main-header__info">
                 <div className="main-header__list">
