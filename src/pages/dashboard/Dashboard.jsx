@@ -1,4 +1,6 @@
 import React from "react";
+import jwt_decode from "jwt-decode";
+
 import Sidebar from "../../components/sidebar/Sidebar";
 import DashboardNav from "./dashboardnav/DashboardNav";
 import "./dashboard.css";
@@ -7,6 +9,9 @@ import Footer from "../../components/footer/Footer";
 
 
 export default function Dashboard() {
+  const getToken = localStorage.getItem("token")
+  const decodedToken =  jwt_decode(getToken)
+  const {newUser} = decodedToken
 
   return (
     <>
@@ -33,7 +38,7 @@ export default function Dashboard() {
       </aside>
       <main className="main">
         <div className="main-header">
-          <div className="main-header__heading">Hello user</div>
+          <div className="main-header__heading">Hello {newUser.first_name}</div>
           <div className="main-header__updates">Recent Items</div>
         </div>
         <div className="main-overview">
@@ -59,8 +64,9 @@ export default function Dashboard() {
           <div className="card">Card</div>
           <div className="card">Card</div>
         </div>
+        <Footer />
       </main>
-      <Footer />
+      
       {/* <footer className="footer">
         <div className="footer__copyright">&copy; 2019 BB</div>
         <div className="footer__signature">Made with love by pure genius</div>
