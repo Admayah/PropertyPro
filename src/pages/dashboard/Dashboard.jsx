@@ -15,12 +15,11 @@ export default function Dashboard() {
 
   return (
     <>
-
+<DashboardNav />
 <div className="grid-container">
       <div className="menu-icon">
         <i className="fas fa-bars"></i>
       </div>
-      <DashboardNav />
       {/* <header className="header">
         <div className="header__search">Search...</div>
         <div className="header__avatar">Your face</div>
