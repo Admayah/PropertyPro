@@ -17,7 +17,12 @@
   justify-content: space-between;
 }
 .navbar-left {
+  display: flex;
+  align-items: center;
+}
+.navbar-left a{
   /* color: white; */
+  color: #000;
   padding-left: 0.625rem;
   display: flex;
   align-items: center;

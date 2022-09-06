@@ -30,8 +30,11 @@ export default function Navbar(props) {
     <div className="navbar-container" >
       <div className="navbar-wrapper">
         <div className="navbar-left">
-          <i className="fa fa-home logo"></i>
-          <span className="logo-name">9jaProperty</span>
+          <a href="/">
+            <i className="fa fa-home logo"></i>
+            <span className="logo-name">9jaProperty</span>
+          </a>
+
         </div>
         <div className="navbar-right">
           <ul className={toggle ? "show-navbar-menu" : "hide-navbar-menu"} >
