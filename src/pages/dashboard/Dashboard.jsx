@@ -44,16 +44,22 @@ export default function Dashboard() {
         </div>
         <div className="main-overview">
           <div className="overviewcard">
-            <div className="overviewcard__icon">Overview</div>
-            <div className="overviewcard__info">Card</div>
+            <div className="overviewcard__icon">
+            <i class="fa fa-dashboard fa-5x" aria-hidden="true" ></i>
+            </div>
+            <div className="overviewcard__info">Properties</div>
           </div>
           <div className="overviewcard">
-            <div className="overviewcard__icon">Overview</div>
-            <div className="overviewcard__info">Card</div>
+            <div className="overviewcard__icon">
+            <i class="fa fa-id-card-o fa-5x" aria-hidden="true" ></i>
+            </div>
+            <div className="overviewcard__info">Subscription</div>
           </div>
           <div className="overviewcard">
-            <div className="overviewcard__icon">Overview</div>
-            <div className="overviewcard__info">Card</div>
+            <div className="overviewcard__icon">
+            <i className="fa fa-user fa-5x" aria-hidden="true" ></i>
+            </div>
+            <div className="overviewcard__info">Profile</div>
           </div>
           <div className="overviewcard">
             <div className="overviewcard__icon">Overview</div>

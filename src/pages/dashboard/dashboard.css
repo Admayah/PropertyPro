@@ -177,8 +177,9 @@
   background-color: #d3d3;
 }
 
-.overviewcard__icon {
-border-right: "1px solid #000";
+.overviewcard__info {
+border-left: "1px solid #000";
+border: "1px solid black";
 }
 .main-cards {
   column-count: 1;
