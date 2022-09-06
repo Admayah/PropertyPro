@@ -82,14 +82,44 @@ export default function Signup() {
 			<div class="left">
 				<div class="top_link"><a href="#"><img src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download" alt="" />Return home</a></div>
 				<div class="contact">
-					<form action="">
+					<form onSubmit={handleSubmit}>
 						<h3>SIGN UP</h3>
-						<input type="text" placeholder="FIRSTNAME" />
-						<input type="text" placeholder="LASTNAME" />
-            <input type="text" placeholder="EMAIL" />
-            <input type="text" placeholder="PASSWORD" />
-            <input type="text" placeholder="PHONE NUMBER" />
-						<button class="submit">CREATE AN ACCOUNT</button>
+						<input
+             type="text"
+              placeholder="FIRSTNAME"
+              name='firstName'
+              value={person.firstName}
+              onChange={handleChange}
+               />
+						<input
+             type="text"
+              placeholder="LASTNAME"
+              name='lastName'
+              value={person.lastName}
+              onChange={handleChange}
+              />
+            <input 
+            type="email"
+             placeholder="EMAIL"
+             name='email'
+             value={person.email}
+             onChange={handleChange}
+              />
+            <input 
+            type="password"
+             placeholder="PASSWORD"
+             name='password'
+             value={person.password}
+             onChange={handleChange}
+              />
+            <input 
+            type="tel" 
+            placeholder="PHONE NUMBER"
+            name='phoneNo'
+            value={person.phoneNo}
+            onChange={handleChange}
+             />
+						<button class="submit" disabled={isDisabled}>CREATE AN ACCOUNT</button>
 					</form>
 				</div>
 			</div>

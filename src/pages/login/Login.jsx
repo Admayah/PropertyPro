@@ -74,13 +74,13 @@ export default function Login() {
                 onChange={handleChange}
                  />
                 <input 
-                type="text" 
+                type="password" 
                 placeholder="PASSWORD" 
                 name='password'
                 value={user.password}
                 onChange={handleChange}
                 />
-                <button type="button" className="submit" onClick={handleSubmit} disabled={isDisabled}>
+                <button type="submit" className="submit" disabled={isDisabled}>
                   {isDisabled ? <i class="fa fa-circle-o-notch fa-spin"></i> : 'Login'}
                   </button>
               </form>
