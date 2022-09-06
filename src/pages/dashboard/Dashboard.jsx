@@ -93,7 +93,7 @@ export default function Dashboard() {
             </div>
             <div className="main-cards">
               <div className="card">
-                <img src="/images/perform.jpg" alt="perform" />
+                <img src="/images/perform2.jpg" alt="perform" />
                 Performance
               </div>
               <div className="card">Card</div>

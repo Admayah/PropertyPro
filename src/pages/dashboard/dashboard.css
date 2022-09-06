@@ -212,14 +212,24 @@ margin-top: 0;
 .overviewcard {
   display: flex;
   align-items: center;
+  /* justify-content: center; */
   /* justify-content: space-between; */
   padding: 20px;
   background-color: #d3d3;
 }
 
 .overviewcard__info {
+  font-size: 18px;
 border-left: "1px solid #000";
 border: "1px solid black";
+}.overviewcard__info::before{
+  content: '';
+  width: 0;
+  height: 100%;
+  position: absolute;
+  border: 1px solid black;
+  top: 0;
+  left: 100px;
 }
 .main-cards {
   column-count: 1;
