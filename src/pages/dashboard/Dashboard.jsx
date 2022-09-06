@@ -25,7 +25,7 @@ export default function Dashboard() {
         <div className="header__search">Search...</div>
         <div className="header__avatar">Your face</div>
       </header> */}
-      <aside className="sidenav">
+      {/* <aside className="sidenav">
         <div className="sidenav__close-icon">
           <i className="fas fa-times"></i>
         </div>
@@ -36,7 +36,7 @@ export default function Dashboard() {
           <li className="sidenav__list-item">Item four</li>
           <li className="sidenav__list-item">Item five</li>
         </ul>
-      </aside>
+      </aside> */}
       <main className="main">
         <div className="main-header">
           <div className="main-header__heading">Hello {newUser.first_name}</div>
