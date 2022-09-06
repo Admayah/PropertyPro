@@ -155,7 +155,7 @@
   display: flex;
   flex-direction: column;
   margin: 20px;
-
+margin-top: 0;
 
   height: 150px; /*force height since there is no content*/
   background-color: #e3e4e6;
