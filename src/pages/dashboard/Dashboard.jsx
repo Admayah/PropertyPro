@@ -44,16 +44,6 @@ export default function Dashboard() {
             <div className="main-header">
               <div className="main-header_container">
                 <span className="main-header__heading">Hello {newUser.first_name}</span>
-                <span className="main-header__updates">Recent Items</span>
-              </div>
-              <div className="main-header__info">
-                <div className="main-header__list">
-                  <a href="#">
-                    <span className="main-header__text">
-                      Enquires
-                    </span>
-                  </a>
-                </div>
                 <div className="main-header__list">
                   <a href="#">
                     <span className="main-header__text">
@@ -61,6 +51,16 @@ export default function Dashboard() {
                     </span>
                   </a>
                 </div>
+              </div>
+              <div className="main-header__info">
+                <div className="main-header_enquiry">
+                  <a href="#">
+                    <span className="main-header__text">
+                      Enquires
+                    </span>
+                  </a>
+                </div>
+
 
               </div>
             </div>
