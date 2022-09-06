@@ -21,8 +21,8 @@ function AllPropertiesData() {
 
 useEffect(() => {
   setLoading(true)
-  const getProperties = async () => {
-    const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties`)
+  const getProperties = async (page, limit) => {
+    const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties?page=${page}&limit=${limit}`)
     const { data } = response
     console.log(data)
     setProperties(data)
