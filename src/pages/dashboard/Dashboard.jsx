@@ -17,7 +17,10 @@ export default function Dashboard() {
     <>
 <DashboardNav />
 <div className="grid-container">
-  <Sidebar />
+<aside className="sidenav">
+<Sidebar />
+</aside>
+  
       {/* <div className="menu-icon">
         <i className="fas fa-bars"></i>
       </div> */}
