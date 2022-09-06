@@ -2,6 +2,7 @@ import React from "react";
 import Sidebar from "../../components/sidebar/Sidebar";
 import DashboardNav from "./dashboardnav/DashboardNav";
 import "./dashboard.css";
+import Footer from "../../components/footer/Footer";
 
 
 
@@ -59,10 +60,11 @@ export default function Dashboard() {
           <div className="card">Card</div>
         </div>
       </main>
-      <footer className="footer">
+      <Footer />
+      {/* <footer className="footer">
         <div className="footer__copyright">&copy; 2019 BB</div>
         <div className="footer__signature">Made with love by pure genius</div>
-      </footer>
+      </footer> */}
     </div>
       {/* <div className="dashboard-container">
         <DashboardNav />
