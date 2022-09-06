@@ -68,7 +68,7 @@ export default function Login() {
                 
                 <input type="email" placeholder="EMAIL" />
                 <input type="text" placeholder="PASSWORD" />
-                <button type="button" className="submit" disabled={isDisabled}>
+                <button type="button" className="submit" onClick={handleSubmit} disabled={isDisabled}>
                   {isDisabled ? <i class="fa fa-circle-o-notch fa-spin"></i> : 'Login'}
                   </button>
               </form>
