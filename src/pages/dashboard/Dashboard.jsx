@@ -9,17 +9,64 @@ export default function Dashboard() {
 
   return (
     <>
-      <div className="dashboard-container">
+
+<div className="grid-container">
+      <div className="menu-icon">
+        <i className="fas fa-bars"></i>
+      </div>
+      <header className="header">
+        <div className="header__search">Search...</div>
+        <div className="header__avatar">Your face</div>
+      </header>
+      <aside className="sidenav">
+        <div className="sidenav__close-icon">
+          <i className="fas fa-times"></i>
+        </div>
+        <ul className="sidenav__list">
+          <li className="sidenav__list-item">Item one</li>
+          <li className="sidenav__list-item">Item two</li>
+          <li className="sidenav__list-item">Item three</li>
+          <li className="sidenav__list-item">Item four</li>
+          <li className="sidenav__list-item">Item five</li>
+        </ul>
+      </aside>
+      <main className="main">
+        <div className="main-header">
+          <div className="main-header__heading">Hello user</div>
+          <div className="main-header__updates">Recent Items</div>
+        </div>
+        <div className="main-overview">
+          <div className="overviewcard">
+            <div className="overviewcard__icon">Overview</div>
+            <div className="overviewcard__info">Card</div>
+          </div>
+          <div className="overviewcard">
+            <div className="overviewcard__icon">Overview</div>
+            <div className="overviewcard__info">Card</div>
+          </div>
+          <div className="overviewcard">
+            <div className="overviewcard__icon">Overview</div>
+            <div className="overviewcard__info">Card</div>
+          </div>
+          <div className="overviewcard">
+            <div className="overviewcard__icon">Overview</div>
+            <div className="overviewcard__info">Card</div>
+          </div>
+        </div>
+        <div className="main-cards">
+          <div className="card">Card</div>
+          <div className="card">Card</div>
+          <div className="card">Card</div>
+        </div>
+      </main>
+      <footer className="footer">
+        <div className="footer__copyright">&copy; 2019 BB</div>
+        <div className="footer__signature">Made with love by pure genius</div>
+      </footer>
+    </div>
+      {/* <div className="dashboard-container">
         <DashboardNav />
         <div className="dashboard-wrapper">
-          {/* <div className="searchbar-wrapper">
-            <input type="search" className="search-bar" />
-            <img
-              src="https://img.icons8.com/material-outlined/50/000000/search--v1.png"
-              className="search-icon"
-              alt="search-menu"
-            />
-          </div> */}
           <Sidebar />
           <div className="dashboard-content">
             <div className="first-card-container">
@@ -38,7 +85,6 @@ export default function Dashboard() {
             </div>
  
             <div className="card">
-              {/* <img src="img_avatar.png" alt="Avatar" style="width:100%" /> */}
               <div className="db-container">
                 <i className="fa fa-user fa-5x" aria-hidden="true" ></i>
                 <h1 className="db-name">Profile</h1>
@@ -46,7 +92,7 @@ export default function Dashboard() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
