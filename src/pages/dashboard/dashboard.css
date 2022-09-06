@@ -74,21 +74,16 @@
 }
 
 
-body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-}
 
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 50px 1fr 50px;
-  grid-template-areas:
+  /* grid-template-areas:
     "header"
     "main"
     "footer";
-  height: 100vh;
+  height: 100vh; */
 }
 
 .header {
@@ -177,11 +172,14 @@ body {
 .overviewcard {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   padding: 20px;
   background-color: #d3d3;
 }
 
+.overviewcard__icon {
+border-right: "1px solid #000";
+}
 .main-cards {
   column-count: 1;
   column-gap: 20px;
