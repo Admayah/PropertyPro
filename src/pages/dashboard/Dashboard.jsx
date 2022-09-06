@@ -20,10 +20,11 @@ export default function Dashboard() {
       <div className="menu-icon">
         <i className="fas fa-bars"></i>
       </div>
-      <header className="header">
+      <DashboardNav />
+      {/* <header className="header">
         <div className="header__search">Search...</div>
         <div className="header__avatar">Your face</div>
-      </header>
+      </header> */}
       <aside className="sidenav">
         <div className="sidenav__close-icon">
           <i className="fas fa-times"></i>

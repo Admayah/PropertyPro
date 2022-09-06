@@ -7,10 +7,10 @@ function Sidebar() {
   return (
     <div className="sidebar-container">
       <div className="sidebar-wrapper">
-        <ul className="sidebar-items">
+        <ul className="sidenav__list">
           {SidebarData.map((item, index) => (
               <Link to={item.href} className="sidebar-links">
-            <li className="sidebar-menu" key={index}>
+            <li className="sidenav__list-item" key={index}>
                 <span className="sidebar-text">
                   <span className="sidebar-icon">
                     <img src={item.icon} alt="" className="sidebar-img" />
