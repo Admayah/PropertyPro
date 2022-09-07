@@ -16,9 +16,9 @@ export default function Dashboard() {
   return (
     <>
       <div className="grid-container">
-        <aside className="sidenav">
+        {/* <aside className="sidenav"> */}
           <Sidebar />
-        </aside>
+        {/* </aside> */}
         <div className="dashboard-content">
           {/* <div className="menu-icon">
         <i className="fas fa-bars"></i>
