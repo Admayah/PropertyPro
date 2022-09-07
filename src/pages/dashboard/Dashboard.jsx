@@ -17,9 +17,9 @@ export default function Dashboard() {
     <>
       {/* <DashboardNav /> */}
       <div className="grid-container">
-        <aside className="sidenav">
+        {/* <aside className="sidenav"> */}
           <Sidebar />
-        </aside>
+        {/* </aside> */}
         <div className="dashboard-content">
           {/* <div className="menu-icon">
         <i className="fas fa-bars"></i>
@@ -48,7 +48,7 @@ export default function Dashboard() {
                 <div className="main-header__list">
                   <a href="#">
                     <span className="main-header__text">
-                      Messages "0"
+                      Messages 
                     </span>
                   </a>
                 </div>
