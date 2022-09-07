@@ -15,7 +15,7 @@ export default function Dashboard() {
 
   return (
     <>
-      <DashboardNav />
+      {/* <DashboardNav /> */}
       <div className="grid-container">
         <aside className="sidenav">
           <Sidebar />
@@ -70,7 +70,7 @@ export default function Dashboard() {
             <div className="main-overview">
               <div className="overviewcard">
                 <div className="overviewcard__icon">
-                  <i class="fa fa-dashboard fa-5x" aria-hidden="true" ></i>
+                <i class="fa fa-list fa-5x" aria-hidden="true"></i>
                 </div>
                 <div className="overviewcard__info">Properties</div>
               </div>
@@ -87,8 +87,10 @@ export default function Dashboard() {
                 <div className="overviewcard__info">Profile</div>
               </div>
               <div className="overviewcard">
-                <div className="overviewcard__icon">Overview</div>
-                <div className="overviewcard__info">Card</div>
+                <div className="overviewcard__icon">
+                <i class="fa fa-heart-o fa-5x" aria-hidden="true"></i>
+                </div>
+                <div className="overviewcard__info">Favourite</div>
               </div>
             </div>
             <div className="main-cards">
@@ -99,7 +101,7 @@ export default function Dashboard() {
               <div className="card">Card</div>
               <div className="card">Card</div>
             </div>
-            <Footer />
+            {/* <Footer /> */}
           </main>
         </div>
         {/* <footer className="footer">

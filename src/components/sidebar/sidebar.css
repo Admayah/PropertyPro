@@ -1,8 +1,13 @@
 .sidebar-container {
   flex: 2.5;
-  height: calc(100vh - 80px);
+  position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	bottom: 0;
+  /* height: 100vh;
   background-color: #272c33;
-  display: block;
+  display: block; */
 }
 @media (max-width: 768px) {
   .sidebar-container {
@@ -14,12 +19,19 @@
   }
 }
 .sidebar-wrapper {
-  display: flex;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: (15rem - 60);
+  margin: 0;
+  padding: 30px;
+  overflow: auto;
+  /* display: flex;
   padding-top: 30px;
   width: 100%;
   justify-content: center;
 
-  color: white;
+  color: white; */
 }
 @media (max-width: 768px) {
   .sidebar-wrapper {
