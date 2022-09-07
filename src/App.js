@@ -17,6 +17,9 @@ import ErrorPage from "./ErrorPage";
 import ProtectedRoute from "./ProtectedRoute";
 import EditProperty from "./components/editProperty/EditProperty";
 import Agents from "./pages/agents";
+import CustomFetch from "./CustomFetch";
+import Check from "./Check";
+
 
 
 function App() {
@@ -38,6 +41,7 @@ function App() {
           <Route path='/agents' element={<Agents />} />
           <Route path="/sales" element={<Sales />}></Route>
           <Route path="/rent" element={<Rent />}></Route>
+          <Route path="/hello" element={<Check />}></Route>
           {/* <Route path="/agents/:id" element={<Hello />} /> */}
           <Route path="/edit-property/:id" element={<EditProperty />}></Route>
           <Route path="/properties/:id" element={<PropertyDetails />}>
@@ -46,6 +50,7 @@ function App() {
             <Route path="review" element={<Review />} />
           </Route>
           <Route path="*" element={<ErrorPage />} ></Route>
+          <Route path="/fetchinfo" element={<CustomFetch />} ></Route>
         </Routes>
       </Router>
     </div>

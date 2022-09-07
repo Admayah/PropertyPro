@@ -104,7 +104,7 @@
   cursor: pointer;
 }
 
-.btn-container {
+.btn-containers {
   display: flex;
   justify-content: flex-end;
   flex-wrap: wrap;
@@ -125,7 +125,8 @@
 }
 .prev-btn,
 .next-btn {
-  background: transparent;
+  width: 3.75rem;
+  background: #1C3988;
   border-color: transparent;
   font-weight: bold;
   text-transform: capitalize;
@@ -133,6 +134,7 @@
   margin: 0.5rem;
   font-size: 1rem;
   cursor: pointer;
+  border-radius: .3rem;
 }
 
 @media screen and (min-width: 775px) {

@@ -60,9 +60,9 @@
 }
 .sidebar-menu {
   display: flex;
-  /* width: 50%; */
-  /* margin: 0 auto; */
-  margin-bottom: 20px;
+  width: 50%;
+ margin: 0 auto;
+  padding-bottom: 10px;
 }
 .sidebar-links:hover{
   font-size: 20px;

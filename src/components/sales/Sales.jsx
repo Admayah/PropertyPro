@@ -4,29 +4,46 @@ import Footer from "../footer/Footer";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useFetch } from "../../useFetch";
+import paginate from "../../utils";
 import PropertiesInfo from "../allproperties/PropertiesInfo";
 
 
 function Sales() {
-  const { loading, datas } = useFetch();
+  const { loading, allData, datas } = useFetch();
   const [page, setPage] = useState(0)
 
   const [saleProps, setSaleProps] = useState([]);
+  const [filterSale, setFilterSale] = useState([]);
 
-  const salesPoperties = saleProps.filter((item) => item.purpose === 'sale')
+  // const salesPoperties = datas
+
+console.log('all data', allData)
 
 
 
   useEffect(() => {
     if (loading) return
-    setSaleProps(datas[page])
-  }, [page]);
+    const newData = allData.filter((item) => {
+      console.log(item.purpose)
+      return item.purpose === "Sale"
+    }
+     )
+     
+    console.log('this are sale properties only====>', newData)
+    // const newProps = 
+    // console.log(newProps)
+    setSaleProps(paginate(newData))
+    setFilterSale(saleProps[page])
+    console.log(saleProps)
+  //  const newData = datas.filter((item) => item.purpose === 'sale')
+  //   setSaleProps(newData[page])
+  }, [loading, page]);
 
 
   const nextPage = () => {
     setPage((oldPage) => {
       let nextPage = oldPage + 1
-      if (nextPage > datas.length - 1) {
+      if (nextPage > saleProps.length - 1) {
         nextPage = 0
       }
       return nextPage
@@ -36,7 +53,7 @@ function Sales() {
     setPage((oldPage) => {
       let prevPage = oldPage - 1
       if (prevPage < 0) {
-        prevPage = datas.length - 1
+        prevPage = filterSale.length - 1
       }
       return prevPage
     })
@@ -45,14 +62,14 @@ function Sales() {
   const handlePage = (index) => {
     setPage(index)
   }
-
+console.log('this are sales properties', saleProps)
   return (
     <>
       <Navbar />
       <ToastContainer />
       <div className="all-properties-container">
         <div className="properties-card-wrapper">
-          {salesPoperties.map((item) => (
+          {filterSale.map((item) => (
             <PropertiesInfo
               key={item.id}
               {...item}
@@ -65,7 +82,7 @@ function Sales() {
           <button className='btn prev-btn' onClick={prevPage}>
             prev
           </button>
-          {datas.map((item, index) => {
+          {saleProps.map((item, index) => {
             return (
               <button
                 key={index}

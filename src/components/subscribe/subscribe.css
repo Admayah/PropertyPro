@@ -1,0 +1,40 @@
+.subscribe-container {
+    width: 100%;
+    padding: 3rem 0;
+    background-color: #F3F3FA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.subscribe-img {
+    width: 13.563rem;
+    height: 13.563rem;
+    /* border: 1px solid yellow; */
+}
+.subscribe-text-wrapper {
+    width: 30rem;
+    /* display: flex;
+    align-items: center;
+    flex-direction: column; */
+    /* border: 1px solid black; */
+    margin-left: 6rem;
+}
+.subscribe-input {
+    padding-top: 1rem;
+    display: flex;
+    
+}
+.subscribe-input input{
+    width: 15rem;
+    padding: 0.25rem;
+    opacity: 0.5;
+}
+.subscribe-btn {
+    width: 7.875rem;
+    padding: 0.813rem 1.5rem;
+    color: #1C3988;;
+    border: 1px solid #1C3988;
+    margin-left: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}

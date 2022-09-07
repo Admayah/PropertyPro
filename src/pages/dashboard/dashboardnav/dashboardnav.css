@@ -3,6 +3,7 @@
   background-color: #312D2A;
   color: white;
   border-bottom: 1px solid #fff;
+  position: fixed;
 
 }
 .dashboard-nav-wrapper {

@@ -1,20 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from "react-router-dom";
+import axios from 'axios'
+import { ToastContainer, toast } from 'react-toastify';
+import { useDispatch, useSelector } from 'react-redux'
 import DashboardNav from '../../pages/dashboard/dashboardnav/DashboardNav'
 import Sidebar from '../sidebar/Sidebar'
 import Footer from '../footer/Footer'
-import './style.css'
-import { useParams, useNavigate } from "react-router-dom";
 import { PropertyFeature } from '../propertiesInput/propertyFeatures'
-import { ToastContainer, toast } from 'react-toastify';
-import axios from 'axios'
-import { useDispatch } from 'react-redux'
-import { editStateProperty } from '../../features/properties/adminProperties'
+import { updateStateProperty, editStateProperty } from '../../features/properties/adminProperties'
 import 'react-toastify/dist/ReactToastify.css';
-import { useEffect } from 'react'
+import './style.css'
 
-const EditProperty = ({data}) => {
+const EditProperty = () => {
   
-  const [datas, setDatas] = useState([])
+  // const [datas, setDatas] = useState([])
+
 
   const {id} = useParams();
   const dispatch = useDispatch();
@@ -31,31 +31,38 @@ const EditProperty = ({data}) => {
       const response = await axios.get(`${process.env.REACT_APP_BASEURL}/agent/property/${id}`, config)
       console.log(response.data)
       const {data} = response
-      const info = data[0]
-      setDatas(info)
+      const destructureData = data[0]
+      console.log(destructureData)
+      dispatch(updateStateProperty(destructureData))
+      // const info = data
+      // setDatas(info)
       
     }
 
     useEffect(()=> {
-      propertyInformation()
-      console.log(datas)
+      propertyInformation() 
     }, [])
 
-const {  title, address, state, land_area, purpose, description, year_of_build, price, no_of_bathrooms, no_of_rooms, no_of_store, no_of_garage } = datas;
+    const {updateProperty} = useSelector((state) => state.updateProperty)
+    console.log('store data', updateProperty)
+    console.log('get title from store data', updateProperty.title)
+
+// const {  title, address, state, land_area, purpose, description, year_of_build, price, no_of_bathrooms, no_of_rooms, no_of_store, no_of_garage } = getData;
+// console.log(title)
 
 const [editProperty, setEditProperty] = useState({ 
-  title, 
-  address, 
-  state, 
-  land_area, 
-  purpose, 
-  description, 
-  year_of_build, 
-  price, 
-  no_of_bathrooms, 
-  no_of_rooms, 
-  no_of_store,
-  no_of_garage
+  title: updateProperty?.title,
+  address: updateProperty?.address,
+  state: updateProperty.state, 
+  land_area: updateProperty.land_area,
+  purpose: updateProperty.purpose, 
+  description: updateProperty.description, 
+  year_of_build: updateProperty.year_of_build, 
+  price: updateProperty.price, 
+  no_of_bathrooms: updateProperty.no_of_bathrooms, 
+  no_of_rooms: updateProperty.no_of_rooms, 
+  no_of_store: updateProperty.no_of_store,
+  no_of_garage: updateProperty.no_of_garage
 });
   
 
@@ -96,7 +103,7 @@ console.log(editProperty)
                 <input
                   type="text"
                   className="property-data"
-                  placeholder="Title"
+                  // placeholder="Title"
                   name="title"
                   value={editProperty.title}
                   onChange={editHandler}
@@ -106,7 +113,7 @@ console.log(editProperty)
                 <input
                   type="text"
                   className="property-data"
-                  placeholder="year-of-build"
+                  // placeholder="year-of-build"
                   name="year_of_build"
                   value={editProperty.type}
                   onChange={editHandler}
@@ -116,7 +123,7 @@ console.log(editProperty)
                 <input
                   type="text"
                   className="property-data"
-                  placeholder="price"
+                  // placeholder="price"
                   name="price"
                   value={editProperty.price}
                   onChange={editHandler}
@@ -139,7 +146,7 @@ console.log(editProperty)
                 <select
                   value={editProperty.no_of_rooms}
                   name='no_of_rooms'
-                  placeholder="no-of-room"
+                  // placeholder="no-of-room"
                   className="property-option"
                   onChange={editHandler}
                   >
@@ -154,7 +161,7 @@ console.log(editProperty)
               <div className="property-data-input-field">
                 <select
                   value={editProperty.no_of_bathrooms}
-                  placeholder="no-of-no_of_bathrooms"
+                  // placeholder="no-of-no_of_bathrooms"
                   name='no_of_bathrooms'
                   className="property-option"
                   onChange={editHandler}
@@ -171,7 +178,7 @@ console.log(editProperty)
                 <select
                   value={editProperty.no_of_garage}
                   name='no_of_garage'
-                  placeholder="no-of-garage"
+                  // placeholder="no-of-garage"
                   className="property-option"
                   onChange={editHandler}
                   >
@@ -187,7 +194,7 @@ console.log(editProperty)
                 <select
                   value={editProperty.no_of_store}
                   name='no_of_store'
-                  placeholder="no-of-store"
+                  // placeholder="no-of-store"
                   className="property-option"
                   onChange={editHandler}
                   >
@@ -207,7 +214,7 @@ console.log(editProperty)
                   <input
                     type="text"
                     className="property-data"
-                    placeholder="State"
+                    // placeholder="State"
                     name='state'
                     value={editProperty.state}
                     onChange={editHandler}
@@ -218,7 +225,7 @@ console.log(editProperty)
                     type="text"
                     className="property-data"
                     name="address"
-                    placeholder="address"
+                    // placeholder="address"
                     value={editProperty.address}
                     onChange={editHandler}
                   />
@@ -231,7 +238,7 @@ console.log(editProperty)
                   <input
                     type="text"
                     className="property-data"
-                    placeholder="land-area"
+                    // placeholder="land-area"
                     name="land_area"
                     value={editProperty.land_area}
                     onChange={editHandler}
@@ -246,7 +253,7 @@ console.log(editProperty)
                     type="text"
                     className="property-data"
                     name="image_url"
-                    placeholder="image_url"
+                    // placeholder="image_url"
                     onChange={editHandler}
                     value={editProperty.image_url}
 
@@ -268,7 +275,8 @@ console.log(editProperty)
                     className="property-desc"
                     onChange={editHandler}
                     value={editProperty.description}
-                    placeholder="property description" />
+                    // placeholder="property description" 
+                    />
                 </div>
               </div>
             </div>

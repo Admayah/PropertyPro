@@ -26,7 +26,7 @@ function PropertiesInfo(props) {
             <li className="featureItem">
               <a href="/" className="feature-item-link">
                 <span>
-                  <i className="fa fa-bed property-feature"></i>
+                  <i className="fa fa-shower property-feature"></i>
                 </span>
                 {no_of_bathrooms}baths
               </a>
@@ -46,7 +46,7 @@ function PropertiesInfo(props) {
               <i className="fa fa-whatsapp wb-color"></i> 09073645165
             </span>
           </div>
-          <Link to={`/properties/${props.id}`} style={{color: 'blue'}}> Read More</Link>
+          <Link to={`/properties/${props.id}`} style={{color: 'blue'}}> Read More </Link>
         </div>
       </div>
     </>

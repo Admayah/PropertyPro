@@ -1,6 +1,6 @@
 .footer-container {
   width: 100%;
-  background-color: #312D2A;
+  background-color: #1C3988;
 }
 .footer-first-wrapper {
   padding: 1.25rem 2.1875rem;
@@ -142,6 +142,7 @@
   }
 }
 .social-icons {
+  color: #fff;
   width: 150px;
   display: flex;
   flex-direction: row-reverse;
@@ -157,6 +158,7 @@
   }
 }
 .social-icon {
+  color: #fff;
   font-size: 1.875rem;
   margin-left: 2.5rem;
   flex-wrap: wrap;
@@ -169,6 +171,9 @@
 .social-icon:hover {
   color: chartreuse;
   border-radius: 50%;
+}
+.ourServiceIcon{
+  color: #fff;
 }
 .contact-info-container {
   display: flex;

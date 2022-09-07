@@ -7,53 +7,61 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "./rent.css";
 import { useFetch } from "../../useFetch";
+import paginate from "../../utils";
 import PropertiesInfo from "../allproperties/PropertiesInfo";
 
 
 function Rent() {
-  const {loading, datas} = useFetch();
-  const [page, setPage] = useState(0)
+ const {loading, allData} = useFetch();
+ const [page, setPage] = useState(0);
 
-  const [rentProps, setRentProps] = useState([]);
+ const [rentProperties, setRentProperties] = useState([]);
+ const [filterRent, setFilterRent] = useState([]);
 
- const rentPoperties = rentProps.filter((item) => item.purpose === 'rent')
 
  useEffect(() => {
   if (loading) return
- setRentProps(datas[page])
-}, [page]);
+  const rentData = allData.filter((item) => {
+    return item.purpose === "Rent"
+  })
+  setFilterRent(rentData)
+  console.log("this are rent data only", rentData)
+  const newRentInfo = paginate(rentData)
+  console.log('paginate rent info', newRentInfo)
+  setRentProperties(newRentInfo[page])
+ }, [loading, page]);
 
-
-const nextPage = () => {
+ const nextPage = () => {
   setPage((oldPage) => {
     let nextPage = oldPage + 1
-    if (nextPage > datas.length - 1) {
-      nextPage = 0
+    if (nextPage > filterRent.length - 1) {
+      nextPage = 0;
     }
     return nextPage
   })
-}
-const prevPage = () => {
+ };
+
+ 
+ const prevPage = () => {
   setPage((oldPage) => {
     let prevPage = oldPage - 1
-    if (prevPage < 0) {
-      prevPage = datas.length - 1
+    if (nextPage > filterRent.length - 1) {
+      nextPage = 0;
     }
-    return prevPage
+    return prevPage;
   })
-}
+ };
 
-const handlePage = (index) => {
+ const handlePage = (index) => {
   setPage(index)
-}
-
+ }
   return (
     <>
      <Navbar />
       <ToastContainer />
       <div className="all-properties-container">
         <div className="properties-card-wrapper">
-          {rentPoperties.map((item) => (
+          {rentProperties.map((item) => (
             <PropertiesInfo
               key={item.id}
               {...item}
@@ -66,7 +74,7 @@ const handlePage = (index) => {
             <button className='btn prev-btn' onClick={prevPage} style={{backgroundColor: 'crimson', color: 'black'}}>
               prev
             </button>
-            {datas.map((item, index) => {
+            {filterRent.map((item, index) => {
               return (
                 <button
                   key={index}

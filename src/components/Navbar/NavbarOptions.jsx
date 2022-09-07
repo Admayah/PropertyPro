@@ -19,6 +19,10 @@ const NavbarOptions = [
     title: "AGENTS",
     href: "/agents",
   },
+  {
+    title: "Abc",
+    href: "hello"
+  }
 ];
 
 export default NavbarOptions;

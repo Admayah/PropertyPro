@@ -7,7 +7,7 @@ import "./dashboardnav.css";
 function DashboardNav() {
   const getToken = localStorage.getItem("token")
   const decodedToken =  jwt_decode(getToken)
-  // const {newUser} = decodedToken
+  const {newUser} = decodedToken
   const [dashtoggle, setDashToggle] = useState(false);
 
   const togHandler = () => {
@@ -29,7 +29,7 @@ function DashboardNav() {
             {dashtoggle ? dashCancelIcon : dashHamburgerIcon}
           </div>
           <div className="username-and-image">
-            {/* <span className="user-name"> {newUser.firstName}</span> */}
+            <span className="user-name"> {newUser.first_name}</span>
             <img src="/images/image2.jpg" alt="" className="profile-logo" />
           </div>
         </div>
