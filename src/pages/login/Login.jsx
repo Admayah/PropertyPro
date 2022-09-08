@@ -4,26 +4,27 @@ import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios'
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/footer/Footer";
-import InputField from "../../components/propertiesInput/Input";
 import { addUser } from "../../features/properties/userSlice";
 import { useDispatch } from "react-redux";
 import "./login.css";
 import 'react-toastify/dist/ReactToastify.css';
 
-const initialValue = {
-  email: '',
-  password: ''
-}
+
 
 export default function Login() {
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const initialValue = {
+    email: '',
+    password: ''
+  }
 
   const [user, setUser] = useState(initialValue)
   const [isDisabled, setDisabled] = useState(false);
 
-
-  const navigate = useNavigate();
+ 
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -32,21 +33,23 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setDisabled(true);
     try {
       const response = await axios.post(`${process.env.REACT_APP_BASEURL}/login`, { ...user });
       const { token } = response.data;
       localStorage.setItem("token", token);
       toast('User logged in successfully')
-      setDisabled(true)
       dispatch(
         addUser({
           id: new Date().getTime().toString(36),
           ...user,
         })
       );
-     
+      setDisabled(false);
       setTimeout(navigate("/dashboard"), 10000)
     } catch (error) {
+      console.log(error)
+      setDisabled(false);
       toast.error(`${error.response.data.message}`)
 
     }
@@ -56,41 +59,49 @@ export default function Login() {
     <>
       <Navbar />
       <ToastContainer />
-      <div className="login-container">
-        <div className="login-wrapper">
-          <div className="login-input-wrapper">
-            <div className="login-header">
-              <h2 className="login-header-text">LOGIN</h2>
-            </div>
-            <form onSubmit={handleSubmit}>
-              <div className="login-data-input-container">
-                <InputField
-                  type='email'
-                  name='email'
-                  value={user.email}
-                  placeholder='Enter email address'
-                  onChange={handleChange}
-                />
-                <InputField
-                  type='password'
-                  name='password'
-                  value={user.password}
-                  placeholder='Enter password'
-                  onChange={handleChange}
-                />
-              </div>
-              <button className="login-button" onClick={handleSubmit}>
-                {isDisabled ? <i class="fa fa-circle-o-notch fa-spin"></i> : 'Login'}
-              </button>
-            </form>
-          </div>
 
-          <div className="register-link">
-            Don't have an account? &nbsp; <Link to="/signup">Signup Here.</Link>
+      <section class="login">
+        <div class="login_box">
+          <div class="left">
+            <div class="top_link"><Link to="/"><img src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download" alt="" />Return home</Link>
+            </div>
+            <div class="contact">
+            <h3>SIGN IN</h3>
+              <form  onSubmit={handleSubmit}>
+                
+                <input 
+                type="email" 
+                placeholder="EMAIL"
+                name='email'
+                value={user.email}
+                onChange={handleChange}
+                 />
+                <input 
+                type="password" 
+                placeholder="PASSWORD" 
+                name='password'
+                value={user.password}
+                onChange={handleChange}
+                />
+                <button type="submit" className="submit" disabled={isDisabled}>
+                  {isDisabled ? <i class="fa fa-circle-o-notch fa-spin"></i> : 'Login'}
+                  </button>
+      
+              </form>
+              <div className="register-link">
+            Don't have an account? &nbsp; <Link to="/signup">Signup</Link>
+          </div>
+            </div>
+
+          </div>
+          <div class="right">
+            <div class="right-text">
+              <h2>9jaProperty</h2>
+              <h5>AN AMAZING REAL ESTATE AGENCY</h5>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
       <Footer />
     </>
-  );
-}
+  )}

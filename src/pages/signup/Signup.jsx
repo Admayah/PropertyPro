@@ -53,17 +53,17 @@ export default function Signup() {
       );
       setDisabled(false);
       setTimeout(navigate("/dashboard"), 10000)
-      
+
     } catch (error) {
       console.log(error)
       setDisabled(false);
       toast.error(`${error.response.data.message}`)
-      
+
     }
     setLoading(!loading)
     setDisabled(false);
     console.log('hello')
-    
+
     // setPerson({
     //   firstName: "",
     //   lastName: "",
@@ -77,69 +77,67 @@ export default function Signup() {
     <>
       <Navbar />
       <ToastContainer />
-      <div className="signup-container">
-        <div className="signup-wrapper">
-          <div className="signup-input-wrapper">
-            <header className="signup-header">
-              REGISTER
-            </header>
-            <form onSubmit={handleSubmit}>
-              <div className="signup-data-input-container">
-                <InputField
-                  type='text'
+      <section class="signup">
+        <div class="signup_box">
+          <div class="left">
+            <div class="top_link"><Link to="/"><img src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download" alt="" />Return home</Link></div>
+            <div class="contact">
+              <form onSubmit={handleSubmit}>
+                <h3>SIGN UP</h3>
+                <input
+                  type="text"
+                  placeholder="FIRSTNAME"
                   name='firstName'
                   value={person.firstName}
-                  placeholder='First Name'
                   onChange={handleChange}
                 />
-                <InputField
-                  type='text'
+                <input
+                  type="text"
+                  placeholder="LASTNAME"
                   name='lastName'
                   value={person.lastName}
-                  placeholder='Last Name'
                   onChange={handleChange}
                 />
-                <InputField
-                  type='email'
+                <input
+                  type="email"
+                  placeholder="EMAIL"
                   name='email'
                   value={person.email}
-                  placeholder='Enter email address'
                   onChange={handleChange}
                 />
-                <InputField
-                  type='password'
+                <input
+                  type="password"
+                  placeholder="PASSWORD"
                   name='password'
                   value={person.password}
-                  placeholder='Enter password'
                   onChange={handleChange}
                 />
-                <InputField
-                  type='tel'
+                <input
+                  type="tel"
+                  placeholder="PHONE NUMBER"
                   name='phoneNo'
                   value={person.phoneNo}
-                  placeholder='Enter phone number'
                   onChange={handleChange}
                 />
-              </div>
-              {/* <input type="submit" disabled={isDisabled} className="signup-button"/> */}
-            
-            {/* <Link to='#'> */}
-              <button className="signup-button" disabled={isDisabled}>
+                <button type="submit" className="submit" disabled={isDisabled}>
                 {isDisabled ? <i class="fa fa-circle-o-notch fa-spin"></i> : 'CREATE AN ACCOUNT'}
-              
-            </button>
-            {/* </Link> */}
-            </form>
-          </div>
-          
+                </button>
+              </form>
+              <div className="register-link">
+                Already an agent? &nbsp; <Link to="/login">Login Here.</Link>
+              </div>
+            </div>
 
-          <div className="register-link">
-            Already an agent? &nbsp; <Link to="/login">Login Here.</Link>
+          </div>
+          <div class="right">
+            <div class="right-text">
+              <h2>9jaProperty</h2>
+              <h5>AN AMAZING REAL ESTATE AGENCY</h5>
+            </div>
           </div>
         </div>
-
-      </div>
-      <Footer />
+      </section>
+    <Footer />
     </>
   );
 }
