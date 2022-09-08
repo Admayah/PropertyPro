@@ -83,7 +83,6 @@ export default function Login() {
                 {isDisabled ? <i class="fa fa-circle-o-notch fa-spin"></i> : 'Login'}
               </button>
             </form>
-            {/* <Link to='#'></Link> */}
           </div>
 
           <div className="register-link">
