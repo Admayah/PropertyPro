@@ -82,7 +82,7 @@ if(loading) {
       <ToastContainer />
       <div className="all-properties-container">
         <div className="properties-card-wrapper">
-          {rentProperties(a => a.purpose === "Rent").map((item) => (
+          {rentProperties.filter(a => a.purpose === "Rent").map((item) => (
             <PropertiesInfo
               key={item.id}
               {...item}

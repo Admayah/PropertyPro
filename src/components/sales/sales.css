@@ -3,17 +3,19 @@
     position: relative;
     max-width: 1536px;
     margin: 0 auto;
-    margin-top: 50px;
+    /* margin-top: 50px; */
   }
   
   .properties-card-wrapper {
     display: flex;
     flex-wrap: wrap;
+    padding: 10px;
   }
   @media (max-width: 768px) {
     .properties-card-wrapper {
       display: flex;
       flex-direction: column;
+      
     }
   }
   .property-info {
