@@ -26,9 +26,6 @@ const getSaleProperties = async () => {
     const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties`)
     const {data} = response
     setSaleProps(data)
-  const  newProps = setSaleProps.filter((item) => item.purpose === 'Sale')
-  setFilterSale(newProps)
-  setLoading(false)
   } catch (error) {
     setLoading(false)
 
@@ -91,7 +88,7 @@ if(loading) {
       <ToastContainer />
       <div className="all-properties-container">
         <div className="properties-card-wrapper">
-          {filterSale.map((item) => (
+          {saleProps.filter(a => a.purpose === 'Sale').map((item) => (
             <PropertiesInfo
               key={item.id}
               {...item}
