@@ -1,77 +1,127 @@
 .sidebar-container {
-  flex: 2.5;
-  height: calc(100vh - 80px);
-  background-color: #272c33;
-  display: block;
+  width: 20%;
+  background-color: #f4f4f4;
+text-align: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+ 
+  transition: all 0.6s ease-in-out;
+}
+.sidebar-left a{
+  display: inline-block;
+margin-top: 30px;
+color: #000;
+}
+
+.sidebar__logo {
+  display: none;
 }
 @media (max-width: 768px) {
   .sidebar-container {
-    height: 100vh;
-    display: flex;
-    background-color: #272c33;
-    z-index: 1;
-    display: none;
+    width: 70px;
+    transform: translateX(0);
   }
-}
-.sidebar-wrapper {
-  display: flex;
-  padding-top: 30px;
-  width: 100%;
-  justify-content: center;
-
-  color: white;
 }
 @media (max-width: 768px) {
-  .sidebar-wrapper {
-    /* padding: 10px; */
-    position: relative;
+.sidebar-left {
+display: none;
+}
+.sidebar__logo {
+  display: inline-block;
+  margin-top: 10px;
+}
+}
+.sidebar__menu_list {
+padding-left: 5px;
+}
+
+@media (max-width: 768px) {
+  .sidebar__menu_list {
+    display: none;
+  }
+  .sidebar__icon:hover + .sidebar__menu_list{
+    display: block;
   }
 }
+
+.sidenav__list {
+  color: #000;
+  padding: 0;
+  margin-top: 85px;
+  list-style-type: none;
+}
+@media (max-width: 768px) {
+  .sidenav__list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+.sidenav__list-item {
+  padding: 20px 20px 20px 40px;
+  padding-right: 0;
+  padding-left: 0;
+  color: #000;
+}
+
+
 .sidebar-items {
   display: block;
 }
+
 .sidebar-icon {
   color: white;
   margin-right: 10px;
   display: flex;
   align-items: center;
 }
+
 .sidebar-icon {
   filter: brightness(0) invert(1);
 }
+
 .sidebar-img {
   width: 30px;
   height: 30px;
+  color: #fff;
 }
+
 .sidebar-text {
   font-size: 18px;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
+  padding-left: 20px;
 }
 
 .sidebar-links {
+  width: 100%;
   display: flex;
   text-decoration: none;
   color: white;
 }
+
 .sidebar-links:hover {
-  font-size: 50px;
-  color: white;
+  font-size: 20px;
+  background: #fff;
 }
+
 .sidebar-menu {
   display: flex;
   width: 50%;
- margin: 0 auto;
+  margin: 0 auto;
   padding-bottom: 10px;
 }
-.sidebar-links:hover{
+
+.sidebar-links:hover {
   font-size: 20px;
- color: yellow;
+  color: yellow;
 }
+
 @media (min-width: 768px) {
   .sidebar-menu {
     width: 100%;
   }
 }
-
-

@@ -81,7 +81,7 @@ export default function PropertiesInputData() {
   }
   return (
     <div className="properties-container">
-      <DashboardNav />
+      {/* <DashboardNav /> */}
       <ToastContainer />
       <div className="properties-wrap">
         <Sidebar />
@@ -248,7 +248,7 @@ export default function PropertiesInputData() {
 
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
