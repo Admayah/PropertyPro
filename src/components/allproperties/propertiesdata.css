@@ -3,7 +3,8 @@
   position: relative;
   max-width: 1536px;
   margin: 0 auto;
-  margin-top: 3.125rem;
+  padding: 15px;
+  /* margin-top: 3.125rem; */
 }
 
 .properties-card-wrapper {

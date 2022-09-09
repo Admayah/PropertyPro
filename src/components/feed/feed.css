@@ -1,6 +1,7 @@
 .my-properties-wrapper {
   display: flex;
   max-width: 1536px;
+  padding: 15px;
 }
 
 .feed-container {

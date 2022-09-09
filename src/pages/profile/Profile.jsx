@@ -76,8 +76,8 @@ function Profile(props) {
 
             </div> */}
 
-            <div class="button-container">
-              <button class="button">SAVE</button>
+            <div class="buttons-container">
+              <button class="buttons">SAVE</button>
             </div>
           </div>
           {/* <div className="row">
