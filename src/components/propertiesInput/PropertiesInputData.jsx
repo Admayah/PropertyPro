@@ -252,15 +252,15 @@ export default function PropertiesInputData() {
 
           </div>
           <div className="property-image">
-            <label className="photo-wrapper profile-input-container">
-              <span className="profile">
-                Upload property Image
+            {/* <label className="photo-wrapper profile-input-container"> */}
+              {/* <span className="profile"> */}
+                {/* Upload property Image */}
                 <input type="file"
                   name='image'
                   // value={propertiesInfo.image}
                   onChange={saveFile} />
-              </span>
-            </label>
+              {/* </span> */}
+            {/* </label> */}
             <button className="post-btn" onClick={handleSubmit} disabled={isDisabled}>Post property</button>
           </div>
 
