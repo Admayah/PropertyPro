@@ -194,16 +194,32 @@ export default function PropertiesInputData() {
               </div>
             </div>
             <div className="properties-content-wrapper">
+            <div className="property-data-input-field">
+            <select
+                  value={propertiesInfo.noOfRoom}
+                  name='state'
+                  placeholder="state"
+                  className="property-option"
+                  onChange={informationHandler}
+                >
+                  <option value="" disabled selected hidden>
+                    State
+                  </option>
+                  {statesArray.map((feature) => (
+                    <option value={feature}>{feature}</option>
+                  ))}
+                </select>
+                </div>
               <div className="property-location">
-                <div className="property-location-header">Location</div>
-                <label htmlFor="price">State</label>
-                <InputField
+                {/* <div className="property-location-header">Location</div> */}
+                {/* <label htmlFor="price">State</label> */}
+                {/* <InputField
                   type='text'
                   placeholder='state'
                   name='state'
                   value={propertiesInfo.state}
                   onChange={informationHandler}
-                />
+                /> */}
                 <label htmlFor="price">Address</label>
                 <InputField
                   type='text'

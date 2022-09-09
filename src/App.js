@@ -50,6 +50,9 @@ function App() {
           </Route>
           <Route path="*" element={<ErrorPage />} ></Route>
           <Route path="/fetchinfo" element={<CustomFetch />} ></Route>
+          <Route
+            path="/post-property"
+            element={<PropertiesInputData />}></Route>
         </Routes>
       </Router>
     </div>
