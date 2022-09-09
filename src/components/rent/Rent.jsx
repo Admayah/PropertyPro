@@ -24,9 +24,9 @@ const [loading, setLoading] = useState(false)
     const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties`)
     const {data} = response
     setRentProperties(data)
-  const  newProps = rentProperties.filter((item) => item.purpose === 'Rent')
-  setFilterRent(newProps)
-  setLoading(false)
+  // const  newProps = rentProperties.filter((item) => item.purpose === 'Rent')
+  // setFilterRent(newProps)
+  // setLoading(false)
 
   } catch (error) {
     setLoading(false)
@@ -82,7 +82,7 @@ if(loading) {
       <ToastContainer />
       <div className="all-properties-container">
         <div className="properties-card-wrapper">
-          {filterRent.map((item) => (
+          {rentProperties(a => a.purpose === "Rent").map((item) => (
             <PropertiesInfo
               key={item.id}
               {...item}
