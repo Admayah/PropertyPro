@@ -32,13 +32,13 @@ function App() {
           <Route path="/properties" element={<AllPropertiesData />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/login" element={<Login />}></Route>
-          <Route path="/dashboard" element={<ProtectedRoute />}>
-          <Route path="/agent/dashboard" element={<ProtectedRoute />} />
+          <ProtectedRoute path="/dashboard" element={<Dashboard />}>
+          {/* <Route path="/agent/dashboard" element={<ProtectedRoute />} /> */}
           <Route path="/dashboard/my-properties" element={<Feed />}></Route>
           <Route
             path="/dashboard/post-property"
             element={<PropertiesInputData />}></Route>
-          </Route>
+          </ProtectedRoute>
          
           <Route path="/profile" element={<Profile />}></Route>
           <Route path='/agents' element={<Agents />} />
