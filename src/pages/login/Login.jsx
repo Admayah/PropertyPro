@@ -45,7 +45,6 @@ export default function Login() {
           ...user,
         })
       );
-
       setDisabled(false);
       setTimeout(navigate("/dashboard"), 10000)
     } catch (error) {
