@@ -8,8 +8,10 @@ import Sidebar from "../sidebar/Sidebar";
 import InputField from "./Input";
 import { useDispatch } from "react-redux";
 import { addProperty } from "../../features/properties/adminProperties";
+import { statesArray } from "./propertyFeatures";
 import "./propertiesInput.css";
 import 'react-toastify/dist/ReactToastify.css';
+
 
 
 export default function PropertiesInputData() {
@@ -80,11 +82,11 @@ export default function PropertiesInputData() {
     setDisabled(true);
   }
   return (
-    <div className="properties-container">
+    <div className="dashboard-wrapper">
       {/* <DashboardNav /> */}
       <ToastContainer />
-      <div className="properties-wrap">
-        <Sidebar />
+      <Sidebar />
+      <div className="main">
         <div className="properties-input-container">
           <div className="properties-input-wrapper">
             <div className="properties-header">Add New Property</div>
