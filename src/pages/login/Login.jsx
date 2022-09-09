@@ -45,6 +45,7 @@ export default function Login() {
           ...user,
         })
       );
+
       setDisabled(false);
       setTimeout(navigate("/dashboard"), 10000)
     } catch (error) {
@@ -90,6 +91,7 @@ export default function Login() {
               </form>
               <div className="register-link">
             Don't have an account? &nbsp; <Link to="/signup">Signup</Link>
+
           </div>
             </div>
 

@@ -150,15 +150,11 @@
     font-weight: bold;
     cursor: pointer;
 }
+
 @media (max-width: 1000px) {
   .submit {
     padding: 15px 15px;
   }
 }
-
-
-
-
-
 
 

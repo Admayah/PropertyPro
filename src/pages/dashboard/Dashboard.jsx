@@ -14,7 +14,6 @@ export default function Dashboard() {
 
   return (
     <div className="dashboard-wrapper">
-
       <Sidebar />
       <main class="main">
         <div className="main-header">
