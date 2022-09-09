@@ -32,27 +32,20 @@ function App() {
           <Route path="/properties" element={<AllPropertiesData />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/login" element={<Login />}></Route>
-          <Route path="/dashboard" element={
-            <ProtectedRoute>
-              <Dashboard />
-              <Feed />
-              <PropertiesInputData />
-            </ProtectedRoute>} />
-          {/* <Route path="/agent/dashboard" element={<ProtectedRoute />} /> */}
-          {/* <ProtectedRoute path="/my-properties" element={<Feed />} />
-          <ProtectedRoute
+          <Route path="/dashboard" element={<Dashboard />}></Route>
+          <Route path="/my-properties" element={<Feed />}></Route>
+          <Route
             path="/post-property"
-            element={<PropertiesInputData />} /> */}
-
+            element={<PropertiesInputData />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
           <Route path='/agents' element={<Agents />} />
           <Route path="/sales" element={<Sales />}></Route>
           <Route path="/rent" element={<Rent />}></Route>
-          <Route path="/hello" element={<Profile />}></Route>
+          <Route path="/hello" element={<Check />}></Route>
           <Route path="/edit-property/:id" element={<EditProperty />}></Route>
           <Route path="/properties/:id" element={<PropertyDetails />}>
             <Route path="features" element={<Features />} />
-            <Route path="desc" element={<Description />} />
+            <Route path="desc" element={<Description />} />{" "}
             <Route path="review" element={<Review />} />
           </Route>
           <Route path="*" element={<ErrorPage />} ></Route>
