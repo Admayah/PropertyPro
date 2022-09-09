@@ -9,60 +9,81 @@ import PropertiesInfo from "../allproperties/PropertiesInfo";
 
 
 function Sales() {
-  const { loading, allData, datas } = useFetch();
-  const [page, setPage] = useState(0)
-
+  // const { loading, allData, datas } = useFetch();
+  // const [page, setPage] = useState(0)
+const [loading, setLoading] = useState(false)
   const [saleProps, setSaleProps] = useState([]);
   const [filterSale, setFilterSale] = useState([]);
 
   // const salesPoperties = datas
 
-console.log('all data', allData)
+// console.log('all data', allData)
+
+const getSaleProperties = async () => {
+  setLoading(true)
+  try {
+    const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties`)
+    const {data} = response
+    setSaleProps(data)
+  const  newProps = setSaleProps.filter((item) => item.purpose === 'Sale')
+  setFilterSale(newProps)
+  setLoading(false)
+  } catch (error) {
+    setLoading(false)
+
+    console.log(error)
+  }
+
+ }
 
 
 
   useEffect(() => {
-    if (loading) return
-    const newData = allData.filter((item) => {
-      console.log(item.purpose)
-      return item.purpose === "Sale"
-    }
-     )
+    getSaleProperties()
+    // if (loading) return
+    // const newData = allData.filter((item) => {
+    //   console.log(item.purpose)
+    //   return item.purpose === "Sale"
+    // }
+    //  )
      
-    console.log('this are sale properties only====>', newData)
+    // console.log('this are sale properties only====>', newData)
     // const newProps = 
     // console.log(newProps)
-    setSaleProps(paginate(newData))
-    setFilterSale(saleProps[page])
-    console.log(saleProps)
+    // setSaleProps(paginate(newData))
+    // setFilterSale(saleProps[page])
+    // console.log(saleProps)
   //  const newData = datas.filter((item) => item.purpose === 'sale')
   //   setSaleProps(newData[page])
-  }, [loading, page]);
+  }, []);
 
 
-  const nextPage = () => {
-    setPage((oldPage) => {
-      let nextPage = oldPage + 1
-      if (nextPage > saleProps.length - 1) {
-        nextPage = 0
-      }
-      return nextPage
-    })
-  }
-  const prevPage = () => {
-    setPage((oldPage) => {
-      let prevPage = oldPage - 1
-      if (prevPage < 0) {
-        prevPage = filterSale.length - 1
-      }
-      return prevPage
-    })
-  }
+//   const nextPage = () => {
+//     setPage((oldPage) => {
+//       let nextPage = oldPage + 1
+//       if (nextPage > saleProps.length - 1) {
+//         nextPage = 0
+//       }
+//       return nextPage
+//     })
+//   }
+//   const prevPage = () => {
+//     setPage((oldPage) => {
+//       let prevPage = oldPage - 1
+//       if (prevPage < 0) {
+//         prevPage = filterSale.length - 1
+//       }
+//       return prevPage
+//     })
+//   }
 
-  const handlePage = (index) => {
-    setPage(index)
-  }
-console.log('this are sales properties', saleProps)
+//   const handlePage = (index) => {
+//     setPage(index)
+//   }
+// console.log('this are sales properties', saleProps)
+if(loading) {
+  <>Loading.....</>
+}
   return (
     <>
       <Navbar />
@@ -77,7 +98,7 @@ console.log('this are sales properties', saleProps)
           ))}
         </div>
       </div>
-      {!loading && (
+      {/* {!loading && (
         <div className='btn-container'>
           <button className='btn prev-btn' onClick={prevPage}>
             prev
@@ -97,7 +118,7 @@ console.log('this are sales properties', saleProps)
             next
           </button>
         </div>
-      )}
+      )} */}
       <Footer />
     </>
   );
