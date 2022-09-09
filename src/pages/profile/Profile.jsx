@@ -7,10 +7,10 @@ import "./profile.css";
 function Profile(props) {
   return (
     <>
-      <DashboardNav />
-      <div className="profile-dashboard-container">
+      {/* <DashboardNav /> */}
+      <div className="dashboard-wrapper">
         <Sidebar />
-    <div className="container addbook">
+    <div className="main">
       <div className="row">
         <div className="col-sm-12">
           <form onSubmit={props.handleSubmit}>
