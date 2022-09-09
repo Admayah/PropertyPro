@@ -32,19 +32,23 @@ function App() {
           <Route path="/properties" element={<AllPropertiesData />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/login" element={<Login />}></Route>
-          <ProtectedRoute path="/dashboard" element={<Dashboard />}>
+          <Route path="/dashboard" element={
+            <ProtectedRoute>
+              <Dashboard />
+              <Feed />
+              <PropertiesInputData />
+            </ProtectedRoute>} />
           {/* <Route path="/agent/dashboard" element={<ProtectedRoute />} /> */}
-          <Route path="/dashboard/my-properties" element={<Feed />}></Route>
-          <Route
-            path="/dashboard/post-property"
-            element={<PropertiesInputData />}></Route>
-          </ProtectedRoute>
-         
+          {/* <ProtectedRoute path="/my-properties" element={<Feed />} />
+          <ProtectedRoute
+            path="/post-property"
+            element={<PropertiesInputData />} /> */}
+
           <Route path="/profile" element={<Profile />}></Route>
           <Route path='/agents' element={<Agents />} />
           <Route path="/sales" element={<Sales />}></Route>
           <Route path="/rent" element={<Rent />}></Route>
-          {/* <Route path="/hello" element={<Check />}></Route> */}
+          <Route path="/hello" element={<Profile />}></Route>
           <Route path="/edit-property/:id" element={<EditProperty />}></Route>
           <Route path="/properties/:id" element={<PropertyDetails />}>
             <Route path="features" element={<Features />} />

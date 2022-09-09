@@ -90,11 +90,11 @@ const [editProperty, setEditProperty] = useState({
     }  
 console.log(editProperty)
   return (
-    <div className="properties-container">
-    <DashboardNav />
+    <div className="dashboard-wrapper">
+    {/* <DashboardNav /> */}
     <ToastContainer />
-    <div className="properties-wrap">
-      <Sidebar />
+    <Sidebar />
+    <div className="main">
       <div className="properties-input-container">
         <div className="properties-input-wrapper">
           <div className="properties-header">Add New Property</div>
