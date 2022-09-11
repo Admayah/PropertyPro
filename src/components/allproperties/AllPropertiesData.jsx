@@ -10,7 +10,7 @@ import "./propertiesdata.css"
 import CustomFetch from "../../CustomFetch";
 
 
-function AllPropertiesData() {
+function AllPropertiesData(rooms) {
 
   // const { loading, datas } = useFetch()
   // const [page, setPage] = useState(0)
