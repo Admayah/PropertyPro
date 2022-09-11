@@ -45,14 +45,14 @@
 	font-weight: bold;
 	line-height: 19px;
 	background: #1C3988;
-	border: none;
+	/* border: none; */
 	padding: 15px 25px;
 	border-radius: 6px;
 	color: white;
 	width: 100%;
 	margin-top: 24px;
-  opacity: .7;
-  cursor: pointer;
+  	opacity: .7;
+  	cursor: pointer;
 }
 .button:hover {
 	background: #6e67ee;
