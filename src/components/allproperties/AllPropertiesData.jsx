@@ -11,6 +11,7 @@ import CustomFetch from "../../CustomFetch";
 import { useSearchParams } from "react-router-dom";
 import { PropertyFeature } from "../propertiesInput/propertyFeatures";
 
+const filterByRoom = ["All", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 function AllPropertiesData() {
 
@@ -142,7 +143,7 @@ function AllPropertiesData() {
           className="room__label"
           >By Bedrooms</label>
           <select name="bedrooms" id="bedrooms" className="room__select">
-            {PropertyFeature.map((num) => (
+            {filterByRoom.map((num) => (
               <option
                value={num}
                onChange={handleChange}
