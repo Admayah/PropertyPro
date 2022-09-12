@@ -20,14 +20,14 @@ function AllPropertiesData() {
   // const [page, setPage] = useState(0)
   const [loading, setLoading] = useState(false)
   const [properties, setProperties] = useState([])
-  let [searchParams, setSearchParams] = useSearchParams()
+  // let [searchParams, setSearchParams] = useSearchParams()
   const [roomOption, selectRoomOption] = useState('All')
 
-  const rooms = searchParams.get("rooms")
+  // const rooms = searchParams.get("rooms")
 
-  console.log(searchParams)
+  // console.log(searchParams)
 
-  console.log(rooms)
+  // console.log(rooms)
 
 
   useEffect(() => {
