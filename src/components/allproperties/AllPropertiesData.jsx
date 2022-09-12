@@ -146,7 +146,7 @@ function AllPropertiesData() {
               <option
                value={num}
                onChange={handleChange}
-              >{roomOption}</option>
+              >{num}</option>
             ))}
           </select>
         </div>
