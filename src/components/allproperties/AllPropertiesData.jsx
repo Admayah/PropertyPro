@@ -8,13 +8,14 @@ import { useFetch } from "../../useFetch";
 import 'react-toastify/dist/ReactToastify.css';
 import "./propertiesdata.css"
 import CustomFetch from "../../CustomFetch";
-import { createSearchParams, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { PropertyFeature } from "../propertiesInput/propertyFeatures";
 
 const filterByRoom = ["All", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 function AllPropertiesData() {
 
+  let navigate = useNavigate();
   // const { loading, datas } = useFetch()
   // const [page, setPage] = useState(0)
   const [loading, setLoading] = useState(false)
@@ -47,9 +48,9 @@ function AllPropertiesData() {
 
   const handleChange = (e) => {
     selectRoomOption(e.target.value)
-    setSearchParams(
-      createSearchParams({rooms : e.target.value})
-    )
+    navigate(`/properties?rooms=${roomOption}`)
+
+
   }
   console.log('this is room option value', roomOption)
   // useEffect(() => {
