@@ -42,7 +42,7 @@ function AllPropertiesData() {
       setLoading(false)
     }
     getProperties()
-  }, [roomOption])
+  }, [rooms])
 
   const handleChange = (e) => {
     selectRoomOption(e.target.value)
