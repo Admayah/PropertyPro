@@ -46,6 +46,7 @@ function AllPropertiesData() {
   const handleChange = (e) => {
     selectRoomOption(e.target.value)
   }
+  console.log('this is room option value', roomOption)
   // useEffect(() => {
   //   if (loading) return
   //   setProperties(datas[page])
@@ -145,7 +146,7 @@ function AllPropertiesData() {
               <option
                value={roomOption}
                onChange={handleChange}
-              >{num}</option>
+              >{roomOption}</option>
             ))}
           </select>
 
