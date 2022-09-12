@@ -150,11 +150,12 @@ function AllPropertiesData() {
           <label
           className="room__label"
           >By Bedrooms</label>
-          <select name="bedrooms" id="bedrooms" className="room__select">
+          <select name="bedrooms" id="bedrooms" className="room__select" 
+               onChange={handleChange}
+               >
             {filterByRoom.map((num) => (
               <option
                value={num}
-               onChange={handleChange}
               >{num}</option>
             ))}
           </select>
