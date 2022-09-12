@@ -17,6 +17,9 @@ function AllPropertiesData(rooms) {
   const [loading, setLoading] = useState(false)
   const [properties, setProperties] = useState([])
 
+  const { rooms } = req.query;
+
+  console.log(rooms)
 
 
 useEffect(() => {
