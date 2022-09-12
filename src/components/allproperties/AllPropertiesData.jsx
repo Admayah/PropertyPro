@@ -149,7 +149,6 @@ function AllPropertiesData() {
               >{roomOption}</option>
             ))}
           </select>
-
         </div>
         <div className="properties-card-wrapper">
           {properties.map((item) => (
