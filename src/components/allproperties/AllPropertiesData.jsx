@@ -8,7 +8,7 @@ import { useFetch } from "../../useFetch";
 import 'react-toastify/dist/ReactToastify.css';
 import "./propertiesdata.css"
 import CustomFetch from "../../CustomFetch";
-import { useSearchParams } from "react-router-dom";
+import { createSearchParams, useSearchParams } from "react-router-dom";
 import { PropertyFeature } from "../propertiesInput/propertyFeatures";
 
 const filterByRoom = ["All", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
@@ -32,7 +32,7 @@ function AllPropertiesData() {
   useEffect(() => {
     setLoading(true)
     const getProperties = async () => {
-      setSearchParams(rooms = {roomOption})
+      // setSearchParams(rooms = roomOption)
       const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties?rooms=${roomOption}`);
       // ?page=${page}&limit=${limit}
 
@@ -47,6 +47,9 @@ function AllPropertiesData() {
 
   const handleChange = (e) => {
     selectRoomOption(e.target.value)
+    setSearchParams(
+      createSearchParams({rooms : e.target.value})
+    )
   }
   console.log('this is room option value', roomOption)
   // useEffect(() => {
