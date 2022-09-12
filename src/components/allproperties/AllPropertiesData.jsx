@@ -44,7 +44,7 @@ function AllPropertiesData() {
       setLoading(false)
     }
     getProperties()
-  }, [searchParams])
+  }, [])
 
   const handleChange = (e) => {
     selectRoomOption(e.target.value)
