@@ -8,6 +8,7 @@ import { useFetch } from "../../useFetch";
 import 'react-toastify/dist/ReactToastify.css';
 import "./propertiesdata.css"
 import CustomFetch from "../../CustomFetch";
+import { useSearchParams } from "react-router-dom";
 
 
 function AllPropertiesData() {
@@ -16,8 +17,11 @@ function AllPropertiesData() {
   // const [page, setPage] = useState(0)
   const [loading, setLoading] = useState(false)
   const [properties, setProperties] = useState([])
+  let [searchParams, setSearchParams] = useSearchParams()
 
-  const { rooms } = req.query;
+  const rooms = searchParams.get("rooms")
+
+  console.log(searchParams)
 
   console.log(rooms)
 
