@@ -32,7 +32,7 @@ function AllPropertiesData() {
   useEffect(() => {
     setLoading(true)
     const getProperties = async () => {
-      const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties?rooms=${rooms}`);
+      const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties?rooms=${roomOption}`);
       // ?page=${page}&limit=${limit}
 
       const { data } = response
