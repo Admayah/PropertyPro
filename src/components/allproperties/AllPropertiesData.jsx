@@ -155,7 +155,7 @@ function AllPropertiesData() {
                >
             {filterByRoom.map((num) => (
               <option
-               value={num}
+               value={roomOption}
               >{num}</option>
             ))}
           </select>
