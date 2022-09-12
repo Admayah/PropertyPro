@@ -144,7 +144,7 @@ function AllPropertiesData() {
           <select name="bedrooms" id="bedrooms" className="room__select">
             {PropertyFeature.map((num) => (
               <option
-               value={roomOption}
+               value={num}
                onChange={handleChange}
               >{roomOption}</option>
             ))}
