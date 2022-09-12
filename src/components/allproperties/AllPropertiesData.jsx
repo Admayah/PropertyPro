@@ -19,7 +19,7 @@ function AllPropertiesData() {
   const [loading, setLoading] = useState(false)
   const [properties, setProperties] = useState([])
   let [searchParams, setSearchParams] = useSearchParams()
-  const [roomOption, selectRoomOption] = useState(roomOption || 'All')
+  const [roomOption, selectRoomOption] = useState('All')
 
   const rooms = searchParams.get("rooms")
 
