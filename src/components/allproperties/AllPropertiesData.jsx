@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import "./propertiesdata.css"
 import CustomFetch from "../../CustomFetch";
 import { useSearchParams } from "react-router-dom";
+import { PropertyFeature } from "../propertiesInput/propertyFeatures";
 
 
 function AllPropertiesData() {
@@ -18,6 +19,7 @@ function AllPropertiesData() {
   const [loading, setLoading] = useState(false)
   const [properties, setProperties] = useState([])
   let [searchParams, setSearchParams] = useSearchParams()
+  const [roomOption, selectRoomOption] = useState(roomOption || 'All')
 
   const rooms = searchParams.get("rooms")
 
@@ -26,20 +28,24 @@ function AllPropertiesData() {
   console.log(rooms)
 
 
-useEffect(() => {
-  setLoading(true)
-  const getProperties = async () => {
-    const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties?rooms=${rooms}`);
-    // ?page=${page}&limit=${limit}
+  useEffect(() => {
+    setLoading(true)
+    const getProperties = async () => {
+      const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties?rooms=${rooms}`);
+      // ?page=${page}&limit=${limit}
 
-    const { data } = response
-    console.log(data)
-    setProperties(data)
-    // setDatas(paginate(data))
-    setLoading(false)
-}
-getProperties()
-}, [])
+      const { data } = response
+      console.log(data)
+      setProperties(data)
+      // setDatas(paginate(data))
+      setLoading(false)
+    }
+    getProperties()
+  }, [])
+
+  const handleChange = (e) => {
+    selectRoomOption(e.target.value)
+  }
   // useEffect(() => {
   //   if (loading) return
   //   setProperties(datas[page])
@@ -69,10 +75,10 @@ getProperties()
   // }
 
 
-// const {loading, datas} = useFetch();
-// console.log('this is the data', datas[0])
-// // const {loadings, currentPost} = CustomFetch();
-//   const [page, setPage] = useState(1)
+  // const {loading, datas} = useFetch();
+  // console.log('this is the data', datas[0])
+  // // const {loadings, currentPost} = CustomFetch();
+  //   const [page, setPage] = useState(1)
 
 
   // useEffect(()=>{
@@ -86,17 +92,17 @@ getProperties()
 
   // console.log(currentPost)
 
-//   const newData = () => { 
-//     try {
-//       const check = datas[page]
-//       setProperties(check)
-//     } catch (error) {fa
-//       console.log(error)
-//     }
-//   }
-//   useLayoutEffect(() => {
-// newData()
-//   }, []);
+  //   const newData = () => { 
+  //     try {
+  //       const check = datas[page]
+  //       setProperties(check)
+  //     } catch (error) {fa
+  //       console.log(error)
+  //     }
+  //   }
+  //   useLayoutEffect(() => {
+  // newData()
+  //   }, []);
 
   // const nextPage = () => {
   //   setPage((oldPage) => {
@@ -120,16 +126,30 @@ getProperties()
   // const handlePage = (index) => {
   //   setPage(index)
   // }
-if (loading) {
-  return <div style={{fontSize: '24px', textAlign: 'center'}}>
-    Loading....
+  if (loading) {
+    return <div style={{ fontSize: '24px', textAlign: 'center' }}>
+      Loading....
     </div>
-}
+  }
   return (
     <>
       <Navbar />
       <ToastContainer />
       <div className="all-properties-container">
+        <div className="dropdown">
+          <label
+          className="room__label"
+          >By Bedrooms</label>
+          <select name="bedrooms" id="bedrooms" className="room__select">
+            {PropertyFeature.map((num) => (
+              <option
+               value={roomOption}
+               onChange={handleChange}
+              >{num}</option>
+            ))}
+          </select>
+
+        </div>
         <div className="properties-card-wrapper">
           {properties.map((item) => (
             <PropertiesInfo
