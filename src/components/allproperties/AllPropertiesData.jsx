@@ -48,7 +48,7 @@ function AllPropertiesData() {
 
   const handleChange = (e) => {
     selectRoomOption(e.target.value)
-    navigate(`/properties?rooms=${roomOption}`)
+    navigate(`/properties?rooms=${e.target.value}`)
 
 
   }
