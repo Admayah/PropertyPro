@@ -16,7 +16,7 @@ const filterByRoom = ["All", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 function AllPropertiesData() {
 
   let navigate = useNavigate();
-  const router = useHistory();
+  // const router = useHistory();
   // const { loading, datas } = useFetch()
   // const [page, setPage] = useState(0)
   const [loading, setLoading] = useState(false)
