@@ -49,7 +49,7 @@ function AllPropertiesData() {
 
   const handleChange = async (e) => {
     selectRoomOption(e.target.value)
-    const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties?rooms=${roomOption}`);
+    const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties?rooms=${e.target.value}`);
       // ?page=${page}&limit=${limit}
 
       const { data } = response
