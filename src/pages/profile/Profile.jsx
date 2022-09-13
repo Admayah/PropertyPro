@@ -17,7 +17,7 @@ function Profile(props) {
     last_name: "",
     email: "",
     password: "",
-    phoneNo: "",
+    phone_no: "",
     state: "",
     city: "",
     new_password: ""
@@ -79,6 +79,7 @@ function Profile(props) {
               <div className="form-group a">
                 <label for="name">FIRSTNAME</label>
                 <input id="name" type="text"
+                name="first_name"
                   value={editUser.first_name}
                   onChange={handleChange}
                 />
@@ -87,6 +88,7 @@ function Profile(props) {
               <div className="form-group b">
                 <label for="first-name">LASTNAME</label>
                 <input id="first-name" type="text"
+                name="last_name"
                   value={editUser.last_name}
                   onChange={handleChange}
                 />
@@ -95,6 +97,7 @@ function Profile(props) {
               <div className="form-group email-group">
                 <label for="email">EMAIL</label>
                 <input id="email" type="email"
+                name="email"
                   value={editUser.email}
                   onChange={handleChange}
                 />
@@ -103,6 +106,7 @@ function Profile(props) {
               <div className="form-group phone-group">
                 <label for="phone">PHONE NUMBER</label>
                 <input id="phone" type="tel"
+                name="phone_no"
                   value={editUser.phone_no}
                   onChange={handleChange}
                 />
@@ -115,7 +119,8 @@ function Profile(props) {
 
               <div class="form-group">
                 <label for="city">STATE</label>
-                <input id="city" type="text"
+                <input id="state" type="text"
+                name="state"
                   value={editUser.state}
                   onChange={handleChange}
                 />
@@ -123,7 +128,8 @@ function Profile(props) {
 
               <div className="form-group">
                 <label for="address">CITY</label>
-                <input id="address" type="password"
+                <input id="address" type="text"
+                name="city"
                   value={editUser.city}
                   onChange={handleChange}
                 />
@@ -132,6 +138,7 @@ function Profile(props) {
               <div className="form-group">
                 <label for="city">PASSWORD</label>
                 <input id="city" type="password"
+                name="password"
                   value={editUser.password}
                   onChange={handleChange}
                 />
@@ -140,6 +147,7 @@ function Profile(props) {
               <div className="form-group">
                 <label for="zip">NEW PASSWORD</label>
                 <input id="confirm_new_password" type="password"
+                name="new_password"
                   value={editUser.new_password}
                   onChange={handleChange}
                 />
