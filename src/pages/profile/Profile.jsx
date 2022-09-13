@@ -10,6 +10,8 @@ import { ToastContainer, toast } from "react-toastify";
 
 function Profile(props) {
 
+  const dispatch = useDispatch()
+
   const [editUser, setEditUser] = useState({
     first_name: "",
     last_name: "",
