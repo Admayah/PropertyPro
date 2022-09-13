@@ -17,6 +17,7 @@ import 'react-toastify/dist/ReactToastify.css';
 export default function PropertiesInputData() {
 
   const [isDisabled, setDisabled] = useState(false);
+  const [loading, setLoading] = useState(false)
 
   const dispatch = useDispatch();
 
@@ -63,6 +64,7 @@ export default function PropertiesInputData() {
 
     formData.append("file", file);
     formData.append("fileName", JSON.stringify(propertiesInfo));
+    setLoading(true)
 
     try {
       const response = await axios.post(
@@ -76,6 +78,7 @@ export default function PropertiesInputData() {
         id,
         ...propertiesInfo
       }))
+      setLoading(false)
     } catch (error) {
       toast.error(`${error.response.data.message}`)
     }
@@ -261,7 +264,7 @@ export default function PropertiesInputData() {
                   onChange={saveFile} />
               {/* </span> */}
             {/* </label> */}
-            <button className="post-btn" onClick={handleSubmit} disabled={isDisabled}>Post property</button>
+          <button className="post-btn" onClick={handleSubmit} disabled={isDisabled}>{loading ? <>Posting</> : <>Post property</>}</button>
           </div>
 
         </div>
