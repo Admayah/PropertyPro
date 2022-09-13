@@ -56,7 +56,7 @@ function AllPropertiesData() {
 
   }
   useEffect(()=> {
-    handleChange()
+    handleChange(e)
   }, [searchParams])
 
   console.log('this is room option value', roomOption)
