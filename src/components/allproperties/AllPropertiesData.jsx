@@ -45,11 +45,17 @@ function AllPropertiesData() {
       setLoading(false)
     }
     getProperties()
-  }, [searchParams])
+  }, [])
 
-  const handleChange = (e) => {
+  const handleChange = async (e) => {
     selectRoomOption(e.target.value)
-    console.log(e.target.value, 'hello')
+    const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties?rooms=${rooms}`);
+      // ?page=${page}&limit=${limit}
+
+      const { data } = response
+      console.log(data)
+      setProperties(data)
+    // console.log(e.target.value, 'hello')
     navigate(`/properties?rooms=${e.target.value}`)
     // router.push(`/properties?rooms=${e.target.value}`)
 

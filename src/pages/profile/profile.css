@@ -54,6 +54,21 @@
   	opacity: .7;
   	cursor: pointer;
 }
+@media (min-width: 768px) {
+	.button {
+		width: 100px;
+		color: white;
+		border: none;
+		outline: none;
+		background-color: blue;
+		font-size: 18px;
+		padding: 5px;
+		border-radius: 5px;
+		margin-top: 20px;
+		cursor: pointer;
+	}
+}
+
 .button:hover {
 	background: #6e67ee;
   opacity: 0.9;
