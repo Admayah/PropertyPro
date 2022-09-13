@@ -1,10 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import axios from "axios";
+import { useDispatch } from "react-redux";
 import InputField from "../../components/propertiesInput/Input";
 import Sidebar from "../../components/sidebar/Sidebar";
+import { addUser } from "../../features/properties/userSlice";
 import DashboardNav from "../dashboard/dashboardnav/DashboardNav";
 import "./profile.css";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 
 function Profile(props) {
 
@@ -24,7 +26,7 @@ function Profile(props) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setEditUser({ ...person, [name]: value });
+    setEditUser({ ...editUser, [name]: value });
   };
 
   const handleSubmit = async (e) => {
@@ -37,7 +39,7 @@ function Profile(props) {
       dispatch(
         addUser({
           id: new Date().getTime().toString(36),
-          ...person
+          ...editUser
         })
       );
       setDisabled(false);
