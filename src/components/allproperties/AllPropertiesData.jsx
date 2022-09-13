@@ -45,7 +45,7 @@ function AllPropertiesData() {
       setLoading(false)
     }
     getProperties()
-  }, [searchParams])
+  }, [])
   const handleChange = async (e) => {
     selectRoomOption(e.target.value)
     const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties?rooms=${e.target.value}`);
@@ -57,7 +57,7 @@ function AllPropertiesData() {
   }
   useEffect(()=> {
     handleChange()
-  }, [])
+  }, [searchParams])
 
   console.log('this is room option value', roomOption)
   // useEffect(() => {
