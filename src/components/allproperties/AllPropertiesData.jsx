@@ -52,9 +52,9 @@ function AllPropertiesData() {
     const { data } = response
     console.log(data)
     setProperties(data)
-    // selectRoomOption(e.target.value)
+    selectRoomOption(e.target.value)
     // console.log(e.target.value, 'hello')
-    // navigate(`/properties?rooms=${e.target.value}`)
+    navigate(`/properties?rooms=${e.target.value}`)
     // router.push(`/properties?rooms=${e.target.value}`)
 
 
