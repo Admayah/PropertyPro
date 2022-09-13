@@ -49,7 +49,8 @@ function AllPropertiesData() {
 
   const handleChange = async (e) => {
     selectRoomOption(e.target.value)
-    const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties?rooms=${roomOption}`);
+    navigate(`/properties?rooms=${e.target.value}`)
+    const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties?rooms=${rooms}`);
     const { data } = response
     console.log(data)
     setProperties(data)
