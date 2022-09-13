@@ -28,7 +28,7 @@ function AllPropertiesData() {
 
   // console.log(searchParams)
 
-  // console.log(rooms)
+  console.log(rooms, 'rooms value')
 
 
   useEffect(() => {
@@ -146,6 +146,7 @@ function AllPropertiesData() {
       <Navbar />
       <ToastContainer />
       <div className="all-properties-container">
+        <div className="dropdown__wrapper">
         <div className="dropdown">
           <label
           className="room__label"
@@ -161,6 +162,8 @@ function AllPropertiesData() {
             ))}
           </select>
         </div>
+        </div>
+
         <div className="properties-card-wrapper">
           {properties.map((item) => (
             <PropertiesInfo

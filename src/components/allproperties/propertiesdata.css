@@ -163,7 +163,11 @@
   }
 }
 
-
+.dropdown__wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
 
 .dropdown {
   /* position: absolute;
