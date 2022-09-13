@@ -264,9 +264,9 @@ export default function PropertiesInputData() {
                   onChange={saveFile} />
               {/* </span> */}
             {/* </label> */}
-          <button className="post-btn" onClick={handleSubmit} disabled={isDisabled}>{loading ? <>Posting</> : <>Post property</>}</button>
+          
           </div>
-
+          <button className="post-btn" onClick={handleSubmit} disabled={isDisabled}>{loading ? <>Posting...</> : <>Post property</>}</button>
         </div>
       </div>
       {/* <Footer /> */}

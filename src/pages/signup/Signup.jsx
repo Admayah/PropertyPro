@@ -42,9 +42,10 @@ export default function Signup() {
 
     try {
       const response = await axios.post(`${process.env.REACT_APP_BASEURL}/signup`, { ...person });
+      toast('Account successfully created')
       const { token } = response.data;
       localStorage.setItem("token", token);
-      toast('Account successfully created')
+      
       dispatch(
         addUser({
           id: new Date().getTime().toString(36),
@@ -76,8 +77,9 @@ export default function Signup() {
   return (
     <>
       <Navbar />
-      <ToastContainer />
+      
       <section class="signup">
+      <ToastContainer />
         <div class="signup_box">
           <div class="left">
             <div class="top_link"><Link to="/"><img src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download" alt="" />Return home</Link></div>
