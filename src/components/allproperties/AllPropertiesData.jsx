@@ -46,17 +46,16 @@ function AllPropertiesData() {
     }
     getProperties()
   }, [searchParams])
+  const handleChange = async (e) => {
+    selectRoomOption(e.target.value)
+    const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties?rooms=${e.target.value}`);
+    console.log(e.target.value, 'hello')
+    navigate(`/properties?rooms=${e.target.value}`)
+    // router.push(`/properties?rooms=${e.target.value}`)
 
+
+  }
   useEffect(()=> {
-    const handleChange = async (e) => {
-      selectRoomOption(e.target.value)
-      const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties?rooms=${e.target.value}`);
-      console.log(e.target.value, 'hello')
-      navigate(`/properties?rooms=${e.target.value}`)
-      // router.push(`/properties?rooms=${e.target.value}`)
-  
-  
-    }
     handleChange()
   }, [])
 
