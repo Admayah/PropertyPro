@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
 import Signup from "./pages/signup/Signup";
 import Login from "./pages/login/Login";
 import Dashboard from "./pages/dashboard/Dashboard";
@@ -19,6 +20,8 @@ import EditProperty from "./components/editProperty/EditProperty";
 import Agents from "./pages/agents";
 import CustomFetch from "./CustomFetch";
 import Check from "./Check";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 
@@ -26,6 +29,7 @@ function App() {
 
   return (
     <div className="App">
+      <ToastContainer />
       <Router>
         <Routes>
           <Route path="/" element={<Homepage />}></Route>

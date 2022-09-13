@@ -34,9 +34,9 @@ function AllPropertiesData() {
   useEffect(() => {
     setLoading(true)
     const getProperties = async () => {
-      if(!rooms) {
-        setSearchParams({rooms: 'All'})
-      }
+      // if(!rooms) {
+      //   setSearchParams({rooms: 'All'})
+      // }
       // setSearchParams(rooms = roomOption)
       const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties?rooms=${rooms}`);
       // ?page=${page}&limit=${limit}
