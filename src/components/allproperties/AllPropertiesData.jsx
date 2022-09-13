@@ -56,7 +56,7 @@ function AllPropertiesData() {
       console.log(data)
       setProperties(data)
     // console.log(e.target.value, 'hello')
-    navigate(`/properties?rooms=${e.target.value}`)
+    // navigate(`/properties?rooms=${e.target.value}`)
     // router.push(`/properties?rooms=${e.target.value}`)
 
 
