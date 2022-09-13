@@ -28,12 +28,12 @@ function Profile(props) {
 
               <div className="form-group email-group">
                 <label for="email">EMAIL</label>
-                <input id="email" type="text" />
+                <input id="email" type="email" />
               </div>
 
               <div className="form-group phone-group">
                 <label for="phone">PHONE NUMBER</label>
-                <input id="phone" type="text" />
+                <input id="phone" type="tel" />
               </div>
 
               {/* <div className="textarea-group">
