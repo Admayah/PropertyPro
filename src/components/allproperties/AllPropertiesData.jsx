@@ -48,7 +48,7 @@ function AllPropertiesData() {
   }, [searchParams])
 
   const handleChange = async (e) => {
-    const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties?rooms=${e.target.value}`);
+    const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties?rooms=${rooms}`);
     const { data } = response
     console.log(data)
     setProperties(data)
