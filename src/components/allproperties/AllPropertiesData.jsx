@@ -22,7 +22,7 @@ function AllPropertiesData() {
   const [loading, setLoading] = useState(false)
   const [properties, setProperties] = useState([])
   let [searchParams, setSearchParams] = useSearchParams()
-  const [roomOption, selectRoomOption] = useState('All')
+  const [roomOption, selectRoomOption] = useState(['All'])
   const [query, setQuery] = useState("")
 
   const rooms = searchParams.get("rooms")
@@ -39,7 +39,7 @@ function AllPropertiesData() {
       //   setSearchParams({rooms: 'All'})
       // }
       // setSearchParams(rooms = roomOption)
-      const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties`);
+      const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties?rooms=${rooms}`);
       // ?page=${page}&limit=${limit}
 
       const { data } = response
@@ -53,7 +53,7 @@ function AllPropertiesData() {
 
   const handleChange = (e) => {
     setQuery(e.target.value)
-    // selectRoomOption(e.target.value)
+    selectRoomOption(e.target.value)
     // console.log(e.target.value, 'hello')
     // navigate(`/properties?rooms=${e.target.value}`)
     // router.push(`/properties?rooms=${e.target.value}`)
@@ -61,18 +61,18 @@ function AllPropertiesData() {
 
   }
 
-  console.log('query value====>', query)
-//   useEffect(()=> {
-// const params = new URLSearchParams()
-// if (query) {
-//   console.log('this is the query', query)
-//   params.append("rooms", query
-//   )
-// } else {
-//   params.delete("rooms")
-// }
-// navigate({search: params.toString()})
-//   }, [query, navigate])
+  // console.log('query value====>', query)
+  //   useEffect(()=> {
+  // const params = new URLSearchParams()
+  // if (query) {
+  //   console.log('this is the query', query)
+  //   params.append("rooms", query
+  //   )
+  // } else {
+  //   params.delete("rooms")
+  // }
+  // navigate({search: params.toString()})
+  //   }, [query, navigate])
   // console.log('this is room option value', roomOption)
   // useEffect(() => {
   //   if (loading) return
@@ -165,21 +165,21 @@ function AllPropertiesData() {
       <ToastContainer />
       <div className="all-properties-container">
         <div className="dropdown__wrapper">
-        <div className="dropdown">
-          <label
-          className="room__label"
-          >By Bedrooms</label>
-          <select name="bedrooms" id="bedrooms" className="room__select" 
-          value={query}
-               onChange={handleChange}
-               >
-            {filterByRoom.map((num) => (
-              <option
-               value={num}
-              >{num}</option>
-            ))}
-          </select>
-        </div>
+          <div className="dropdown">
+            <label
+              className="room__label"
+            >By Bedrooms</label>
+            <select name="bedrooms" id="bedrooms" className="room__select"
+              value={roomOption}
+              onChange={handleChange}
+            >
+              {filterByRoom.map((num) => (
+                <option
+                  value={num}
+                >{num}</option>
+              ))}
+            </select>
+          </div>
         </div>
 
         <div className="properties-card-wrapper">
