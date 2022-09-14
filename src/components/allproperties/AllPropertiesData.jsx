@@ -49,7 +49,7 @@ function AllPropertiesData() {
       setLoading(false)
     }
     getProperties()
-  }, [searchParams])
+  }, [])
 
   const handleChange = (e) => {
     setQuery(e.target.value)
@@ -63,6 +63,7 @@ function AllPropertiesData() {
   useEffect(()=> {
 const params = new URLSearchParams()
 if (query) {
+  console.log('this is the query', query)
   params.append("rooms", query
   )
 } else {
