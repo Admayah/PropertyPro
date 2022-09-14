@@ -62,17 +62,17 @@ function AllPropertiesData() {
   }
 
   console.log('query value====>', query)
-  useEffect(()=> {
-const params = new URLSearchParams()
-if (query) {
-  console.log('this is the query', query)
-  params.append("rooms", query
-  )
-} else {
-  params.delete("rooms")
-}
-navigate({search: params.toString()})
-  }, [query, navigate])
+//   useEffect(()=> {
+// const params = new URLSearchParams()
+// if (query) {
+//   console.log('this is the query', query)
+//   params.append("rooms", query
+//   )
+// } else {
+//   params.delete("rooms")
+// }
+// navigate({search: params.toString()})
+//   }, [query, navigate])
   // console.log('this is room option value', roomOption)
   // useEffect(() => {
   //   if (loading) return
