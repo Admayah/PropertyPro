@@ -49,7 +49,7 @@ function AllPropertiesData() {
       setLoading(false)
     }
     getProperties()
-  }, [])
+  }, [searchParams])
 
   const handleChange = (e) => {
     setQuery(e.target.value)
