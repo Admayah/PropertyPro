@@ -8,9 +8,16 @@ import DashboardNav from "../dashboard/dashboardnav/DashboardNav";
 import "./profile.css";
 import { ToastContainer, toast } from "react-toastify";
 
-function Profile(props) {
+function Profile() {
 
   const dispatch = useDispatch()
+
+  const token = localStorage.getItem('token');
+  let config = {
+    "headers": {
+      "Authorization": token
+    }
+  };
 
   const [editUser, setEditUser] = useState({
     first_name: "",
@@ -36,7 +43,7 @@ function Profile(props) {
     setDisabled(true);
 
     try {
-      const response = await axios.put(`${process.env.REACT_APP_BASEURL}/edit-profile`, { ...editUser });
+      const response = await axios.put(`${process.env.REACT_APP_BASEURL}/edit-profile`, { ...editUser }, config);
       toast('Account successfully created')
       dispatch(
         addUser({
