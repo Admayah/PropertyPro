@@ -42,7 +42,7 @@
 }
 
 .buttons-container {
-	background-color: #1C3988;
+	/* background-color: #1C3988; */
 	padding: 5px;
     margin-top: 20px;
     border-radius: 5px;
@@ -66,7 +66,7 @@
 		justify-content: center;
 		font-weight: bold;
 		line-height: 19px;
-		opacity: .7;
+		/* opacity: .7; */
 		cursor: pointer;
 	}
 }
