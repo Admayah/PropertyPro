@@ -61,7 +61,7 @@ function AllPropertiesData() {
 
   }
 
-  console.log('query value', query)
+  console.log('query value====>', query)
   useEffect(()=> {
 const params = new URLSearchParams()
 if (query) {
