@@ -39,7 +39,7 @@ function AllPropertiesData() {
       //   setSearchParams({rooms: 'All'})
       // }
       // setSearchParams(rooms = roomOption)
-      const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties?rooms=${rooms}`);
+      const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties`);
       // ?page=${page}&limit=${limit}
 
       const { data } = response
