@@ -43,7 +43,7 @@ function Profile() {
     setDisabled(true);
 
     try {
-      const response = await axios.put(`${process.env.REACT_APP_BASEURL}/edit-profile`, { ...editUser }, config);
+      const response = await axios.put(`${process.env.REACT_APP_BASEURL}/agent/edit`, { ...editUser }, config);
       toast('Account successfully created')
       dispatch(
         addUser({
@@ -72,7 +72,7 @@ function Profile() {
     // });
   };
 
-
+console.log(editUser, 'edit profile for user')
   return (
     <>
       {/* <DashboardNav /> */}
