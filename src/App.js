@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
 import Signup from "./pages/signup/Signup";
 import Login from "./pages/login/Login";
 import Dashboard from "./pages/dashboard/Dashboard";
@@ -19,6 +20,8 @@ import EditProperty from "./components/editProperty/EditProperty";
 import Agents from "./pages/agents";
 import CustomFetch from "./CustomFetch";
 import Check from "./Check";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 
@@ -26,6 +29,7 @@ function App() {
 
   return (
     <div className="App">
+      <ToastContainer />
       <Router>
         <Routes>
           <Route path="/" element={<Homepage />}></Route>
@@ -41,7 +45,7 @@ function App() {
           <Route path='/agents' element={<Agents />} />
           <Route path="/sales" element={<Sales />}></Route>
           <Route path="/rent" element={<Rent />}></Route>
-          <Route path="/hello" element={<Check />}></Route>
+          <Route path="/hello" element={<Profile />}></Route>
           <Route path="/edit-property/:id" element={<EditProperty />}></Route>
           <Route path="/properties/:id" element={<PropertyDetails />}>
             <Route path="features" element={<Features />} />
@@ -50,6 +54,9 @@ function App() {
           </Route>
           <Route path="*" element={<ErrorPage />} ></Route>
           <Route path="/fetchinfo" element={<CustomFetch />} ></Route>
+          <Route
+            path="/post-property"
+            element={<PropertiesInputData />}></Route>
         </Routes>
       </Router>
     </div>

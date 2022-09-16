@@ -6,10 +6,8 @@ import { useDispatch } from "react-redux";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import { addUser } from "../../features/properties/userSlice";
-import InputField from "../../components/propertiesInput/Input";
 import 'react-toastify/dist/ReactToastify.css';
 import "./signup.css";
-// import CustomFetch from "../../CustomFetch";
 
 
 
@@ -42,9 +40,10 @@ export default function Signup() {
 
     try {
       const response = await axios.post(`${process.env.REACT_APP_BASEURL}/signup`, { ...person });
+      console.log(response)
+      toast('Account successfully created')
       const { token } = response.data;
       localStorage.setItem("token", token);
-      toast('Account successfully created')
       dispatch(
         addUser({
           id: new Date().getTime().toString(36),
@@ -62,22 +61,14 @@ export default function Signup() {
     }
     setLoading(!loading)
     setDisabled(false);
-    console.log('hello')
-
-    // setPerson({
-    //   firstName: "",
-    //   lastName: "",
-    //   email: "",
-    //   password: "",
-    //   phoneNo: "",
-    // });
   };
 
   return (
     <>
       <Navbar />
-      <ToastContainer />
+      
       <section class="signup">
+      <ToastContainer />
         <div class="signup_box">
           <div class="left">
             <div class="top_link"><Link to="/"><img src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download" alt="" />Return home</Link></div>
@@ -104,6 +95,7 @@ export default function Signup() {
                   name='email'
                   value={person.email}
                   onChange={handleChange}
+                  // disabled
                 />
                 <input
                   type="password"
@@ -138,7 +130,6 @@ export default function Signup() {
         </div>
       </section>
     <Footer />
-
     </>
   );
 }

@@ -45,7 +45,6 @@ export default function Login() {
           ...user,
         })
       );
-
       setDisabled(false);
       setTimeout(navigate("/dashboard"), 10000)
     } catch (error) {
@@ -59,9 +58,10 @@ export default function Login() {
   return (
     <>
       <Navbar />
-      <ToastContainer />
+      
 
       <section class="login">
+      <ToastContainer />
         <div class="login_box">
           <div class="left">
             <div class="top_link"><Link to="/"><img src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download" alt="" />Return home</Link>

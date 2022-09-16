@@ -1,6 +1,7 @@
 .my-properties-wrapper {
   display: flex;
   max-width: 1536px;
+  padding: 15px;
 }
 
 .feed-container {
@@ -36,7 +37,7 @@
 .property-content {
   margin: 0 auto;
   margin-bottom: 10px;
-  width: 25rem;
+  width: 20rem;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -66,10 +67,9 @@
 .property-title {
   display: flex;
   font-size: 1.125rem;
-  margin: 0.625rem 0;
 }
 .property-location {
-  margin-bottom: 0.625rem;
+  margin-bottom: 0.25rem;
 }
 
 .property-features {

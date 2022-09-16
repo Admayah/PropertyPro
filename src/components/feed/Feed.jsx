@@ -72,12 +72,13 @@ function Feed({ data }) {
   // }
 
   return (
-    <div className="my-properties-cards">
+    <div className="dashboard-wrapper">
       {/* {isModal && <Modal />} */}
       {/* <DashboardNav /> */}
       <ToastContainer />
-      <div className="my-properties-wrapper">
-        <Sidebar />
+      <Sidebar />
+      <div className="main">
+        
         {agentProperties.length === 0 && <div className="empty-container">
           <h3>You haven't post a property</h3>
           <Button className="empty-button" text="post a property" path="/post-property" />

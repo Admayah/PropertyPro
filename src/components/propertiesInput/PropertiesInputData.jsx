@@ -8,13 +8,16 @@ import Sidebar from "../sidebar/Sidebar";
 import InputField from "./Input";
 import { useDispatch } from "react-redux";
 import { addProperty } from "../../features/properties/adminProperties";
+import { statesArray } from "./propertyFeatures";
 import "./propertiesInput.css";
 import 'react-toastify/dist/ReactToastify.css';
+
 
 
 export default function PropertiesInputData() {
 
   const [isDisabled, setDisabled] = useState(false);
+  const [loading, setLoading] = useState(false)
 
   const dispatch = useDispatch();
 
@@ -61,6 +64,7 @@ export default function PropertiesInputData() {
 
     formData.append("file", file);
     formData.append("fileName", JSON.stringify(propertiesInfo));
+    setLoading(true)
 
     try {
       const response = await axios.post(
@@ -74,17 +78,18 @@ export default function PropertiesInputData() {
         id,
         ...propertiesInfo
       }))
+      setLoading(false)
     } catch (error) {
       toast.error(`${error.response.data.message}`)
     }
     setDisabled(true);
   }
   return (
-    <div className="properties-container">
+    <div className="dashboard-wrapper">
       {/* <DashboardNav /> */}
       <ToastContainer />
-      <div className="properties-wrap">
-        <Sidebar />
+      <Sidebar />
+      <div className="main">
         <div className="properties-input-container">
           <div className="properties-input-wrapper">
             <div className="properties-header">Add New Property</div>
@@ -192,16 +197,32 @@ export default function PropertiesInputData() {
               </div>
             </div>
             <div className="properties-content-wrapper">
+            <div className="property-data-input-field">
+            <select
+                  value={propertiesInfo.noOfRoom}
+                  name='state'
+                  placeholder="state"
+                  className="property-option"
+                  onChange={informationHandler}
+                >
+                  <option value="" disabled selected hidden>
+                    State
+                  </option>
+                  {statesArray.map((feature) => (
+                    <option value={feature}>{feature}</option>
+                  ))}
+                </select>
+                </div>
               <div className="property-location">
-                <div className="property-location-header">Location</div>
-                <label htmlFor="price">State</label>
-                <InputField
+                {/* <div className="property-location-header">Location</div> */}
+                {/* <label htmlFor="price">State</label> */}
+                {/* <InputField
                   type='text'
                   placeholder='state'
                   name='state'
                   value={propertiesInfo.state}
                   onChange={informationHandler}
-                />
+                /> */}
                 <label htmlFor="price">Address</label>
                 <InputField
                   type='text'
@@ -234,18 +255,18 @@ export default function PropertiesInputData() {
 
           </div>
           <div className="property-image">
-            <label className="photo-wrapper profile-input-container">
-              <span className="profile">
-                Upload property Image
+            {/* <label className="photo-wrapper profile-input-container"> */}
+              {/* <span className="profile"> */}
+                {/* Upload property Image */}
                 <input type="file"
                   name='image'
                   // value={propertiesInfo.image}
                   onChange={saveFile} />
-              </span>
-            </label>
-            <button className="post-btn" onClick={handleSubmit} disabled={isDisabled}>Post property</button>
+              {/* </span> */}
+            {/* </label> */}
+          
           </div>
-
+          <button className="post-btn" onClick={handleSubmit} disabled={isDisabled}>{loading ? <>Posting...</> : <>Post property</>}</button>
         </div>
       </div>
       {/* <Footer /> */}
