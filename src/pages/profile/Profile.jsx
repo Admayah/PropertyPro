@@ -56,7 +56,7 @@ function Profile() {
     } catch (error) {
       console.log(error)
       setDisabled(false);
-      toast.error(`${error.response.data.message}`)
+      // toast.error(`${error.response.data.message}`)
 
     }
     setLoading(!loading)

@@ -6,10 +6,8 @@ import { useDispatch } from "react-redux";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import { addUser } from "../../features/properties/userSlice";
-import InputField from "../../components/propertiesInput/Input";
 import 'react-toastify/dist/ReactToastify.css';
 import "./signup.css";
-// import CustomFetch from "../../CustomFetch";
 
 
 
@@ -42,10 +40,10 @@ export default function Signup() {
 
     try {
       const response = await axios.post(`${process.env.REACT_APP_BASEURL}/signup`, { ...person });
+      console.log(response)
       toast('Account successfully created')
       const { token } = response.data;
       localStorage.setItem("token", token);
-      
       dispatch(
         addUser({
           id: new Date().getTime().toString(36),
@@ -63,15 +61,6 @@ export default function Signup() {
     }
     setLoading(!loading)
     setDisabled(false);
-    console.log('hello')
-
-    // setPerson({
-    //   firstName: "",
-    //   lastName: "",
-    //   email: "",
-    //   password: "",
-    //   phoneNo: "",
-    // });
   };
 
   return (
@@ -106,6 +95,7 @@ export default function Signup() {
                   name='email'
                   value={person.email}
                   onChange={handleChange}
+                  // disabled
                 />
                 <input
                   type="password"
