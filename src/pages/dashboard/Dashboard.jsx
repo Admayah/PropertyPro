@@ -1,10 +1,11 @@
 import React from "react";
 import jwt_decode from "jwt-decode";
-
-import Sidebar from "../../components/sidebar/Sidebar";
-import "./dashboard.css";
 import { FaRegAddressCard, FaLayerGroup, FaRegUser } from "react-icons/fa";
 import { MdFavoriteBorder } from "react-icons/md";
+import Sidebar from "../../components/sidebar/Sidebar";
+import "./dashboard.css";
+
+
 
 
 export default function Dashboard() {
@@ -37,8 +38,6 @@ export default function Dashboard() {
                 </a>
               </div>
             </div>
-
-
 
           </div>
         </div>
@@ -73,8 +72,14 @@ export default function Dashboard() {
             <img src="/images/perform2.jpg" className="first-card_img" alt="perform" />
             Performance
           </div>
-          <div className="card">Card</div>
-          <div className="card">Card</div>
+          <div className="card">
+          <img src="/images/revenue-chart.png" className="first-card_img" alt="revenue" />
+            Revenue Analysis
+          </div>
+          <div className="card">
+          <img src="/images/sales-graph.png" className="first-card_img" alt="sales" />
+            Sales representation
+          </div>
         </div>
       </main>
 

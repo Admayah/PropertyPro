@@ -11,12 +11,12 @@ function Features(props) {
 
   const getProperty = async () => {
     try {
-      const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties`)
+      const response = await axios.get(`${process.env.REACT_APP_BASEURL}/property/${id}`)
       console.log(response)
       const { data } = response;
       setMoreInfo(data)
 
-      toast('Property is successfully created')
+      toast('Property features')
     } catch (error) {
       toast.error('Something went wrong')
     }
@@ -29,7 +29,7 @@ function Features(props) {
 
   return (
     <div className="features-wrapper">
-       {moreInfo.filter((property) => property.id === parseInt(id)).map((property, index) => {
+       {moreInfo.map((property, index) => {
         return (
 <>
 <div className="more-property-features">

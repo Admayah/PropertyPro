@@ -41,7 +41,7 @@ function PropertiesInfo(props) {
             </li>
           </ul>
           <div className="agent-price-and-no">
-            <span className='agent-price'>{price}</span>
+            <span className='agent-price' style={{fontSize: '18px'}}>{price}</span>
             <span className="agent-no">
               <i className="fa fa-whatsapp wb-color"></i> 09073645165
             </span>

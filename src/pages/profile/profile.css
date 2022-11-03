@@ -13,7 +13,8 @@
 }
 
 .form-group {
-	margin-top: 25px;
+	width: 100%;
+	margin-top: 15px;
 	display: flex;
 	flex-direction: column;
 }
@@ -42,25 +43,25 @@
 }
 
 .buttons-container {
-	/* background-color: #1C3988; */
+	width: 100%;
+	background-color: #1C3988;
 	padding: 5px;
     margin-top: 20px;
     border-radius: 5px;
 }
 @media (min-width: 990px) {
 	.buttons-container {
-		width: 100%;
-        display: flex;
-		justify-content: flex-end;
+		width: 100px;
+		padding: 10px;
 
 	}
 }
 @media (min-width: 990px) {
 	.buttons {
-		width: 100px;
-		background-color: #1C3988;
-		margin-top: 20px;
-		padding: 20px;
+		
+		/* background-color: #1C3988; */
+		/* margin-top: 20px; */
+		/* padding: 20px; */
 		border-radius: 5px;
 		display: flex;
 		justify-content: center;

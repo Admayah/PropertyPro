@@ -17,8 +17,8 @@
 }
 .property-title {
   display: flex;
-  justify-content: center;
-  margin-bottom: 30px;
+  /* justify-content: center;
+  margin-bottom: 30px; */
   font-size: 20px;
   font-weight: 700;
 }
@@ -26,7 +26,7 @@
 .properties-details {
   display: flex;
   justify-content: center;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 .property-details-header {
   font-size: 18px;
@@ -75,7 +75,7 @@
 
 .form-icon {
   padding: 0.625rem;
-  background: crimson;
+  background: #1C3988;;
   color: white;
   min-width: 50px;
   text-align: center;
@@ -89,11 +89,12 @@
 }
 .contact-agent-button {
   width: 100%;
-  background-color: crimson;
+  background-color: #1C3988;
   border-radius: 15px;
   padding: 10px;
   font-size: 18px;
 }
 .active p{
-  color: crimson;
+  color: #1C3988;;
+  border-bottom: 5px solid #1C3988;
 }

@@ -9,37 +9,40 @@ import 'react-toastify/dist/ReactToastify.css';
 function PropertyDetails() {
   
   const { id } = useParams();
+  console.log(id, 'id')
   const [moreInfo, setMoreInfo] = useState([]);
 
   const getProperty = async () => {
     try {
-      const response = await axios.get(`${process.env.REACT_APP_BASEURL}/properties`)
+      const response = await axios.get(`${process.env.REACT_APP_BASEURL}/property/${id}`);
+      console.log(response, 'response')
       const { data } = response;
-      setMoreInfo(data)
+      console.log(data, 'data')
+      setMoreInfo(data);
 
-      toast('Property is successfully created')
+      toast('Property is successfully created');
     } catch (error) {
-      toast.error(`${error.response.data.message}`)
-
+      console.log(error)
+      toast.error(`${error.response.data.message}`);
     }
   };
 
   useEffect(() => {
-    getProperty()
+    getProperty();
   }, []);
 
   return (
     <div className="property-details-container">
       <ToastContainer />
-      {moreInfo.filter((property) => property.id === parseInt(id)).map((property, index) => {
+      {moreInfo.map((property, index) => {
+        console.log(property, 'property')
         return (
           <div className="property-detail-wrapper" key={index}>
           <div className="property-image-wrapper">
             <img src={property.image_url} alt="pic" className="property-img" />
           </div>
           <div className="property-title">{property.title} </div>
-          <div className="property-title">{property.address}</div>
-
+          <div className="property-title">Address: {property.address}</div>
           <div className="properties-details">
             <NavLink to={`/properties/${id}/features`}>
               {" "}

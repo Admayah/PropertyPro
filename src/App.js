@@ -18,9 +18,10 @@ import ErrorPage from "./ErrorPage";
 import ProtectedRoute from "./ProtectedRoute";
 import EditProperty from "./components/editProperty/EditProperty";
 import Agents from "./pages/agents";
+import Reviews from "./components/review/Reviews";
 import CustomFetch from "./CustomFetch";
-import Check from "./Check";
 import 'react-toastify/dist/ReactToastify.css';
+import About from "./components/about-us/About";
 
 
 
@@ -52,8 +53,9 @@ function App() {
             <Route path="desc" element={<Description />} />{" "}
             <Route path="review" element={<Review />} />
           </Route>
+          <Route path='/about' element={<About />} />
           <Route path="*" element={<ErrorPage />} ></Route>
-          <Route path="/fetchinfo" element={<CustomFetch />} ></Route>
+          <Route path="/fetch" element={<Reviews />} ></Route>
           <Route
             path="/post-property"
             element={<PropertiesInputData />}></Route>

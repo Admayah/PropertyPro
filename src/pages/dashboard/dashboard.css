@@ -6,7 +6,7 @@
   width: 100%;
   margin-left: 20%;
 }
-@media (max-width : 768px) {
+@media (max-width : 1000px) {
   .main {
     margin-left: 70px;
   }
@@ -190,15 +190,15 @@ margin-top: 0;
   box-sizing: border-box;
 }
 
-.card:first-child {
+.first-child {
   height: 80%;
 }
-.card:nth-child(2) {
+/* .card:nth-child(2) {
   height: 200px;
 }
 .card:nth-child(3) {
   height: 265px;
-}
+} */
 
 
 /* .header__search {

@@ -1,0 +1,95 @@
+.controls {
+    position: relative;
+    width: 800px;
+    margin: auto;
+    box-sizing: border-box;
+    /* margin: 10px; */
+    /* display: flex;
+    width: 100%;
+    outline: 1px solid red;
+    flex-direction: column;
+    position: relative; */
+
+}
+.mide{
+    /* width: 10px; */
+    color: black;
+    outline: 1px solid red;
+}
+.abc {
+    padding: 10px;
+    padding-top: 30px;
+    background-color: #F5F5F5;
+    width: 50%;
+    padding: 20px;
+    text-align: center;
+    /* outline: 2px solid black; */
+    margin: 0 auto;
+    
+
+}
+.btn-slick {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    display: inline-block;
+    cursor: pointer;
+
+}
+.mide__prev,
+.mide__next {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    /* border-radius: 50%; */
+    border-color: transparent;
+    z-index: 9;
+}
+/* .mide__next {
+    position: absolute;
+    font-size: 0;
+    line-height: 0;
+    top: 50%;
+    right: -25px;
+    width: 20px;
+    height: 20px; */
+    /* -webkit-transform: translate(0,-50%);
+    -ms-transform: translate(0,-50%);
+    transform: translate(0,-50%); */
+    /* cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: 0; */
+    /* background: 0 0; */
+/* } */
+.hope {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.review__wrapper {
+}
+
+.btings {
+    width: 100%;
+	display: flex;
+	justify-content: center;
+	gap: 25px;
+	position: absolute;
+	/* bottom: 0; */
+}
+.slider__btn {
+    z-index: 10;
+    border: 2px solid #1C3988;
+    background: #fff;
+    font-family: inherit;
+    color: #1C3988;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    font-size: 3rem;
+    cursor: pointer;
+}

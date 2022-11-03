@@ -2,11 +2,10 @@ import React, {useState} from 'react'
 import './modal.css'
 
 const Modal = ({closeModal, deleteItem}) => {
+    // console.log(deleteItem, 'delete item')
 
-    const [isOpen, setIsOpen] = useState(false)
+    // const [isOpen, setIsOpen] = useState(false)
 
-    // const showModal = () => useState(true)
-    // const closeModal = () => useState(false)
     return (
         <section className="modal-container">
             <div className='modal'>
