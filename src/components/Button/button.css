@@ -1,13 +1,31 @@
-.button-container {
-  width: 10rem;
+.btns {
+  width: 11rem;
+  background-color: #1C3988;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 20px 5px;
+  cursor: pointer;
+}
+
+/* .button-container { */
+  /* width: 10rem;
   font-size: 1.25rem;
   background-color: #1C3988;
   padding: 0.625rem;
   text-align: center;
-  border-radius: 10px;
-  cursor: pointer;
+  border-radius: 5px;
+  cursor: pointer; */
+  
+
+/* } */
+.button-container:hover {
+background-color: #1f46b3;
 }
 .button-wrapper {
+  width: 100%;
   font-size: 1rem;
   font-weight: 500;
+  cursor: pointer;
+
 }

@@ -15,6 +15,7 @@ export const adminPropertySlice = createSlice({
             state.adminProperties.push(action.payload)
         },
         updateStateProperty: (state, action) => {
+            console.log(action.payload, 'update action')
             state.updateProperty = action.payload
         },
         editStateProperty: (state, action) => {

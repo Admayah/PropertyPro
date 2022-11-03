@@ -1,16 +1,18 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import jwt_decode from "jwt-decode";
 import InputField from "../../components/propertiesInput/Input";
 import Sidebar from "../../components/sidebar/Sidebar";
-import { addUser } from "../../features/properties/userSlice";
-import DashboardNav from "../dashboard/dashboardnav/DashboardNav";
+import { updateProfile } from "../../features/properties/userSlice";
 import "./profile.css";
 import { ToastContainer, toast } from "react-toastify";
 
 function Profile() {
 
+
   const dispatch = useDispatch()
+  const [useerInfo, setUserInfo] = useState([])
 
   const token = localStorage.getItem('token');
   let config = {
@@ -19,16 +21,40 @@ function Profile() {
     }
   };
 
+  useEffect(() => {
+ const userDetails = async () => {
+  const response = await axios.get(`${process.env.REACT_APP_BASEURL}/agent`, config)
+  console.log(response.data)
+  const {data} = response
+  const destructureData = data[0]
+console.log(destructureData, updateProfile())
+  dispatch(
+    updateProfile({
+      // id: new Date().getTime().toString(36),
+      ...destructureData
+  }))
+  setUserInfo(data[0])
+
+ }
+ userDetails()
+  }, []);
+  const {userInfo} = useSelector((state) => state.user.updateSlice)
+  console.log(userInfo, 'aaaaaa')
+  
+  // const {first_name, last_name, email, phone_no, state, city} = useerInfo
+  
+console.log(useerInfo)
+
   const [editUser, setEditUser] = useState({
-    first_name: "",
-    last_name: "",
-    email: "",
-    password: "",
-    phone_no: "",
-    state: "",
-    city: "",
+    first_name: userInfo.first_name,
+    last_name: userInfo.last_name,
+    email: userInfo.email,
+    phone_no: userInfo.phone_no,
+    state: userInfo.state,
+    city: userInfo.city,
     new_password: ""
   });
+  console.log(editUser.firstame, 'kkkk')
   const [loading, setLoading] = useState(false)
   const [isDisabled, setDisabled] = useState(false);
 
@@ -44,9 +70,9 @@ function Profile() {
 
     try {
       const response = await axios.put(`${process.env.REACT_APP_BASEURL}/agent/edit`, { ...editUser }, config);
-      toast('Account successfully created')
+      toast('profile updated successfully')
       dispatch(
-        addUser({
+        updateProfile({
           id: new Date().getTime().toString(36),
           ...editUser
         })
@@ -93,8 +119,8 @@ console.log(editUser, 'edit profile for user')
               </div>
 
               <div className="form-group b">
-                <label for="first-name">LASTNAME</label>
-                <input id="first-name" type="text"
+                <label for="last-name">LASTNAME</label>
+                <input id="last-name" type="text"
                 name="last_name"
                   value={editUser.last_name}
                   onChange={handleChange}
@@ -107,6 +133,8 @@ console.log(editUser, 'edit profile for user')
                 name="email"
                   value={editUser.email}
                   onChange={handleChange}
+                  disabled
+                  style={{ cursor: "not-allowed"}}
                 />
               </div>
 

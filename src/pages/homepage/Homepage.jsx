@@ -16,6 +16,6 @@ function Homepage() {
       <Footer />
     </>
   );
-}
+};
 
 export default Homepage;

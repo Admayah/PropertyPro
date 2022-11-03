@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import paginate from "./utils";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 export const useFetch = () => {
     const [loading, setLoading] = useState(true)
@@ -43,3 +44,22 @@ export const useFetch = () => {
 //     }, [])
 //     console.log(post)
 // }
+
+
+ const Egister =  async (person) => {
+    // const [isable, setIsable] = useState(true)
+    const [a, setA] = useState(true)
+    try {
+        const response = await axios.post(`${process.env.REACT_APP_BASEURL}/signup`, { ...person });
+        console.log(response.data)
+        const { token } = response.data;
+        localStorage.setItem("token", token);
+        toast('Account successfully created')
+        
+    } catch (error) {
+        // setIsable(false)
+        toast.error(`${error.response.data.message}`)
+    }
+// console.log(isable, 'disable state')
+};
+export default Egister;

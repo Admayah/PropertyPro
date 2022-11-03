@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast} from 'react-toastify';
 import axios from 'axios'
+import { useDispatch } from "react-redux"
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import { addUser } from "../../features/properties/userSlice";
-import { useDispatch } from "react-redux";
+import Inputs from "../../components/input/Inputs";
 import "./login.css";
-import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -22,7 +22,7 @@ export default function Login() {
   }
 
   const [user, setUser] = useState(initialValue)
-  const [isDisabled, setDisabled] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
  
 
@@ -33,7 +33,7 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setDisabled(true);
+    setIsLoading(true);
     try {
       const response = await axios.post(`${process.env.REACT_APP_BASEURL}/login`, { ...user });
       const { token } = response.data;
@@ -45,13 +45,14 @@ export default function Login() {
           ...user,
         })
       );
-      setDisabled(false);
       setTimeout(navigate("/dashboard"), 10000)
     } catch (error) {
       console.log(error)
-      setDisabled(false);
-      toast.error(`${error.response.data.message}`)
+      setIsLoading(false);
+      toast.error(`${error.response.data.messages}`)
 
+    } finally {
+      setIsLoading(false)
     }
   }
 
@@ -64,28 +65,29 @@ export default function Login() {
       <ToastContainer />
         <div class="login_box">
           <div class="left">
-            <div class="top_link"><Link to="/"><img src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download" alt="" />Return home</Link>
+            <div class="top_link" onClick={()=> navigate(-1)} style={{cursor: 'pointer'}}><img src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download" alt="" />Return home
             </div>
             <div class="contact">
             <h3>SIGN IN</h3>
               <form  onSubmit={handleSubmit}>
-                
-                <input 
-                type="email" 
-                placeholder="EMAIL"
+                <Inputs
+                title='Email'
+                label='email'
+                type='email'
                 name='email'
                 value={user.email}
-                onChange={handleChange}
-                 />
-                <input 
-                type="password" 
-                placeholder="PASSWORD" 
+                inputHandler={handleChange}
+                />
+                <Inputs
+                title='password'
+                label='password'
+                type='password'
                 name='password'
                 value={user.password}
-                onChange={handleChange}
+                inputHandler={handleChange}
                 />
-                <button type="submit" className="submit" disabled={isDisabled}>
-                  {isDisabled ? <i class="fa fa-circle-o-notch fa-spin"></i> : 'Login'}
+                <button type="submit" className={isLoading ? "submit jax" : "submit"} disabled={isLoading}>
+                  {isLoading ? <i class="fa fa-circle-o-notch fa-spin"></i> : 'Login'}
                   </button>
       
               </form>

@@ -1,8 +1,9 @@
 .all-properties-container {
-    width: 100%;
+  padding: 0 30px;
+    /* width: 100%; */
     position: relative;
     max-width: 1536px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     /* margin-top: 50px; */
   }
   

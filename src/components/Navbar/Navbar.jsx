@@ -1,22 +1,30 @@
 import React, { useState } from "react";
 import "./navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import NavbarOptions from "./NavbarOptions";
 import Button from "../Button/Button";
+import Btn from "../Btn/Btn";
 
 
 
 
 export default function Navbar(props) {
+
+  const navigate = useNavigate();
+
   const [toggle, setToggle] = useState(false);
 
   const toggleHandler = () => {
     setToggle(!toggle);
   };
 
+  const clickHandler = () => {
+    console.log('signp')
+    navigate('/signup')
+  }
 
   const hamburgerIcon = <i className="fa fa-bars" onClick={toggleHandler}></i>;
-  const cancelIcon = <i className="fa fa-times " onClick={toggleHandler}></i>;
+  const cancelIcon = <i className="fa fa-times" onClick={toggleHandler}></i>;
 
   const NavMenu = NavbarOptions.map((btn, index) => (
     <li className="navbar-menu" key={index} >
@@ -38,15 +46,17 @@ export default function Navbar(props) {
         </div>
         <div className="navbar-right">
           <ul className={toggle ? "show-navbar-menu" : "hide-navbar-menu"} >
-            {NavMenu}
-            <Button text="BECOME AN AGENT" path="/signup" />
+            {NavMenu}  
           </ul>
 
           <div className="position-hamburger-icon">
             {" "}
             {toggle ? cancelIcon : hamburgerIcon}
           </div>
+          
         </div>
+        {/* <Button text= path="/signup" /> */}
+        <Btn value="BECOME AN AGENT" type="submit" clickHandler={clickHandler} className="button-container nav-btn" />
       </div>
     </div>
   );

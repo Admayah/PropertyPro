@@ -13,7 +13,7 @@
 }
 .property-feature-item::before {
   content: "\2192";
-  color: crimson;
+  color: #1C3988;
   margin-right: 5px;
 }
 .property-feature-item {
